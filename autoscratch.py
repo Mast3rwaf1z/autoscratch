@@ -27,17 +27,7 @@ def info(msg):
     if not quiet: print(f'\033[38;2;100;100;100m{msg}\033[0m')
 
 
-if not check_call(["rm", "-rf", "build"], stdout=DEVNULL):
-    ok("successfully cleaned build environment")
-else:
-    warning("Failed to clear build environment")
 
-if not check_call(["which", "sqlite3"], stdout=DEVNULL):
-    ok("Sqlite3 installation found!")
-    indexing = True
-else:
-    warning("Sqlite3 not found, disabling package indexing")
-    indexing = False
 
 def loading_icon(package):
     counter = 0
@@ -120,7 +110,19 @@ def pkg_configure(FILENAME):
     return pkg_name, pkg_cmds
 
 if __name__ == "__main__":
-    if indexing: init_db()
+    if not check_call(["rm", "-rf", "build"], stdout=DEVNULL):
+        info("successfully cleaned build environment")
+    else:
+        warning("Failed to clear build environment")
+
+    if not check_call(["which", "sqlite3"], stdout=DEVNULL):
+        info("Sqlite3 installation found!")
+        indexing = True
+    else:
+        warning("Sqlite3 not found, disabling package indexing")
+        indexing = False
+    if indexing: 
+        init_db()
 
     match argv[1]:
         case "single":
