@@ -27,6 +27,29 @@ if system("rm -rf build"):
 else:
     warning("Failed to clear build environment")
 
+if not system("which sqlite3"):
+    ok("Sqlite3 installation found!")
+    indexing = True
+else:
+    warning("Sqlite3 not found, disabling package indexing")
+    indexing = False
+
+def init_db():
+    global indexing
+    if not system("sqlite3 db.db3 'CREATE TABLE IF NOT EXISTS packages values(name VARCHAR PRIMARY KEY)'"):
+        ok("Successfully initialized database")
+    else:
+        warning("failed to initialize database, disabling indexing")
+        indexing = False
+
+def add_package(package):
+    if not system(f'sqlite3 db.db3 "insert or replace into packages values (\'{package}\')"'):
+        ok("successfully added package to database")
+    else:
+        warning(f"Failed to add package to database: {package}")
+
+init_db()
+
 def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
     tmp_script = f'/tmp/{pkg_name}.pkgmgr'
@@ -44,6 +67,7 @@ def pkg_install(pkg_name, pkg_cmds):
             file.write(f"{cmd}\n")
     if not system(f"bash '{tmp_script}'"):
         ok(f"Successfully installed {pkg_name}")
+        if indexing: add_package(pkg_name)
     else:
         error(f"Failed to install {pkg_name}")
 
@@ -82,6 +106,8 @@ match argv[1]:
         for pkg in pkgs:
             pkg_name, pkg_cmds = pkg_configure(pkg)
             pkg_install(pkg_name, pkg_cmds)
+    case "list":
+        system("sqlite3 db.db3 'select * from packages' -table"):
 
 
 
