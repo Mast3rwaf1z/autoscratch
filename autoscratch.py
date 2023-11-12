@@ -48,7 +48,7 @@ def add_package(package):
     else:
         warning(f"Failed to add package to database: {package}")
 
-init_db()
+if indexing: init_db()
 
 def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
