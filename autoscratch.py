@@ -45,7 +45,7 @@ def loading_icon():
     while True:
         sleep(1)
         print(chr(chars[counter]), end="\r")
-        counter+=1 if counter <= 8 else 0
+        counter+=1 if counter < 7 else 0
 
 
 def run_cmd(cmd):
