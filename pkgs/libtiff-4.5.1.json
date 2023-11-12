@@ -1,5 +1,5 @@
 {
-	"name":"libtiff-4.5.1",
+	"name":"tiff-4.5.1",
 	"src":"https://download.osgeo.org/libtiff/tiff-4.5.1.tar.gz",
 	"cmds":[
 		"mkdir -p libtiff-build",
