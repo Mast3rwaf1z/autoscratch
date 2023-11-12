@@ -52,14 +52,14 @@ def run_cmd(cmd, pkg):
 def init_db():
     global indexing
     if not check_call(["sqlite3", "db.db3", "CREATE TABLE IF NOT EXISTS packages (name VARCHAR PRIMARY KEY)"]):
-        ok("Successfully initialized database")
+        info("Successfully initialized database")
     else:
         warning("failed to initialize database, disabling indexing")
         indexing = False
 
 def add_package(package):
     if not check_call(['sqlite3', 'db.db3', f"insert or replace into packages values (\'{package}\')"]):
-        ok("successfully added package to database")
+        info("successfully added package to database")
     else:
         warning(f"Failed to add package to database: {package}")
 
