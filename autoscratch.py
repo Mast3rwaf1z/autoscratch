@@ -39,7 +39,7 @@ else:
 
 def run_cmd(cmd):
     if quiet:
-        return check_call(cmd, stdout=DEVNULL)
+        return check_call(cmd, stdout=DEVNULL, stderr=DEVNULL)
     else:
         return check_call(cmd)
 
