@@ -23,6 +23,6 @@
 		"make",
 		"make install",
 		"tar xf ../blfs-systemd-units-20230816.tar.xz",
-		"cd ../blfs-systemd-units-20230816",
+		"cd blfs-systemd-units-20230816",
 		"make install-lightdm"
 	]}
