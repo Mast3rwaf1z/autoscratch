@@ -75,7 +75,7 @@ match argv[1]:
             with open(pkg, "r") as file:
                 json = loads(file.read())
             pkg_name:str = json["name"]
-            pkg_src:str = json["src"]
+            pkg_src = json["src"]
             info(f"beginning configuration of package: {pkg_name}")
             if pkg_src:
                 pkg_cmds:list[str] = [
