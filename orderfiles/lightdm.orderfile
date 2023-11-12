@@ -42,4 +42,5 @@ pkgs/GTK+-3.24.38.json
 pkgs/libxfce4ui-4.18.4.json
 pkgs/Exo-4.18.0.json
 pkgs/libxklavier-5.4.json
+pkgs/xinit-1.4.2.json
 pkgs/lightdm-1.32.0.json
