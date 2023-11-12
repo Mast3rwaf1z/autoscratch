@@ -26,6 +26,8 @@ pathappend () {
         export $PATHVARIABLE="${!PATHVARIABLE:+${!PATHVARIABLE}:}$1"
 }
 
+export -f pathremove pathprepend pathappend
+
 cat << EOF > config.toml
 # see config.toml.example for more possible options
 # See the 8.4 book for an old example using shipped LLVM
