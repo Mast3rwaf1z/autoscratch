@@ -116,9 +116,9 @@ match argv[1]:
         with open(ORDERFILE, "r") as file:
             pkgs = file.read().split("\n")
         for pkg in pkgs:
+            reinstall = "reinstall" in pkg.lower()
+            pkg = pkg.split(" ")[1] if "reinstall" in pkg.lower() else pkg
             pkg_name, pkg_cmds = pkg_configure(pkg)
-            reinstall = "reinstall" in pkg_name.lower()
-            pkg_name = pkg_name.split(" ")[1] if "reinstall" in pkg_name.lower() else pkg_name
             if not check_installed(pkg_name) and not reinstall: 
                 warning(f"Package {pkg_name} is already installed!")
             else:
