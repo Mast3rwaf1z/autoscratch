@@ -48,7 +48,6 @@ def pkg_install(pkg_name, pkg_cmds):
         error(f"Failed to install {pkg_name}")
 
 def pkg_configure(FILENAME):
-    FILENAME = argv[-1]
     info(f"reading file: {FILENAME}")
     with open(FILENAME, "r") as file:
         json = loads(file.read())
