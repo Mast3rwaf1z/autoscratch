@@ -42,7 +42,7 @@ else:
 def loading_icon(package):
     counter = 0
     chars = [0x2801, 0x2802, 0x2804, 0x2840, 0x2880, 0x2820, 0x2810, 0x2808]
-    print(f" | Installing {package}...", end="")
+    print(f" | Installing {package}...", end="\r")
     while True:
         sleep(.5)
         print(chr(chars[counter]), end="\r")
