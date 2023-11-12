@@ -98,6 +98,7 @@ def pkg_configure(FILENAME):
     #print(type(pkg_src))
     if pkg_src:
         pkg_cmds:list[str] = [
+            "source /etc/profile",
             "rm build", 
             "mkdir build", 
             "\n".join([f"wget {pkg} -O build/{pkg.split('/')[-1]}" for pkg in pkg_src]) if isinstance(pkg_src, list) else f"wget {pkg_src} -O build/{pkg_src.split('/')[-1]}", 
