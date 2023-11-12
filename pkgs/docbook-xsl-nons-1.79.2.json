@@ -1,6 +1,9 @@
 {
   "name":"docbook-xsl-nons-1.79.2",
-  "src":"https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2 https://www.linuxfromscratch.org/patches/blfs/12.0/docbook-xsl-nons-1.79.2-stack_fix-1.patch",
+  "src":[
+    "https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2",
+    "https://www.linuxfromscratch.org/patches/blfs/12.0/docbook-xsl-nons-1.79.2-stack_fix-1.patch"
+  ],
   "cmds":[
     "patch -Np1 -i ../docbook-xsl-nons-1.79.2-stack_fix-1.patch",
     "install -v -m755 -d /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2",

@@ -1,6 +1,11 @@
 {
 	"name":"llvm-16.0.5.src",
-	"src":"https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.5/llvm-16.0.5.src.tar.xz https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake.src.tar.xz https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-third-party.src.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.5/clang-16.0.5.src.tar.xz",
+	"src":[
+		"https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.5/llvm-16.0.5.src.tar.xz",
+		"https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake.src.tar.xz",
+		"https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-third-party.src.tar.xz",
+		"https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.5/clang-16.0.5.src.tar.xz"
+	],
 	"cmds":[
 		"tar -xf ../llvm-cmake.src.tar.xz",
 		"tar -xf ../llvm-third-party.src.tar.xz",

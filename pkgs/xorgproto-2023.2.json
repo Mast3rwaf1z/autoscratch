@@ -1,6 +1,6 @@
 {
   "name":"xorgproto-2023.2",
-  "src":"https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2023.2.tar.xz",
+  "src":["https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2023.2.tar.xz"],
   "cmds":[
     "mkdir build",
     "cd    build",

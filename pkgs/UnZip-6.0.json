@@ -1,6 +1,9 @@
 {
   "name":"unzip60",
-  "src":"https://downloads.sourceforge.net/infozip/unzip60.tar.gz https://www.linuxfromscratch.org/patches/blfs/12.0/unzip-6.0-consolidated_fixes-1.patch",
+  "src":[
+    "https://downloads.sourceforge.net/infozip/unzip60.tar.gz",
+    "https://www.linuxfromscratch.org/patches/blfs/12.0/unzip-6.0-consolidated_fixes-1.patch"
+  ],
   "cmds":[
     "patch -Np1 -i ../unzip-6.0-consolidated_fixes-1.patch",
     "make -f unix/Makefile generic",

@@ -1,6 +1,10 @@
 {
 	"name":"lightdm-1.32.0",
-	"src":"https://github.com/CanonicalLtd/lightdm/releases/download/1.32.0/lightdm-1.32.0.tar.xz https://github.com/Xubuntu/lightdm-gtk-greeter/releases/download/lightdm-gtk-greeter-2.0.8/lightdm-gtk-greeter-2.0.8.tar.gz https://www.linuxfromscratch.org/blfs/downloads/12.0-systemd/blfs-systemd-units-20230816.tar.xz",
+	"src":[
+		"https://github.com/CanonicalLtd/lightdm/releases/download/1.32.0/lightdm-1.32.0.tar.xz",
+		"https://github.com/Xubuntu/lightdm-gtk-greeter/releases/download/lightdm-gtk-greeter-2.0.8/lightdm-gtk-greeter-2.0.8.tar.gz",
+		"https://www.linuxfromscratch.org/blfs/downloads/12.0-systemd/blfs-systemd-units-20230816.tar.xz"
+	],
 	"cmds":[
 		"groupadd -g 65 lightdm",
 		"useradd -c \"Lightdm Daemon\" -d /var/lib/lightdm -u 65 -g lightdm -s /bin/false lightdm",
