@@ -108,7 +108,7 @@ match argv[1]:
             pkgs = file.read().split("\n")
         for pkg in pkgs:
             pkg_name, pkg_cmds = pkg_configure(pkg)
-            if check_installed(pkg_name): 
+            if not check_installed(pkg_name): 
                 warning(f"Package {pkg_name} is already installed!")
             else:
                 pkg_install(pkg_name, pkg_cmds)
