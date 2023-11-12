@@ -46,7 +46,7 @@ def loading_icon(package):
     while True:
         sleep(.5)
         print(chr(chars[counter]), end="\r")
-        counter+=1 if counter < 7 else 0
+        counter = counter + 1 if counter < 7 else 0
 
 
 def run_cmd(cmd, pkg):
