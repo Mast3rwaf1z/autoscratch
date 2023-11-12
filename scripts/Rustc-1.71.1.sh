@@ -46,7 +46,7 @@ description = "for BLFS 12.0"
 # so disabled codegen tests.  The assembly tests rely on FileCheck
 # and cannot easily be disabled, so those will anyway fail if
 # FileCheck has not been installed.
-#codegen-tests = false
+codegen-tests = false
 
 [target.x86_64-unknown-linux-gnu]
 # NB the output of llvm-config (i.e. help options) may be
