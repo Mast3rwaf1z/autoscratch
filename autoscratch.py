@@ -48,6 +48,9 @@ def add_package(package):
     else:
         warning(f"Failed to add package to database: {package}")
 
+def check_installed(package):
+    return len(check_output(["sqlite3", "db.db3", f'"select * from packages where name = \'{package}\'"']).decode().split("\n")) == 1
+
 if indexing: init_db()
 
 def pkg_install(pkg_name, pkg_cmds):
@@ -105,7 +108,10 @@ match argv[1]:
             pkgs = file.read().split("\n")
         for pkg in pkgs:
             pkg_name, pkg_cmds = pkg_configure(pkg)
-            pkg_install(pkg_name, pkg_cmds)
+            if check_installed(pkg_name): 
+                warning(f"Package {pkg_name} is already installed!")
+            else:
+                pkg_install(pkg_name, pkg_cmds)
     case "list":
         system("sqlite3 db.db3 'select * from packages' -table")
 
