@@ -4,7 +4,7 @@
 	"cmds":[
 		"mkdir build",
 		"cd build",
-		"meson setup --prefix=/usr --buildtype=release -Dman=true -Dbroadway_backend=true ..",
+		"meson setup --prefix=/usr --buildtype=release -Dman=true -Dbroadway_backend=true -Dwayland_backend=false -Dx11_backend=true ..",
 		"ninja",
 		"ninja install"
 	]
