@@ -39,9 +39,9 @@ else:
 
 def run_cmd(cmd):
     if quiet:
-        return check_call([cmd], stdout=DEVNULL)
+        return check_call(cmd, stdout=DEVNULL)
     else:
-        return check_call([cmd])
+        return check_call(cmd)
 
 def init_db():
     global indexing
@@ -77,7 +77,7 @@ def pkg_install(pkg_name, pkg_cmds):
         for cmd in pkg_cmds:
             info(f"writing command: {cmd}")
             file.write(f"{cmd}\n")
-    if not run_cmd(f"bash '{tmp_script}'"):
+    if not run_cmd(["bash", tmp_script]):
         ok(f"Successfully installed {pkg_name}")
         if indexing: add_package(pkg_name)
     else:
