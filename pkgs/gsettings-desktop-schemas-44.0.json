@@ -1,0 +1,12 @@
+{
+	"name":"gsettings-desktop-schemas-44.0",
+	"src":"https://download.gnome.org/sources/gsettings-desktop-schemas/44/gsettings-desktop-schemas-44.0.tar.xz",
+	"cmds":[
+		"sed -i -r 's:\"(/system):\"/org/gnome\\1:g' schemas/*.in",
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release ..",
+		"ninja",
+		"ninja install"
+	]
+}

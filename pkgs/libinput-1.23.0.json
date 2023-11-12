@@ -1,0 +1,10 @@
+{
+	"name":"libinput-1.23.0",
+	"src":"https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.23.0/libinput-1.23.0.tar.gz",
+	"cmds":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=$XORG_PREFIX --buildtype=release -Ddebug-gui=false -Dtests=false -Dlibwacom=false -Dudev-dir=/usr/lib/udev ..",
+		"ninja",
+		"ninja install"
+	]}

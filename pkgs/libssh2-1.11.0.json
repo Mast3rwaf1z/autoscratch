@@ -1,0 +1,8 @@
+{
+	"name":"libssh2-1.11.0",
+	"src":"https://www.libssh2.org/download/libssh2-1.11.0.tar.gz",
+	"cmds":[
+		"./configure --prefix=/usr --disable-docker-tests --disable-static",
+		"make",
+		"make install"
+	]}

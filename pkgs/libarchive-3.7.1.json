@@ -1,0 +1,9 @@
+{
+	"name":"libarchive-3.7.1",
+	"src":"https://github.com/libarchive/libarchive/releases/download/v3.7.1/libarchive-3.7.1.tar.xz",
+	"cmds":[
+		"./configure --prefix=/usr --disable-static",
+		"make",
+		"make install"
+	]
+}

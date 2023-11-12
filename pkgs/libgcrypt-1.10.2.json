@@ -1,0 +1,15 @@
+{
+	"name":"libgcrypt-1.10.2",
+	"src":"https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2",
+	"cmds":[
+		"./configure --prefix=/usr",
+		"make",
+		"make install",
+		"install -v -dm755   /usr/share/doc/libgcrypt-1.10.2",
+	       	"install -v -m644    README doc/{README.apichanges,fips*,libgcrypt*} /usr/share/doc/libgcrypt-1.10.2",
+	       	"install -v -dm755   /usr/share/doc/libgcrypt-1.10.2/html",
+		"install -v -m644 doc/gcrypt.html/* /usr/share/doc/libgcrypt-1.10.2/html",
+	       	"install -v -m644 doc/gcrypt_nochunks.html /usr/share/doc/libgcrypt-1.10.2",
+	  	"install -v -m644 doc/gcrypt.{txt,texi} /usr/share/doc/libgcrypt-1.10.2"
+	]
+}

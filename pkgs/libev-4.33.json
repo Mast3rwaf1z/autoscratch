@@ -1,0 +1,9 @@
+{
+  "name":"libev-4.33",
+  "src":"http://dist.schmorp.de/libev/libev-4.33.tar.gz",
+  "cmds":[
+    "./configure $XORG_CONFIG",
+    "make",
+    "make install"
+  ]
+}

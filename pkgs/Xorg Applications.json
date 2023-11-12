@@ -1,0 +1,10 @@
+{
+	"name":"Xorg Applications",
+	"src":null,
+	"cmds":[
+		"mkdir -p build/apps",
+    		"cd build/apps",
+    		"ls ../../scripts",
+    		"bash ../../scripts/Xorg\\ Applications.sh"
+	]
+}

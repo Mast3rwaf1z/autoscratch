@@ -1,0 +1,8 @@
+{
+	"name":"xbitmaps-1.1.3",
+	"src":"https://www.x.org/pub/individual/data/xbitmaps-1.1.3.tar.xz",
+	"cmds":[
+		"./configure $XORG_CONFIG",
+		"make install"
+	]
+}

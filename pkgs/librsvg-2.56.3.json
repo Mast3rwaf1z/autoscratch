@@ -1,0 +1,9 @@
+{
+	"name":"librsvg-2.56.3",
+	"src":"https://download.gnome.org/sources/librsvg/2.56/librsvg-2.56.3.tar.xz",
+	"cmds":[
+		"./configure --prefix=/usr --enable-vala --disable-static --docdir=/usr/share/doc/librsvg-2.56.3",
+		"make",
+		"make DOC_INSTALL_DIR='$(docdir)' install"
+	]
+}

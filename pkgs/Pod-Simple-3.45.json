@@ -1,0 +1,9 @@
+{
+  "name":"Pod-Simple-3.45",
+  "src":"https://cpan.metacpan.org/authors/id/K/KH/KHW/Pod-Simple-3.45.tar.gz",
+  "cmds":[
+    "perl Makefile.PL",
+    "make",
+    "make install"
+  ]
+}

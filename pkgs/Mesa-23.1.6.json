@@ -1,0 +1,10 @@
+{
+	"name":"mesa-23.1.6",
+	"src":"https://mesa.freedesktop.org/archive/mesa-23.1.6.tar.xz",
+	"cmds":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=$XORG_PREFIX --buildtype=release -Dplatforms=x11,wayland -Dgallium-drivers=auto -Dvulkan-drivers=\"\" -Dvalgrind=disabled -Dlibunwind=disabled ..",
+		"ninja",
+		"ninja install"
+	]}

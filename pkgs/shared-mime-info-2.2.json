@@ -1,0 +1,10 @@
+{
+	"name":"shared-mime-info-2.2",
+	"src":"https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/shared-mime-info-2.2.tar.gz",
+	"cmds":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release -Dupdate-mimedb=true ..",
+		"ninja",
+		"ninja install"
+	]}

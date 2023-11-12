@@ -1,0 +1,10 @@
+{
+  "name":"Xorg Libraries",
+  "src": null,
+  "cmds":[
+    "mkdir -p build/libs",
+    "cd build/libs",
+    "ls ../../scripts",
+    "bash ../../scripts/Xorg\\ Libraries.sh"
+  ]
+}

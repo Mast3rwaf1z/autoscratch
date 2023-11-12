@@ -1,0 +1,8 @@
+{
+	"name":"xf86-input-libinput-1.3.0",
+	"src":"https://www.x.org/pub/individual/driver/xf86-input-libinput-1.3.0.tar.xz",
+	"cmds":[
+		"./configure $XORG_CONFIG",
+		"make",
+		"make install"
+	]}

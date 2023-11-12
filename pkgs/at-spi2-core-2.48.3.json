@@ -1,0 +1,10 @@
+{
+	"name":"at-spi2-core-2.48.3",
+	"src":"https://download.gnome.org/sources/at-spi2-core/2.48/at-spi2-core-2.48.3.tar.xz",
+	"cmds":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release ..",
+		"ninja",
+		"ninja install"
+	]}

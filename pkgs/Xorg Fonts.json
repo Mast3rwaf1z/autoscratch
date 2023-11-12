@@ -1,0 +1,12 @@
+{
+	"name":"Xorg Fonts",
+	"src":null,
+	"cmds":[
+		"mkdir -p build/fonts",
+    		"cd build/fonts",
+    		"ls ../../scripts",
+    		"bash ../../scripts/Xorg\\ Fonts.sh",
+		"install -v -d -m755 /usr/share/fonts",
+		"ln -svfn $XORG_PREFIX/share/fonts/X11/OTF /usr/share/fonts/X11-OTF",
+		"ln -svfn $XORG_PREFIX/share/fonts/X11/TTF /usr/share/fonts/X11-TTF"
+	]}

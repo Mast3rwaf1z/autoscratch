@@ -1,0 +1,9 @@
+{
+  "name":"xcb-util-0.4.1",
+  "src":"https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz",
+  "cmds":[
+    "./configure $XORG_CONFIG",
+    "make",
+    "make install"
+  ]
+}
