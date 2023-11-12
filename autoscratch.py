@@ -115,7 +115,7 @@ if __name__ == "__main__":
     else:
         warning("Failed to clear build environment")
 
-    if not check_call(["which", "sqlite3"], stdout=DEVNULL):
+    if not "--nowhich" in argv and not check_call(["which", "sqlite3"], stdout=DEVNULL):
         info("Sqlite3 installation found!")
         indexing = True
     else:

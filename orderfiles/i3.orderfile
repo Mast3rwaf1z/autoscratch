@@ -36,5 +36,4 @@ pkgs/HarfBuzz-8.1.1.json
 REINSTALL pkgs/FreeType-2.13.1.json
 pkgs/Pango-1.50.14.json
 pkgs/Cairo-1.17.6.json
-pkgs/xinit-1.4.2.json
 pkgs/i3-4.23.json
