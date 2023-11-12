@@ -2,6 +2,8 @@ from sys import argv
 from subprocess import check_output, check_call, DEVNULL
 from json import loads
 from os import geteuid, system
+from multiprocessing import Process
+from time import sleep
 
 indexing = False
 quiet = "--quiet" in argv
@@ -37,9 +39,22 @@ else:
     warning("Sqlite3 not found, disabling package indexing")
     indexing = False
 
+def loading_icon():
+    counter = 0
+    chars = [0x2801, 0x2802, 0x2804, 0x2840, 0x2880, 0x2820, 0x2810, 0x2808]
+    while True:
+        sleep(1)
+        print(chr(chars[counter]), end="\r")
+        counter+=1 if counter <= 8 else 0
+
+
 def run_cmd(cmd):
     if quiet:
-        return check_call(cmd, stdout=DEVNULL, stderr=DEVNULL)
+        p = Process(target=loading_icon)
+        p.start()
+        return_code = check_call(cmd, stdout=DEVNULL, stderr=DEVNULL)
+        p.terminate()
+        return return_code
     else:
         return check_call(cmd)
 
@@ -60,7 +75,6 @@ def add_package(package):
 def check_installed(package):
     return len(check_output(["sqlite3", "db.db3", f"select * from packages where name = '{package}'"]).decode().split("\n")) == 1
 
-if indexing: init_db()
 
 def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
@@ -104,28 +118,27 @@ def pkg_configure(FILENAME):
         pkg_cmds = json["cmds"]
     return pkg_name, pkg_cmds
 
-match argv[1]:
-    case "single":
-        FILENAME = argv[-1]
-        pkg_name, pkg_cmds = pkg_configure(FILENAME)
-        pkg_install(pkg_name, pkg_cmds)
+if __name__ == "__main__":
+    if indexing: init_db()
 
-    case "orderfile":
-        ORDERFILE = argv[-1]
-        info(f"reading file: {ORDERFILE}")
-        with open(ORDERFILE, "r") as file:
-            pkgs = file.read().split("\n")
-        for pkg in pkgs:
-            reinstall = "reinstall" in pkg.lower()
-            pkg = pkg.split(" ")[1] if "reinstall" in pkg.lower() else pkg
-            pkg_name, pkg_cmds = pkg_configure(pkg)
-            if not check_installed(pkg_name) and not reinstall: 
-                warning(f"Package {pkg_name} is already installed!")
-            else:
-                pkg_install(pkg_name, pkg_cmds)
-    case "list":
-        print(check_output(["sqlite3", "db.db3", "select * from packages", "-table"]).decode())
+    match argv[1]:
+        case "single":
+            FILENAME = argv[-1]
+            pkg_name, pkg_cmds = pkg_configure(FILENAME)
+            pkg_install(pkg_name, pkg_cmds)
 
-
-
-
+        case "orderfile":
+            ORDERFILE = argv[-1]
+            info(f"reading file: {ORDERFILE}")
+            with open(ORDERFILE, "r") as file:
+                pkgs = file.read().split("\n")
+            for pkg in pkgs:
+                reinstall = "reinstall" in pkg.lower()
+                pkg = pkg.split(" ")[1] if "reinstall" in pkg.lower() else pkg
+                pkg_name, pkg_cmds = pkg_configure(pkg)
+                if not check_installed(pkg_name) and not reinstall: 
+                    warning(f"Package {pkg_name} is already installed!")
+                else:
+                    pkg_install(pkg_name, pkg_cmds)
+        case "list":
+            print(check_output(["sqlite3", "db.db3", "select * from packages", "-table"]).decode())
