@@ -1,5 +1,5 @@
 from sys import argv
-from subprocess import check_output
+from subprocess import check_output, check_call, DEVNULL
 from json import loads
 from os import geteuid, system
 
@@ -25,12 +25,12 @@ def info(msg):
     if not quiet: print(f'\033[38;2;100;100;100m{msg}\033[0m')
 
 
-if not system("rm -rf build"):
+if not check_call(["rm", "-rf", "build"], stdout=DEVNULL):
     ok("successfully cleaned build environment")
 else:
     warning("Failed to clear build environment")
 
-if not system("which sqlite3"):
+if not check_call(["which", "sqlite3"], stdout=DEVNULL):
     ok("Sqlite3 installation found!")
     indexing = True
 else:
@@ -39,20 +39,20 @@ else:
 
 def run_cmd(cmd):
     if quiet:
-        return system(f'{cmd} >> /dev/null')
+        return check_call([cmd], stdout=DEVNULL)
     else:
-        return system(cmd)
+        return check_call([cmd])
 
 def init_db():
     global indexing
-    if not system("sqlite3 db.db3 'CREATE TABLE IF NOT EXISTS packages (name VARCHAR PRIMARY KEY)'"):
+    if not check_call(["sqlite3", "db.db3", "CREATE TABLE IF NOT EXISTS packages (name VARCHAR PRIMARY KEY)"]):
         ok("Successfully initialized database")
     else:
         warning("failed to initialize database, disabling indexing")
         indexing = False
 
 def add_package(package):
-    if not system(f'sqlite3 db.db3 "insert or replace into packages values (\'{package}\')"'):
+    if not check_call(['sqlite3', 'db.db3', f"insert or replace into packages values (\'{package}\')"]):
         ok("successfully added package to database")
     else:
         warning(f"Failed to add package to database: {package}")
@@ -65,11 +65,11 @@ if indexing: init_db()
 def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
     tmp_script = f'/tmp/{pkg_name}.pkgmgr'
-    if not system(f"rm -f '{tmp_script}'"):
+    if not check_call(["rm", "-f" , tmp_script]):
         ok("removed temp script")
     else:
         warning("Failed to remove temp script")
-    if not system(f"touch '{tmp_script}'"):
+    if not check_call(["touch", tmp_script]):
         ok("Created temp file")
     else:
         error(f"Failed to create file: {tmp_script}")
@@ -124,7 +124,7 @@ match argv[1]:
             else:
                 pkg_install(pkg_name, pkg_cmds)
     case "list":
-        system("sqlite3 db.db3 'select * from packages' -table")
+        print(check_output(["sqlite3", "db.db3", "select * from packages", "-table"]).decode())
 
 
 
