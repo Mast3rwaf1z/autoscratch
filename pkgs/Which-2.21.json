@@ -1,0 +1,9 @@
+{
+    "name":"Which-2.21",
+    "src":"https://ftp.gnu.org/gnu/which/which-2.21.tar.gz",
+    "cmds":[
+        "./configure --prefix=/usr",
+        "make",
+        "make install"
+    ]
+}
