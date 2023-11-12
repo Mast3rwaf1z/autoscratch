@@ -81,7 +81,7 @@ match argv[1]:
                 pkg_cmds:list[str] = [
                     "rm build",
                     "mkdir build",
-                    "\n".join([f"wget {pkg} -O build/{pkg.split('/')[-1]}" for pkg in pkg_src]) if pkg_src is list else f"wget {pkg_src} -O build/{pkg_src.split('/')[-1]}", 
+                    "\n".join([f"wget {pkg} -O build/{pkg.split('/')[-1]}" for pkg in pkg_src]) if type(pkg_src) is list else f"wget {pkg_src} -O build/{pkg_src.split('/')[-1]}", 
                     "cd build",
                     f"rm -f {pkg_name}",
                     json["decomp"] if "decomp" in json else f"tar xf {pkg_src.split('/')[-1]}",
