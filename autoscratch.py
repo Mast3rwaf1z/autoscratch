@@ -3,6 +3,9 @@ from subprocess import check_output
 from json import loads
 from os import geteuid, system
 
+indexing = False
+quiet = "--quiet" in argv
+
 if not geteuid() == 0:
     print("\033[38;2;255;0;0mERROR:\033[0m You are not root!")
     exit(1)
@@ -19,7 +22,7 @@ def error(msg):
     exit(1)
 
 def info(msg):
-    print(f'\033[38;2;100;100;100m{msg}\033[0m')
+    if not quiet: print(f'\033[38;2;100;100;100m{msg}\033[0m')
 
 
 if system("rm -rf build"):
@@ -33,6 +36,12 @@ if not system("which sqlite3"):
 else:
     warning("Sqlite3 not found, disabling package indexing")
     indexing = False
+
+def run_cmd(cmd):
+    if quiet:
+        return system(f'{cmd} >> /dev/null')
+    else:
+        return system(cmd)
 
 def init_db():
     global indexing
