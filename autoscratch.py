@@ -62,7 +62,7 @@ def check_installed(package):
 
 if indexing: init_db()
 
-def pkg_install(pkg_name, pkg_cmds, reinstall=False):
+def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
     tmp_script = f'/tmp/{pkg_name}.pkgmgr'
     if not system(f"rm -f '{tmp_script}'"):
@@ -77,7 +77,7 @@ def pkg_install(pkg_name, pkg_cmds, reinstall=False):
         for cmd in pkg_cmds:
             info(f"writing command: {cmd}")
             file.write(f"{cmd}\n")
-    if not system(f"bash '{tmp_script}'"):
+    if not run_cmd(f"bash '{tmp_script}'"):
         ok(f"Successfully installed {pkg_name}")
         if indexing: add_package(pkg_name)
     else:
@@ -122,7 +122,7 @@ match argv[1]:
             if not check_installed(pkg_name) and not reinstall: 
                 warning(f"Package {pkg_name} is already installed!")
             else:
-                pkg_install(pkg_name, pkg_cmds, reinstall)
+                pkg_install(pkg_name, pkg_cmds)
     case "list":
         system("sqlite3 db.db3 'select * from packages' -table")
 
