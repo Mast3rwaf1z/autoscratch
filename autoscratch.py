@@ -36,7 +36,7 @@ else:
 
 def init_db():
     global indexing
-    if not system("sqlite3 db.db3 'CREATE TABLE IF NOT EXISTS packages values(name VARCHAR PRIMARY KEY)'"):
+    if not system("sqlite3 db.db3 'CREATE TABLE IF NOT EXISTS packages (name VARCHAR PRIMARY KEY)'"):
         ok("Successfully initialized database")
     else:
         warning("failed to initialize database, disabling indexing")
