@@ -107,7 +107,7 @@ match argv[1]:
             pkg_name, pkg_cmds = pkg_configure(pkg)
             pkg_install(pkg_name, pkg_cmds)
     case "list":
-        system("sqlite3 db.db3 'select * from packages' -table"):
+        system("sqlite3 db.db3 'select * from packages' -table")
 
 
 
