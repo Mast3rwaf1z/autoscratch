@@ -81,11 +81,11 @@ def pkg_install(pkg_name, pkg_cmds):
     info(f"beginning build+install phase for package: {pkg_name}")
     tmp_script = f'/tmp/{pkg_name}.pkgmgr'
     if not check_call(["rm", "-f" , tmp_script]):
-        ok("removed temp script")
+        info("removed temp script")
     else:
         warning("Failed to remove temp script")
     if not check_call(["touch", tmp_script]):
-        ok("Created temp file")
+        info("Created temp file")
     else:
         error(f"Failed to create file: {tmp_script}")
     with open(tmp_script, "a") as file:
