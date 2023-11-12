@@ -25,7 +25,7 @@ def info(msg):
     if not quiet: print(f'\033[38;2;100;100;100m{msg}\033[0m')
 
 
-if system("rm -rf build"):
+if not system("rm -rf build"):
     ok("successfully cleaned build environment")
 else:
     warning("Failed to clear build environment")
@@ -62,7 +62,7 @@ def check_installed(package):
 
 if indexing: init_db()
 
-def pkg_install(pkg_name, pkg_cmds):
+def pkg_install(pkg_name, pkg_cmds, reinstall=False):
     info(f"beginning build+install phase for package: {pkg_name}")
     tmp_script = f'/tmp/{pkg_name}.pkgmgr'
     if not system(f"rm -f '{tmp_script}'"):
@@ -117,10 +117,12 @@ match argv[1]:
             pkgs = file.read().split("\n")
         for pkg in pkgs:
             pkg_name, pkg_cmds = pkg_configure(pkg)
-            if not check_installed(pkg_name): 
+            reinstall = "reinstall" in pkg_name.lower()
+            pkg_name = pkg_name.split(" ")[1] if "reinstall" in pkg_name.lower() else pkg_name
+            if not check_installed(pkg_name) and not reinstall: 
                 warning(f"Package {pkg_name} is already installed!")
             else:
-                pkg_install(pkg_name, pkg_cmds)
+                pkg_install(pkg_name, pkg_cmds, reinstall)
     case "list":
         system("sqlite3 db.db3 'select * from packages' -table")
 
