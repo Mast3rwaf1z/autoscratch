@@ -39,18 +39,19 @@ else:
     warning("Sqlite3 not found, disabling package indexing")
     indexing = False
 
-def loading_icon():
+def loading_icon(package):
     counter = 0
     chars = [0x2801, 0x2802, 0x2804, 0x2840, 0x2880, 0x2820, 0x2810, 0x2808]
+    print(f" | Installing {package}...", end="")
     while True:
-        sleep(1)
+        sleep(.5)
         print(chr(chars[counter]), end="\r")
         counter+=1 if counter < 7 else 0
 
 
-def run_cmd(cmd):
+def run_cmd(cmd, pkg):
     if quiet:
-        p = Process(target=loading_icon)
+        p = Process(target=loading_icon, args=[pkg])
         p.start()
         return_code = check_call(cmd, stdout=DEVNULL, stderr=DEVNULL)
         p.terminate()
@@ -91,7 +92,7 @@ def pkg_install(pkg_name, pkg_cmds):
         for cmd in pkg_cmds:
             info(f"writing command: {cmd}")
             file.write(f"{cmd}\n")
-    if not run_cmd(["bash", tmp_script]):
+    if not run_cmd(["bash", tmp_script], pkg_name):
         ok(f"Successfully installed {pkg_name}")
         if indexing: add_package(pkg_name)
     else:
