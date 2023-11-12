@@ -1,0 +1,10 @@
+{
+    "name":"xinit-1.4.2",
+    "src":"https://www.x.org/pub/individual/app/xinit-1.4.2.tar.xz",
+    "cmds":[
+        "./configure $XORG_CONFIG --with-xinitdir=/etc/X11/app-defaults",
+        "make",
+        "make install",
+        "ldconfig"
+    ]
+}
