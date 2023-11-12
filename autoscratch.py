@@ -49,7 +49,7 @@ def add_package(package):
         warning(f"Failed to add package to database: {package}")
 
 def check_installed(package):
-    return len(check_output(["sqlite3", "db.db3", f'select * from packages where name = \'{package}\'']).decode().split("\n")) == 1
+    return len(check_output(["sqlite3", "db.db3", f"select * from packages where name = '{package}'"]).decode().split("\n")) == 1
 
 if indexing: init_db()
 
