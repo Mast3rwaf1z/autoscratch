@@ -11,6 +11,8 @@ pkgs/libxcvt-0.1.2.json
 pkgs/mtdev-1.1.6.json
 pkgs/libevdev-1.13.1.json
 pkgs/libinput-1.23.0.json
+pkgs/libepoxy-1.5.10.json
+pkgs/Xorg-Server-21.1.8.json
 pkgs/xf86-input-libinput-1.3.0.json
 pkgs/libtirpc-1.3.3.json
 pkgs/libepoxy-1.5.10.json
