@@ -138,7 +138,7 @@ if __name__ == "__main__":
                 pkg = pkg.split(" ")[1] if "reinstall" in pkg.lower() else pkg
                 pkg_name, pkg_cmds = pkg_configure(pkg)
                 if not check_installed(pkg_name) and not reinstall: 
-                    warning(f"Package {pkg_name} is already installed!")
+                    info(f"Package {pkg_name} is already installed!")
                 else:
                     pkg_install(pkg_name, pkg_cmds)
         case "list":
