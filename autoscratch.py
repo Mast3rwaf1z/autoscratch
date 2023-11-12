@@ -57,7 +57,7 @@ match argv[1]:
                 "mkdir build", 
                 "\n".join([f"wget {pkg} -O build/{pkg.split('/')[-1]}" for pkg in pkg_src]) if isinstance(pkg_src, list) else f"wget {pkg_src} -O build/{pkg_src.split('/')[-1]}", 
                 "cd build", 
-                json["decomp"] if "decomp" in json else f"tar xf {pkg_src.split('/')[-1]}", 
+                json["decomp"] if "decomp" in json else f"tar xf {pkg_src[0].split('/')[-1]}", 
                 f"cd {pkg_name}"
             ] + json["cmds"]
         else:
@@ -84,7 +84,7 @@ match argv[1]:
                     "\n".join([f"wget {pkg} -O build/{pkg.split('/')[-1]}" for pkg in pkg_src]) if isinstance(pkg_src, list) else f"wget {pkg_src} -O build/{pkg_src.split('/')[-1]}", 
                     "cd build",
                     f"rm -f {pkg_name}",
-                    json["decomp"] if "decomp" in json else f"tar xf {pkg_src.split('/')[-1]}",
+                    json["decomp"] if "decomp" in json else f"tar xf {pkg_src[0].split('/')[-1]}",
                     f'cd {pkg_name}'
                 ] + json["cmds"]
             else:
