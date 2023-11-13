@@ -39,7 +39,7 @@ class Package:
             for line in self.configPhase:
                 file.write(f"{line}\n")
         
-        return check_call(["bash", filename], stdout=DEVNULL, stderr=DEVNULL)
+        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stderr=DEVNULL if "--quiet" in argv else None)
     
     def build(self):
         filename = f"/tmp/{self.name}-build.sh"
