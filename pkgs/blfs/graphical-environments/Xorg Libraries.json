@@ -2,8 +2,8 @@
   "name":"Xorg Libraries",
   "src": null,
   "config":[
-    "mkdir -p build/libs",
-    "cd build/libs",
+    "mkdir -p libs",
+    "cd libs",
     "ls ../../scripts"
   ],
   "build":[
