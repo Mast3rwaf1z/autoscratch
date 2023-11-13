@@ -58,7 +58,7 @@ class Package:
             for line in self.buildPhase:
                 file.write(f"{line}\n")
 
-        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stdin=DEVNULL if "--quiet" in argv else None)
+        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stderr=DEVNULL if "--quiet" in argv else None)
     
     def install(self):
         filename = f"/tmp/{self.name}-install.sh"
