@@ -6,7 +6,7 @@ from include.Logger import info, error
 
 class PackageManager:
     def install(self, package:Package):
-        if not package in Database.singleton:
+        if not package.name in Database.singleton:
             Database.add(package)
         
         if Database.getPackage(package)["configured"]:
