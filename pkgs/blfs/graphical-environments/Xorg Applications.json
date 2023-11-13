@@ -2,8 +2,6 @@
 	"name":"Xorg Applications",
 	"src":null,
 	"config":[
-		"mkdir -p build/apps",
-    	"cd build/apps",
     	"ls ../../scripts"
 	],
 	"build":[

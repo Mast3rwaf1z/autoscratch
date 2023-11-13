@@ -2,8 +2,6 @@
 	"name":"Xorg Fonts",
 	"src":null,
 	"config":[
-		"mkdir -p build/fonts",
-    	"cd build/fonts",
     	"ls ../../scripts"
 	],
 	"build":[
