@@ -16,7 +16,7 @@ def loading():
     chars = ["|", "/", "-", "\\", "|"]
     while not stopLoading:
         sleep(.5)
-        print(f'{chr(chars[counter])} | {statusMessage}\033[0K', end="\r")
+        print(f'{chars[counter]} | {statusMessage}\033[0K', end="\r")
         counter = counter + 1 if counter < (len(chars)-1) else 0
 
 class PackageManager:
