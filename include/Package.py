@@ -25,7 +25,7 @@ class Package:
         filename = f"/tmp/{self.name}-config.sh"
         check_call(["rm", "-f", filename])
         check_call(["rm", "-rf", f'build/{self.name}'])
-        check_call(["rm", "-f", f'build/{self.src.split("/")[-1]}*']) if not isinstance(self.src, list) else [check_call(["rm", "-f", f'build/{src.split("/")[-1]}*']) for src in self.src]
+        if self.src: check_call(["rm", "-f", f'build/{self.src.split("/")[-1]}*']) if not isinstance(self.src, list) else [check_call(["rm", "-f", f'build/{src.split("/")[-1]}*']) for src in self.src]
         with open(filename, "a") as file:
             file.write("source /etc/profile\n")
             file.write("cd build\n")
