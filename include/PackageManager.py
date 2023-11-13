@@ -1,6 +1,6 @@
 from subprocess import check_call
 from threading import Thread
-from time import sleep
+from time import sleep, time
 from sys import argv
 
 from include.Package import Package
@@ -14,10 +14,12 @@ def loading():
     global statusMessage, stopLoading
     counter = 0
     chars = ["|", "/", "-", "\\"]
+    start = time()
     while not stopLoading:
         sleep(.5)
-        print(f'\r{chars[counter]} | {statusMessage}\033[0K', end="")
+        print(f'\r{chars[counter]} | {now-start}s | {statusMessage}\033[0K', end="")
         counter = counter + 1 if counter < (len(chars)-1) else 0
+        now = time()
 
 class PackageManager:
     def install(self, package:Package):
