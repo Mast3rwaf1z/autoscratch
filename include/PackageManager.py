@@ -8,30 +8,29 @@ from include.Database import Database
 from include.Logger import info, error, ok
 
 statusMessage = ""
-stopLoading = False
 
 def loading():
-    global statusMessage, stopLoading
+    global statusMessage
     counter = 0
     chars = ["|", "/", "-", "\\"]
     start = now = time()
-    while not stopLoading:
+    while True:
         sleep(.5)
         print(f'\r{chars[counter]} | {int(now-start)}s | {statusMessage}\033[0K', end="")
         counter = counter + 1 if counter < (len(chars)-1) else 0
         now = time()
 
 class PackageManager:
+    def __init__(self):
+        if "--quiet" in argv:
+            self.loader = Thread(target=loading)
+            self.loader.start()
+
     def install(self, package:Package):
-        global statusMessage, stopLoading
+        global statusMessage
 
         if not package.name in Database.singleton:
             Database.add(package)
-
-        if "--quiet" in argv:
-            stopLoading = False
-            thread = Thread(target=loading, daemon=True)
-            thread.start()
         
         statusMessage = f"Configuring {package.name}..."
         if not package.reinstall and Database.getPackage(package)["configured"]:
@@ -59,9 +58,6 @@ class PackageManager:
             Database.update(package, "installed", True)
         else:
             error(f"Failed to install {package.name}")
-
-        if "--quiet" in argv:
-            stopLoading = True
 
     def uninstall(self, package:Package):
         if not package in Database:
