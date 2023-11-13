@@ -13,6 +13,7 @@
     "ninja"
   ],
   "install":[
+    "cd    build",
     "ninja install",
     "rm -rf /usr/share/doc/xorgproto-2023.2/xorgproto",
     "mv -v $XORG_PREFIX/share/doc/xorgproto{,-2023.2}"
