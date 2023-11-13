@@ -79,3 +79,5 @@ class PackageManager:
         info("Cleaning build directory")
         check_call(["rm", "-rf", "build"])
         check_call(["mkdir", "-p", "build"])
+        for package in Database.getAll():
+            Database.update(Package(package), "configured", False)
