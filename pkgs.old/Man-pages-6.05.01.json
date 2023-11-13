@@ -1,0 +1,8 @@
+{
+    "name":"man-pages-6.05.01",
+    "src":"https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.05.01.tar.xz",
+    "cmds":[
+        "rm -v man3/crypt*",
+        "make prefix=/usr install"
+    ]
+}

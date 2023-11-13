@@ -1,0 +1,10 @@
+{
+    "name":"zlib-1.2.13",
+    "src":"https://anduin.linuxfromscratch.org/LFS/zlib-1.2.13.tar.xz",
+    "cmds":[
+        "./configure --prefix=/usr",
+        "make",
+        "make install",
+        "rm -fv /usr/lib/libz.a"
+    ]
+}
