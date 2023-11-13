@@ -8,6 +8,7 @@
     "meson setup --prefix=$XORG_PREFIX .."
   ],
   "build":[
+    "cd    build",
     "ninja"
   ],
   "install":[
