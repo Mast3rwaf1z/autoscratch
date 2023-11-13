@@ -23,9 +23,10 @@ class Package:
 
     def configure(self):
         filename = f"/tmp/{self.name}-config.sh"
-        check_call(["rm", "-f", filename])
-        check_call(["rm", "-f", f'{self.src}*']) if not isinstance(self.src, list) else [check_call(["rm", "-f", f'{src}*']) for src in self.src]
+        check_call(["rm", "-f", f'build/{filename}'])
+        check_call(["rm", "-f", f'build/{self.src}*']) if not isinstance(self.src, list) else [check_call(["rm", "-f", f'build/{src}*']) for src in self.src]
         with open(filename, "a") as file:
+            file.write("source /etc/profile\n")
             file.write("cd build\n")
             if not self.src:
                 file.write(f"mkdir -p '{self.name}'\n")
