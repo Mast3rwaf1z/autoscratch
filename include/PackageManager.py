@@ -13,7 +13,7 @@ stopLoading = False
 def loading():
     global statusMessage, stopLoading
     counter = 0
-    chars = ["|", "/", "-", "\\", "|"]
+    chars = ["|", "/", "-", "\\"]
     while not stopLoading:
         sleep(.5)
         print(f'{chars[counter]} | {statusMessage}\033[0K', end="\r")
