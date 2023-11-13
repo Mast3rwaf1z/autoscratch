@@ -26,13 +26,15 @@ class Package:
         check_call(["rm", "-f", filename])
         with open(filename, "a") as file:
             file.write("cd build\n")
-            if isinstance(self.src, list):
+            if not self.src:
+                file.write(f"mkdir -p '{self.name}'\n")
+            elif isinstance(self.src, list):
                 for src in self.src:
                     file.write(f"wget {src}\n")
+                file.write(f"tar xf {self.src[0].split('/')[-1]}\n")
             else:
                 file.write(f"wget {self.src}\n")
-            if self.src: file.write(f"tar xf {self.src.split('/')[-1]}\n")
-            else: file.write(f"mkdir -p '{self.name}'\n")
+                file.write(f"tar xf {self.src.split('/')[-1]}\n")
             file.write(f"cd '{self.name}'\n")
             for line in self.configPhase:
                 file.write(f"{line}\n")

@@ -2,7 +2,7 @@ from subprocess import check_call
 
 from include.Package import Package
 from include.Database import Database
-from include.Logger import info, error
+from include.Logger import info, error, ok
 
 class PackageManager:
     def install(self, package:Package):
@@ -28,7 +28,7 @@ class PackageManager:
         if Database.getPackage(package)["installed"]:
             info(f"{package.name} is already installed")
         elif not package.install():
-            info(f"Successfully installed {package.name}")
+            ok(f"Successfully installed {package.name}")
             Database.update(package, "installed", True)
         else:
             error(f"Failed to install {package.name}")
@@ -44,7 +44,7 @@ class PackageManager:
             error(f"Failed to configure {package.name}")
 
         if not package.uninstall():
-            info(f"Successfully uninstalled {package.name}")
+            ok(f"Successfully uninstalled {package.name}")
             Database.update(package, "installed", False)
 
     def clean(self):
