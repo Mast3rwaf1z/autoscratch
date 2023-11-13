@@ -17,7 +17,7 @@ def loading():
     start = now = time()
     while not stopLoading:
         sleep(.5)
-        print(f'\r{chars[counter]} | {now-start}s | {statusMessage}\033[0K', end="")
+        print(f'\r{chars[counter]} | {int(now-start)}s | {statusMessage}\033[0K', end="")
         counter = counter + 1 if counter < (len(chars)-1) else 0
         now = time()
 
