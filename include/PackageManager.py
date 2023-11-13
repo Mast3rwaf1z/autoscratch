@@ -13,11 +13,11 @@ stopLoading = False
 def loading():
     global statusMessage, stopLoading
     counter = 0
-    chars = [0x2801, 0x2802, 0x2804, 0x2840, 0x2880, 0x2820, 0x2810, 0x2808]
+    chars = ["|", "/", "-", "\\", "|"]
     while not stopLoading:
         sleep(.5)
         print(f'{chr(chars[counter])} | {statusMessage}\033[0K', end="\r")
-        counter = counter + 1 if counter < 7 else 0
+        counter = counter + 1 if counter < (len(chars)-1) else 0
 
 class PackageManager:
     def install(self, package:Package):
