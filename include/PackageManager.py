@@ -14,7 +14,7 @@ def loading():
     global statusMessage, stopLoading
     counter = 0
     chars = ["|", "/", "-", "\\"]
-    start = time()
+    start = now = time()
     while not stopLoading:
         sleep(.5)
         print(f'\r{chars[counter]} | {now-start}s | {statusMessage}\033[0K', end="")
