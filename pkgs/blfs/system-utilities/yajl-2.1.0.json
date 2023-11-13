@@ -7,12 +7,15 @@
     "cmake .. --install-prefix=/usr"
   ],
   "build":[
+    "cd build",
     "make"
   ],
   "install":[
+    "cd build",
     "make install" 
   ],
   "uninstall":[
+    "cd build",
     "make uninstall"
   ]
 }
