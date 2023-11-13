@@ -1,7 +1,7 @@
 from sys import argv
 
 def ok(msg):
-    print(f'\033[38;2;0;255;0m{msg}\033[0m')
+    print(f'\r\033[38;2;0;255;0m{msg}\033[0m')
 
 def warning(msg):
     print(f'\033[38;2;255;255;0m{msg}\033[0m')
