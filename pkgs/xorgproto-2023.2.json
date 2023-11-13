@@ -2,6 +2,7 @@
   "name":"xorgproto-2023.2",
   "src":["https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2023.2.tar.xz"],
   "config":[
+    "rm -r build",
     "mkdir build",
     "cd    build",
     "meson setup --prefix=$XORG_PREFIX .."
