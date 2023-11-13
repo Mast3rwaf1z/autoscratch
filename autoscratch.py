@@ -16,10 +16,16 @@ match argv[1]:
     case "install":
         if "--list" in argv:
             with open(argv[argv.index("--list")+1], "r") as file:
-                for package in file.read().split("\n"):
-                    packageManager.install(Package(package))
+                timings = {Package(package).name:packageManager.install(Package(package)) for package in file.read().split("\n")}
         else:
-            packageManager.install(Package(argv[argv.index("install")+1]))
+            timings = {Package(argv[argv.index("install")+1]):packageManager.install(Package(argv[argv.index("install")+1]))}
+        print("-"*10)
+        print("Stats")
+        for key in timings:
+            print(f"Statistics for package {key}")
+            print(f"\tConfigure:    {timings['configure']}")
+            print(f"\tBuild:        {timings['build']}")
+            print(f"\tInstall:      {timings['install']}")
     case "help":
         pass
 

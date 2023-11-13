@@ -26,12 +26,13 @@ class PackageManager:
             self.loader = Thread(target=loading)
             self.loader.start()
 
-    def install(self, package:Package):
+    def install(self, package:Package) -> dict[str, float]:
         global statusMessage
-
         if not package.name in Database.singleton:
             Database.add(package)
-        
+
+        timings = {}
+        then = time()
         statusMessage = f"Configuring {package.name}..."
         if not package.reinstall and Database.getPackage(package)["configured"]:
             info(f"{package.name} is already configured")
@@ -40,7 +41,9 @@ class PackageManager:
             Database.update(package, "configured", True)
         else:
             error(f"Failed to configure {package.name}")
+        timings["configure"] = time() - then
 
+        then = time()
         statusMessage = f"Building {package.name}..."
         if not package.reinstall and Database.getPackage(package)["built"]:
             info(f"{package.name} is already built")
@@ -49,7 +52,9 @@ class PackageManager:
             Database.update(package, "built", True)
         else:
             error(f"Failed to build {package.name}")
+        timings["build"] = time() - then
 
+        then = time()
         statusMessage = f"Installing {package.name}..."
         if not package.reinstall and Database.getPackage(package)["installed"]:
             info(f"{package.name} is already installed")
@@ -58,6 +63,9 @@ class PackageManager:
             Database.update(package, "installed", True)
         else:
             error(f"Failed to install {package.name}")
+        timings["install"] = time() - then
+
+        return timings
 
     def uninstall(self, package:Package):
         if not package in Database:
