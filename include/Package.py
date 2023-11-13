@@ -48,6 +48,7 @@ class Package:
         filename = f"/tmp/{self.name}-build.sh"
         check_call(["rm", "-f", filename])
         with open(filename, "a") as file:
+            file.write("source /etc/profile\n")
             file.write(f"cd build/'{self.name}'\n")
             for line in self.buildPhase:
                 file.write(f"{line}\n")
@@ -58,6 +59,7 @@ class Package:
         filename = f"/tmp/{self.name}-install.sh"
         check_call(["rm", "-f", filename])
         with open(filename, "a") as file:
+            file.write("source /etc/profile\n")
             file.write(f"cd build/'{self.name}'\n")
             for line in self.installPhase:
                 file.write(f"{line}\n")
@@ -68,6 +70,7 @@ class Package:
         filename = f"/tmp/{self.name}-uninstall.sh"
         check_call(["rm", "-f", filename])
         with open(filename, "a") as file:
+            file.write("source /etc/profile\n")
             file.write(f"cd build/'{self.name}'\n")
             for line in self.uninstallPhase:
                 file.write(f"{line}\n")
