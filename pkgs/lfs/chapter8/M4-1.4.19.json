@@ -1,0 +1,8 @@
+{
+    "name":"m4-1.4.19",
+    "src":"https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.xz",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

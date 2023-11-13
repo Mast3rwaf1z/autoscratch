@@ -9,7 +9,7 @@ class PackageManager:
         if not package.name in Database.singleton:
             Database.add(package)
         
-        if Database.getPackage(package)["configured"]:
+        if not package.reinstall and Database.getPackage(package)["configured"]:
             info(f"{package.name} is already configured")
         elif not package.configure():
             info(f"Successfully configured {package.name}")
@@ -17,7 +17,7 @@ class PackageManager:
         else:
             error(f"Failed to configure {package.name}")
 
-        if Database.getPackage(package)["built"]:
+        if not package.reinstall and Database.getPackage(package)["built"]:
             info(f"{package.name} is already built")
         elif not package.build():
             info(f"Successfully built {package.name}")
@@ -25,7 +25,7 @@ class PackageManager:
         else:
             error(f"Failed to build {package.name}")
 
-        if Database.getPackage(package)["installed"]:
+        if not package.reinstall and Database.getPackage(package)["installed"]:
             info(f"{package.name} is already installed")
         elif not package.install():
             ok(f"Successfully installed {package.name}")

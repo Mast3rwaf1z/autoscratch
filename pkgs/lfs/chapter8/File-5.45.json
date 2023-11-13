@@ -1,0 +1,8 @@
+{
+    "name":"file-5.45",
+    "src":"https://astron.com/pub/file/file-5.45.tar.gz",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

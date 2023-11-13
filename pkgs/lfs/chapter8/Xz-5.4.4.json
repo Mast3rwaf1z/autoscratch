@@ -1,0 +1,10 @@
+{
+    "name":"xz-5.4.4",
+    "src":"https://tukaani.org/xz/xz-5.4.4.tar.xz",
+    "config":[
+        "./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/xz-5.4.4"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

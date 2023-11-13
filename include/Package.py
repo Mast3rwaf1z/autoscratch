@@ -10,7 +10,12 @@ class Package:
     installPhase:list[str] = []
     uninstallPhase:list[str] = []
 
-    def __init__(self, filepath) -> None:
+    def __init__(self, filepath:str) -> None:
+        if "reinstall" in filepath.lower():
+            self.reinstall = True
+            filepath = filepath[:filepath.lower().index("reinstall")]+filepath[filepath.lower().index("reinstall")+len("reinstall"):].strip()
+        else:
+            self.reinstall = False
         with open(filepath, "r") as file:
             config = loads(file.read())
 

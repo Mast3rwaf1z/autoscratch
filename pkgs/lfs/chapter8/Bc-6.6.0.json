@@ -1,0 +1,8 @@
+{
+    "name":"bc-6.6.0",
+    "src":"https://github.com/gavinhoward/bc/releases/download/6.6.0/bc-6.6.0.tar.xz",
+    "config":["CC=gcc ./configure --prefix=/usr -G -O3 -r"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}
