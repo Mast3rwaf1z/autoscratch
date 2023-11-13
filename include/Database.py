@@ -64,7 +64,7 @@ class Database:
                 f"select * from packages",
                 "-json"
             ]
-        )) if not len(check_output(["sqlite3", "db.db3", "select name from packages"]).decode()) == 0 else []
+        )) if not len(check_output(["sqlite3", Database.path, "select name from packages"]).decode()) == 0 else []
     
     def print():
         if not Database.singleton: Database.initialize()
