@@ -3,12 +3,14 @@ from sys import argv
 from json import loads
 
 from include.Package import Package
+from include.Logger import info
 
 class Database:
     path:str = ""
     singleton = None
 
     def initialize(filepath="/opt/autoscratch/db.db3"):
+        info("Initializing database singleton")
         Database.singleton = Database(filepath)
 
 
@@ -42,7 +44,7 @@ class Database:
             ]
         )
     
-    def get(package:Package) -> dict[str, str | bool]:
+    def getPackage(package:Package) -> dict[str, str | bool]:
         if not Database.singleton: Database.initialize()
         data = loads(check_output(
             [
@@ -53,3 +55,25 @@ class Database:
             ]
         ).decode())
         return data[0]
+    def getAll():
+        return loads(check_output(
+            [
+                "sqlite3",
+                "db.db3",
+                f"select * from packages",
+                "-json"
+            ]
+        ))
+    
+    def __iter__(self):
+        self.__names__ = [package["name"] for package in Database.getAll()]
+        self.__i__ = 0
+        return self
+    def __next__(self):
+
+        if self.__i__ == len(self.__names__):
+            raise StopIteration
+        name = self.__names__[self.__i__]
+        self.__i__ += 1
+        return name
+        

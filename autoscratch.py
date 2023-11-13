@@ -2,7 +2,11 @@ from include.PackageManager import PackageManager
 from include.Package import Package
 from include.Database import Database
 from sys import argv
+from os import geteuid
 
+if not geteuid() == 0:
+    print("\033[38;2;255;0;0mERROR:\033[0m You are not root!")
+    exit(1)
 
 Database.initialize(argv[argv.index("--db")+1] if "--db" in argv else "db.db3")
 
