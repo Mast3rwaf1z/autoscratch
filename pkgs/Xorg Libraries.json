@@ -1,0 +1,17 @@
+{
+  "name":"Xorg Libraries",
+  "src": null,
+  "config":[
+    "mkdir -p build/libs",
+    "cd build/libs",
+    "ls ../../scripts"
+  ],
+  "build":[
+    "bash ../../scripts/Xorg\\ Libraries.sh"
+  ],
+  "install":[],
+  "uninstall":[
+    "echo 'Please uninstall manually!'",
+    "exit 1"
+  ]
+}

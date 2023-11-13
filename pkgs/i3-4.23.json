@@ -1,0 +1,18 @@
+{
+  "name":"i3-4.23",
+  "src":"https://github.com/i3/i3/archive/refs/tags/4.23.tar.gz",
+  "config":[
+    "mkdir build",
+    "cd build",
+    "meson setup --prefix=/usr --buildtype=release .."
+  ],
+  "build":[
+    "ninja"
+  ],
+  "install":[
+    "ninja install"
+  ],
+  "uninstall":[
+    
+  ]
+}

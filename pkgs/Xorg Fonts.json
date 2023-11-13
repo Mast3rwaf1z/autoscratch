@@ -1,0 +1,21 @@
+{
+	"name":"Xorg Fonts",
+	"src":null,
+	"config":[
+		"mkdir -p build/fonts",
+    	"cd build/fonts",
+    	"ls ../../scripts"
+	],
+	"build":[
+    	"bash ../../scripts/Xorg\\ Fonts.sh"
+	],
+	"install":[
+		"install -v -d -m755 /usr/share/fonts",
+		"ln -svfn $XORG_PREFIX/share/fonts/X11/OTF /usr/share/fonts/X11-OTF",
+		"ln -svfn $XORG_PREFIX/share/fonts/X11/TTF /usr/share/fonts/X11-TTF"
+	],
+	"uninstall":[
+		"echo 'Please uninstall manually!'",
+		"exit 1"
+	]
+}

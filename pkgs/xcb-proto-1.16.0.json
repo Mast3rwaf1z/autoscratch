@@ -1,0 +1,14 @@
+{
+  "name":"xcb-proto-1.16.0",
+  "src":"https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.16.0.tar.xz",
+  "config":[
+    "PYTHON=python3 ./configure $XORG_CONFIG"
+  ],
+  "build":[],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "libxcb-1.16",
+  "src":"https://xorg.freedesktop.org/archive/individual/lib/libxcb-1.16.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG --without-doxygen --docdir='${datadir}'/doc/libxcb-1.16"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install",
+    "chown -Rv root:root $XORG_PREFIX/share/doc/libxcb-1.16"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

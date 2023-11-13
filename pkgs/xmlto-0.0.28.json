@@ -1,0 +1,16 @@
+{
+  "name":"xmlto-0.0.28",
+  "src":"https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2",
+  "config":[
+    "LINKS=\"/usr/bin/links\" ./configure --prefix=/usr"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

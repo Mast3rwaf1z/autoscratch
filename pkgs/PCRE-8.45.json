@@ -1,0 +1,16 @@
+{
+  "name":"pcre-8.45",
+  "src":"https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2",
+  "config":[
+    "./configure --prefix=/usr --docdir=/usr/share/doc/pcre-8.45 --enable-unicode-properties --enable-pcre16 --enable-pcre32 --enable-pcregrep-libz --enable-pcregrep-libbz2 --enable-pcretest-libreadline --disable-static"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

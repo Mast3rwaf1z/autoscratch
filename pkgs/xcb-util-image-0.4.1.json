@@ -1,0 +1,16 @@
+{
+  "name":"xcb-util-image-0.4.1",
+  "src":"https://xcb.freedesktop.org/dist/xcb-util-image-0.4.1.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

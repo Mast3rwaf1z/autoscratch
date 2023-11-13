@@ -1,0 +1,18 @@
+{
+	"name":"harfbuzz-8.1.1",
+	"src":"https://github.com/harfbuzz/harfbuzz/releases/download/8.1.1/harfbuzz-8.1.1.tar.xz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup .. --prefix=/usr --buildtype=release -Dgraphite2=enabled"
+	],
+	"build":[
+		"ninja"
+	],
+	"install":[
+		"ninja install"
+	],
+	"uninstall":[
+		"ninja uninstall"
+	]
+}

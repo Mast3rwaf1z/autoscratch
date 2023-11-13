@@ -1,0 +1,14 @@
+{
+  "name":"util-macros-1.20.0",
+  "src":"https://www.x.org/pub/individual/util/util-macros-1.20.0.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

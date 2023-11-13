@@ -1,0 +1,17 @@
+{
+	"name":"Xorg Applications",
+	"src":null,
+	"config":[
+		"mkdir -p build/apps",
+    	"cd build/apps",
+    	"ls ../../scripts"
+	],
+	"build":[
+		"bash ../../scripts/Xorg\\ Applications.sh"
+	],
+	"install":[],
+	"uninstall":[
+		"echo 'please uninstall manually!'",
+		"exit 1"
+	]
+}

@@ -1,9 +1,0 @@
-{
-  "name":"xcb-util-renderutil-0.3.10",
-  "src":"https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.10.tar.xz",
-  "cmds":[
-    "./configure $XORG_CONFIG",
-    "make",
-    "make install"
-  ]
-}

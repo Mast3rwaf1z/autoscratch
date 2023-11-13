@@ -1,0 +1,14 @@
+{
+  "name":"asciidoc-10.2.0",
+  "src":"https://files.pythonhosted.org/packages/source/a/asciidoc/asciidoc-10.2.0.tar.gz",
+  "config":[
+    "pip3 wheel -w dist --no-build-isolation --no-deps $PWD"
+  ],
+  "build":[],
+  "install":[
+    "pip3 install --no-index --find-links dist --no-cache-dir --no-user asciidoc"
+  ],
+  "uninstall":[
+    "pip3 uninstall --no-index --find-links dist --no-cache-dir --no-user asciidoc"
+  ]
+}
