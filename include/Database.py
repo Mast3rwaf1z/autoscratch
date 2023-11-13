@@ -63,7 +63,7 @@ class Database:
                 f"select * from packages",
                 "-json"
             ]
-        ))
+        )) if not len(check_output(["sqlite3", "db.db3", "select name from packages"]).decode()) == 0 else []
     
     def __iter__(self):
         self.__names__ = [package["name"] for package in Database.getAll()]
