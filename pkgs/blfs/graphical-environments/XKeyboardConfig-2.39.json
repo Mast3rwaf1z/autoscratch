@@ -15,6 +15,7 @@
     "ninja install"
   ],
   "uninstall":[
+    "cd build",
     "ninja uninstall"
   ]
 }

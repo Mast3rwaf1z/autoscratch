@@ -7,12 +7,15 @@
     "meson setup .. --prefix=/usr --buildtype=release -Denable-docs=false -Denable-wayland=false"
   ],
   "build":[
+    "cd build",
     "ninja"
   ],
   "install":[
+    "cd build",
     "ninja install"
   ],
   "uninstall":[
+    "cd build",
     "ninja uninstall"
   ]
 }
