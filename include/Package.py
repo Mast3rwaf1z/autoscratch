@@ -2,6 +2,8 @@ from json import loads
 from subprocess import check_call, DEVNULL
 from sys import argv
 
+from include.Arguments import quiet
+
 class Package:
     name:str = ""
     src:str | list[str] | None = ""
@@ -47,7 +49,7 @@ class Package:
             for line in self.configPhase:
                 file.write(f"{line}\n")
         
-        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stderr=DEVNULL if "--quiet" in argv else None)
+        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stderr=DEVNULL if quiet else None)
     
     def build(self):
         filename = f"/tmp/{self.name}-build.sh"
@@ -58,7 +60,7 @@ class Package:
             for line in self.buildPhase:
                 file.write(f"{line}\n")
 
-        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stderr=DEVNULL if "--quiet" in argv else None)
+        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stderr=DEVNULL if quiet else None)
     
     def install(self):
         filename = f"/tmp/{self.name}-install.sh"
@@ -69,7 +71,7 @@ class Package:
             for line in self.installPhase:
                 file.write(f"{line}\n")
 
-        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stdin=DEVNULL if "--quiet" in argv else None)
+        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stdin=DEVNULL if quiet else None)
     
     def uninstall(self):
         filename = f"/tmp/{self.name}-uninstall.sh"
@@ -80,4 +82,4 @@ class Package:
             for line in self.uninstallPhase:
                 file.write(f"{line}\n")
 
-        return check_call(["bash", filename], stdout=DEVNULL if "--quiet" in argv else None, stdin=DEVNULL if "--quiet" in argv else None)
+        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stdin=DEVNULL if quiet else None)

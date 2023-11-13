@@ -1,11 +1,11 @@
 from subprocess import check_call
 from threading import Thread
 from time import sleep, time
-from sys import argv
 
 from include.Package import Package
 from include.Database import Database
 from include.Logger import info, error, ok
+from include.Arguments import quiet, reinstall
 
 statusMessage = ""
 
@@ -22,7 +22,7 @@ def loading():
 
 class PackageManager:
     def __init__(self):
-        if "--quiet" in argv:
+        if quiet:
             self.loader = Thread(target=loading)
             self.loader.start()
 
@@ -34,7 +34,7 @@ class PackageManager:
         timings = {}
         then = time()
         statusMessage = f"Configuring {package.name}..."
-        if not package.reinstall and Database.getPackage(package)["configured"]:
+        if not package.reinstall and not reinstall and Database.getPackage(package)["configured"]:
             info(f"{package.name} is already configured")
         elif not package.configure():
             info(f"Successfully configured {package.name}")
@@ -45,7 +45,7 @@ class PackageManager:
 
         then = time()
         statusMessage = f"Building {package.name}..."
-        if not package.reinstall and Database.getPackage(package)["built"]:
+        if not package.reinstall and not reinstall and Database.getPackage(package)["built"]:
             info(f"{package.name} is already built")
         elif not package.build():
             info(f"Successfully built {package.name}")
@@ -56,7 +56,7 @@ class PackageManager:
 
         then = time()
         statusMessage = f"Installing {package.name}..."
-        if not package.reinstall and Database.getPackage(package)["installed"]:
+        if not package.reinstall and not reinstall and Database.getPackage(package)["installed"]:
             info(f"{package.name} is already installed")
         elif not package.install():
             ok(f"Successfully installed {package.name}")

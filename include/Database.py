@@ -4,6 +4,7 @@ from json import loads
 
 from include.Package import Package
 from include.Logger import info
+from include.Arguments import quiet
 
 class Database:
     path:str = ""
@@ -21,8 +22,8 @@ class Database:
                 "sqlite3", 
                 Database.path, 
                 "create table if not exists packages (name VARCHAR PRIMARY KEY, configured BOOL, built BOOL, installed BOOL)"], 
-            stderr=DEVNULL if "--quiet" in argv else None, 
-            stdout=DEVNULL if "--quiet" in argv else None)
+            stderr=DEVNULL if quiet else None, 
+            stdout=DEVNULL if quiet else None)
         
     def add(package:Package):
         if not Database.singleton: Database.initialize()
