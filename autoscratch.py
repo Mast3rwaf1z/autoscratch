@@ -3,7 +3,7 @@ from include.Package import Package
 from include.Database import Database
 from os import geteuid
 
-from include.Arguments import dbFile, listFile, listMode, mode, installTarget
+from include.Arguments import dbFile, listFile, listMode, mode, installTarget, uninstallTarget
 
 if not geteuid() == 0:
     print("\033[38;2;255;0;0mERROR:\033[0m You are not root!")
@@ -27,6 +27,8 @@ match mode:
             print(f"\tConfigure:    {timings[key]['configure']}")
             print(f"\tBuild:        {timings[key]['build']}")
             print(f"\tInstall:      {timings[key]['install']}")
+    case "uninstall":
+        packageManager.uninstall(Package(uninstallTarget))
     case "help":
         pass
 
