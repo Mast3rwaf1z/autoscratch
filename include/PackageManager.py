@@ -23,7 +23,7 @@ def loading():
 class PackageManager:
     def __init__(self):
         if quiet:
-            self.loader = Thread(target=loading)
+            self.loader = Thread(target=loading, daemon=True)
             self.loader.start()
 
     def install(self, package:Package) -> dict[str, float]:

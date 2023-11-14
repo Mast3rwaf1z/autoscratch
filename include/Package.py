@@ -41,10 +41,10 @@ class Package:
             elif isinstance(self.src, list):
                 for src in self.src:
                     file.write(f"wget {src}\n")
-                file.write(f"tar xf {self.src[0].split('/')[-1]}\n" if "tar" in self.src[0] else f"mkdir -p {self.name}\nunzip {self.src[0].split('/')[-1]} -d {self.name}\n")
+                file.write(f"tar xf {self.src[0].split('/')[-1]}\n" if "tar" in self.src[0] or "tgz" in self.src[0] else f"mkdir -p {self.name}\nunzip {self.src[0].split('/')[-1]} -d {self.name}\n")
             else:
                 file.write(f"wget {self.src}\n")
-                file.write(f"tar xf {self.src.split('/')[-1]}\n" if "tar" in self.src else f"mkdir -p {self.name}\nunzip {self.src.split('/')[-1]} -d {self.name}\n")
+                file.write(f"tar xf {self.src.split('/')[-1]}\n" if "tar" in self.src or "tgz" in self.src else f"mkdir -p {self.name}\nunzip {self.src.split('/')[-1]} -d {self.name}\n")
             file.write(f"cd '{self.name}'\n")
             for line in self.configPhase:
                 file.write(f"{line}\n")

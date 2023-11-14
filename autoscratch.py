@@ -17,16 +17,16 @@ match mode:
     case "install":
         if listMode:
             with open(listFile, "r") as file:
-                timings = {Package(package).name:packageManager.install(Package(package)) for package in file.read().split("\n")}
+                timings = {Package(package):packageManager.install(Package(package)) for package in file.read().split("\n")}
         else:
             timings = {Package(installTarget):packageManager.install(Package(installTarget))}
         print("-"*10)
         print("Stats")
-        for key in timings:
-            print(f"Statistics for package {key}")
-            print(f"\tConfigure:    {timings['configure']}")
-            print(f"\tBuild:        {timings['build']}")
-            print(f"\tInstall:      {timings['install']}")
+        for key in timings.keys():
+            print(f"Statistics for package {key.name}")
+            print(f"\tConfigure:    {timings[key]['configure']}")
+            print(f"\tBuild:        {timings[key]['build']}")
+            print(f"\tInstall:      {timings[key]['install']}")
     case "help":
         pass
 

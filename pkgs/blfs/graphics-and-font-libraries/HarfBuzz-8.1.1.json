@@ -7,12 +7,15 @@
 		"meson setup .. --prefix=/usr --buildtype=release -Dgraphite2=enabled"
 	],
 	"build":[
+		"cd build",
 		"ninja"
 	],
 	"install":[
+		"cd build",
 		"ninja install"
 	],
 	"uninstall":[
+		"cd build",
 		"ninja uninstall"
 	]
 }
