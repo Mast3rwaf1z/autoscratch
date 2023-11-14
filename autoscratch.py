@@ -29,6 +29,8 @@ match mode:
             print(f"\tInstall:      {timings[key]['install']}")
     case "uninstall":
         packageManager.uninstall(Package(uninstallTarget))
+    case "clean":
+        packageManager.clean()
     case "help":
         pass
 
