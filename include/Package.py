@@ -71,7 +71,7 @@ class Package:
             for line in self.installPhase:
                 file.write(f"{line}\n")
 
-        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stdin=DEVNULL if quiet else None)
+        return check_call(["bash", filename], stdout=DEVNULL if quiet else None, stderr=DEVNULL if quiet else None)
     
     def uninstall(self):
         filename = f"/tmp/{self.name}-uninstall.sh"
