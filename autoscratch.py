@@ -31,7 +31,7 @@ match mode:
                 print(f"\tInstall:      {timings[key]['install']}")
         except KeyboardInterrupt as e:
             if not quiet: raise e
-            warning("Interrupted installer")
+            warning("\nInterrupted installer")
     case "uninstall":
         packageManager.uninstall(Package(uninstallTarget))
     case "clean":
