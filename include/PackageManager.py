@@ -87,3 +87,4 @@ class PackageManager:
         check_call(["mkdir", "-p", "build"])
         for package in Database.getAll():
             Database.update(package["name"], "configured", False)
+            Database.update(package["name"], "built", False)
