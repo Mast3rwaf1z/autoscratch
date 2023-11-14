@@ -68,7 +68,7 @@ class PackageManager:
         return timings
 
     def uninstall(self, package:Package):
-        if not package in Database:
+        if not package in Database.singleton:
             Database.add(package)
 
         if not package.configure():
