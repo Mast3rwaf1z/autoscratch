@@ -54,13 +54,13 @@ class Database:
             stderr=DEVNULL if quiet else None, 
             stdout=DEVNULL if quiet else None)
     
-    def update(package:Package, field:str, value:bool):
+    def update(package:Package | str, field:str, value:bool):
         if not Database.singleton: Database.initialize()
         return check_call(
             [
                 "sqlite3",
                 Database.path,
-                f"update packages set {field} = {'true' if value else 'false'} where name = '{package.name}'"
+                f"update packages set {field} = {'true' if value else 'false'} where name = '{package.name if isinstance(package, Package) else package}'"
             ]
         )
     
