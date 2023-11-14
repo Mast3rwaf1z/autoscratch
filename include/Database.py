@@ -32,8 +32,27 @@ class Database:
                 "sqlite3",
                 Database.path,
                 f"insert into packages values('{package.name}', false, false, false)"
-            ]
-        )
+            ], 
+            stderr=DEVNULL if quiet else None, 
+            stdout=DEVNULL if quiet else None)
+    def addTiming(package:Package, type:str, value:float):
+        if not Database.singleton: Database.initialize()
+        check_call(
+            [
+                "sqlite3",
+                Database.path,
+                f"create table if not exists {package.name} (type VARCHAR, value FLOAT)"
+            ], 
+            stderr=DEVNULL if quiet else None, 
+            stdout=DEVNULL if quiet else None)
+        check_call(
+            [
+                "sqlite3",
+                Database.path,
+                f"insert into {package.name} values('{type}', {value})"
+            ], 
+            stderr=DEVNULL if quiet else None, 
+            stdout=DEVNULL if quiet else None)
     
     def update(package:Package, field:str, value:bool):
         if not Database.singleton: Database.initialize()
