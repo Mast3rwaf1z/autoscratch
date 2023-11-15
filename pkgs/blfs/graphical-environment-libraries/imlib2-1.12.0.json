@@ -1,0 +1,14 @@
+{
+    "name":"imlib2-1.12.0",
+    "src":"https://downloads.sourceforge.net/enlightenment/imlib2-1.12.0.tar.xz",
+    "config":[
+        "./configure --prefix=/usr --disable-static"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/graphical-environments/Xorg Libraries.json",
+        "pkgs/blfs/graphics-and-font-libraries/giflib-5.2.1.json"
+    ]
+}
