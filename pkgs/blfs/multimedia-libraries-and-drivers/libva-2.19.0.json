@@ -7,12 +7,15 @@
 		"meson setup --prefix=$XORG_PREFIX --buildtype=release"
 	],
 	"build":[
+		"cd build",
 		"ninja"
 	],
 	"install":[
+		"cd build",
 		"ninja install"
 	],
 	"uninstall":[
+		"cd build",
 		"ninja uninstall"
 	]
 }

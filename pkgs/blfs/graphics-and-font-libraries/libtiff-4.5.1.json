@@ -7,12 +7,15 @@
 		"cmake -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/libtiff-4.5.1 -DCMAKE_INSTALL_PREFIX=/usr -G Ninja .."
 	],
 	"build":[
+    "cd libtiff-build",
 		"ninja"
 	],
 	"install":[
+    "cd libtiff-build",
 		"ninja install"
 	],
 	"uninstall":[
+    "cd libtiff-build",
 		"ninja uninstall"
 	]
 }

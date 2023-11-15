@@ -7,12 +7,15 @@
 		"meson setup --prefix=$XORG_PREFIX --buildtype=release -Dplatforms=x11 -Dgallium-drivers=auto -Dvulkan-drivers=\"\" -Dvalgrind=disabled -Dlibunwind=disabled .."
 	],
 	"build":[
+		"cd build",
 		"ninja"
 	],
 	"install":[
+		"cd build",
 		"ninja install"
 	],
 	"uninstall":[
+		"cd build",
 		"ninja uninstall"
 	]
 }

@@ -11,13 +11,16 @@
 		"meson setup .. --prefix=$XORG_PREFIX --localstatedir=/var -Dglamor=true -Dxkb_output_dir=/var/lib/xkb"
 	],
 	"build":[
+    "cd build",
 		"ninja"
 	],
 	"install":[
+    "cd build",
 		"ninja install",
 		"mkdir -pv /etc/X11/xorg.conf.d"
 	],
 	"uninstall":[
+    "cd build",
 		"ninja uninstall"
 	]
 }

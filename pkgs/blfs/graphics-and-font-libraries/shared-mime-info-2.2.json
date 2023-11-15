@@ -7,12 +7,15 @@
 		"meson setup --prefix=/usr --buildtype=release -Dupdate-mimedb=true .."
 	],
 	"build":[
+    "cd build",
 		"ninja"
 	],
 	"install":[
+    "cd build",
 		"ninja install"
 	],
 	"uninstall":[
+    "cd build",
 		"ninja uninstall"
 	]
 }
