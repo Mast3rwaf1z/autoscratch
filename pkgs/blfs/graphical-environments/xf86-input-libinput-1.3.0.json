@@ -12,5 +12,9 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Xorg-Server-21.1.8.json",
+		"pkgs/blfs/graphical-environments/libinput-1.23.0.json"
 	]
 }

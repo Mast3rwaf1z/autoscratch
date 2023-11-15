@@ -17,5 +17,9 @@
 	"uninstall":[
     "cd build",
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/programming/CMake-3.27.2.json",
+		"pkgs/blfs/programming/NASM-2.16.01.json"
 	]
 }

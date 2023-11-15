@@ -11,5 +11,9 @@
   "uninstall":[
     "echo 'Please uninstall manually!'",
     "exit 1"
-  ]
+  ],
+	"depends":[
+    "pkgs/blfs/graphical-environments/libxcb-1.16.json",
+    "pkgs/blfs/graphics-and-font-libraries/Fontconfig-2.14.2.json"
+	]
 }

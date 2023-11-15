@@ -17,5 +17,9 @@
     "uninstall":[
         "cd build",
         "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/graphical-environments/XKeyboardConfig-2.39.json",
+        "pkgs/blfs/graphical-environments/libxcb-1.16.json"
     ]
 }

@@ -17,5 +17,12 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphics-and-font-libraries/FreeType-2.13.1.json",
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json",
+		"pkgs/blfs/general-libraries/GLib-2.76.4.json",
+		"pkgs/blfs/graphics-and-font-libraries/Graphite2-1.3.14.json",
+		"pkgs/blfs/general-libraries/ICU-73.2.json"
 	]
 }

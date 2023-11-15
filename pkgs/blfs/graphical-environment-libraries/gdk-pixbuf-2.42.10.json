@@ -17,5 +17,14 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/general-libraries/GLib-2.76.4.json",
+		"pkgs/blfs/graphics-and-font-libraries/libjpeg-turbo-3.0.0.json",
+		"pkgs/blfs/graphics-and-font-libraries/libpng-1.6.40.json",
+		"pkgs/blfs/graphics-and-font-libraries/shared-mime-info-2.2.json",
+		"pkgs/blfs/programming/docutils-0.20.1.json",
+		"pkgs/blfs/graphics-and-font-libraries/librsvg-2.56.3.json",
+		"pkgs/blfs/graphics-and-font-libraries/libtiff-4.5.1.json"
 	]
 }

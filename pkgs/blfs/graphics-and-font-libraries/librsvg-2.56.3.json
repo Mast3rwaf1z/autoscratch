@@ -12,5 +12,13 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/programming/Rustc-1.71.1.json",
+		"pkgs/blfs/graphical-environment-libraries/Pango-1.50.14.json",
+		"pkgs/blfs/graphical-environment-libraries/gdk-pixbuf-2.42.10.json",
+		"pkgs/blfs/graphical-environment-libraries/Cairo-1.17.6.json",
+		"pkgs/blfs/programming/Vala-0.56.11.json",
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
 	]
 }

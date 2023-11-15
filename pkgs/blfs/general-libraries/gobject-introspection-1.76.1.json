@@ -17,5 +17,8 @@
     "uninstall":[
         "cd build",
         "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json"
     ]
 }

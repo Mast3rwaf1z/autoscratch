@@ -15,5 +15,8 @@
 	"uninstall":[
 		"echo 'Please uninstall manually!'",
 		"exit 1"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/xcursor-themes-1.0.7.json"
 	]
 }

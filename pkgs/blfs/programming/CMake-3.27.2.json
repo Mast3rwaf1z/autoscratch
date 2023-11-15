@@ -13,5 +13,11 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/networking-libraries/nghttp2-1.55.1.json",
+		"pkgs/blfs/general-libraries/libuv-1.46.0.json",
+		"pkgs/blfs/general-libraries/libarchive-3.7.1.json",
+		"pkgs/blfs/networking-libraries/cURL-8.2.1.json"
 	]
 }

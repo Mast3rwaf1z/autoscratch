@@ -11,5 +11,8 @@
     ],
     "uninstall":[
         "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/security/p11-kit-0.25.0.json"
     ]
 }

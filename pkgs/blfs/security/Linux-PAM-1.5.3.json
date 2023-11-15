@@ -1,0 +1,16 @@
+{
+    "name":"Linux-PAM-1.5.3",
+    "src":"https://github.com/linux-pam/linux-pam/releases/download/v1.5.3/Linux-PAM-1.5.3.tar.xz",
+    "config":["./configure --prefix=/usr                        --sbindir=/usr/sbin                  --sysconfdir=/etc                    --libdir=/usr/lib                    --enable-securedir=/usr/lib/security --docdir=/usr/share/doc/Linux-PAM-1.5.3"],
+    "build":["make"],
+    "install":[
+        "make install",
+        "chmod -v 4755 /usr/sbin/unix_chkpwd",
+        "echo 'account   required    pam_unix.so' > /etc/pam.d/system-account",
+        "echo 'auth      required    pam_unix.so' > /etc/pam.d/system-auth",
+        "echo 'session   required    pam_unix.so' > /etc/pam.d/system-session",
+        "echo 'password  required    pam_unix.so       yescrypt shadow try_first_pass' > /etc/pam.d/system-password",
+        "echo 'auth        required        pam_warn.so\nauth        required        pam_deny.so\naccount     required        pam_warn.so\naccount     required        pam_deny.so\npassword    required        pam_warn.so\npassword    required        pam_deny.so\nsession     required        pam_warn.so\nsession     required        pam_deny.so' > /etc/pam.d/other"
+    ],
+    "uninstall":["make uninstall"]
+}

@@ -23,5 +23,9 @@
     "uninstall":[
         "cd build",
         "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/PCRE2-10.42.json",
+        "pkgs/blfs/general-libraries/libxslt-1.1.38.json"
     ]
 }

@@ -21,7 +21,7 @@ match mode:
                 with open(listFile, "r") as file:
                     timings = {Package(package):packageManager.install(Package(package)) for package in file.read().split("\n")}
             else:
-                timings = {Package(installTarget):packageManager.install(Package(installTarget))}
+                timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
             print("-"*10)
             print("Stats")
             for key in timings.keys():

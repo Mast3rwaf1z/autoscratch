@@ -28,5 +28,10 @@
   "uninstall":[
     "rm -rf /usr/share/xml/docbook/xml-dtd-4.5",
     "rm -rf /etc/xml"
+  ],
+  "depends":[
+    "pkgs/blfs/system-utilities/UnZip-6.0.json",
+    "pkgs/blfs/standard-generalized-markup-language/sgml-common-0.6.3.json",
+    "pkgs/blfs/general-libraries/libxml2-2.10.4.json"
   ]
 }

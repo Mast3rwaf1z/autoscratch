@@ -17,5 +17,10 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Xorg Libraries.json",
+		"pkgs/blfs/graphical-environment-libraries/Libdrm-2.4.115.json",
+		"pkgs/blfs/programming/Mako-1.2.4.json"
 	]
 }

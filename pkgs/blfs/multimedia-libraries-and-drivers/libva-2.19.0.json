@@ -17,5 +17,10 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environment-libraries/Libdrm-2.4.115.json",
+		"pkgs/blfs/graphical-environments/Xorg build environment.json",
+		"pkgs/blfs/graphical-environments/Mesa-23.1.6.json"
 	]
 }

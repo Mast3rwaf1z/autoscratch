@@ -25,5 +25,8 @@
   ],
   "uninstall":[
     "rm -rf /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2"
+  ],
+  "depends":[
+    "pkgs/blfs/general-libraries/libxml2-2.10.4.json"
   ]
 }

@@ -12,5 +12,6 @@
     ],
     "uninstall":[
         "make uninstall"
-    ]
+    ],
+    "depends":[]
 }

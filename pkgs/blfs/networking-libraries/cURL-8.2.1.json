@@ -9,5 +9,8 @@
         "find docs \\( -name Makefile\\* -o  -name \\*.1       -o  -name \\*.3       -o  -name CMakeLists.txt \\) -delete",
         "cp -v -R docs -T /usr/share/doc/curl-8.2.1"
     ],
-    "uninstall":["make uninstall"]
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/security/make-ca-1.12.json"
+    ]
 }

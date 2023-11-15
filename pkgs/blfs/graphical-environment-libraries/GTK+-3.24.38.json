@@ -17,5 +17,17 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environment-libraries/at-spi2-core-2.48.3.json",
+		"pkgs/blfs/graphical-environment-libraries/gdk-pixbuf-2.42.10.json",
+		"pkgs/blfs/graphical-environment-libraries/libepoxy-1.5.10.json",
+		"pkgs/blfs/graphical-environment-libraries/Pango-1.50.14.json",
+		"pkgs/blfs/icons/adwaita-icon-theme-44.0.json",
+		"pkgs/blfs/extensible-markup-language/docbook-xsl-nons-1.79.2.json",
+		"pkgs/blfs/graphics-and-font-libraries/ISO Codes-4.15.0.json",
+		"pkgs/blfs/general-libraries/libxkbcommon-1.5.0.json",
+		"pkgs/blfs/general-libraries/libxslt-1.1.38.json",
+		"pkgs/blfs/graphics-and-font-libraries/sassc-3.6.2.json"
 	]
 }

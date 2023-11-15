@@ -14,5 +14,9 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphics-and-font-libraries/libpng-1.6.40.json",
+		"pkgs/blfs/system-utilities/Which-2.21.json"
 	]
 }

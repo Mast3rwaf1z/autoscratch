@@ -27,6 +27,10 @@ class Package:
         self.buildPhase = config["build"]
         self.installPhase = config["install"]
         self.uninstallPhase = config["uninstall"]
+        self.dependencies = config["depends"] if "depends" in config else []
+
+    def generateList(self) -> list[str]:
+        return sum([Package(dependency).generateList() for dependency in self.dependencies], []) + self.dependencies
 
     def configure(self):
         filename = f"/tmp/{self.name}-config.sh"

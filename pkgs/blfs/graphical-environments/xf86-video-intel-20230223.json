@@ -4,5 +4,8 @@
 	"config":["./autogen.sh $XORG_CONFIG --enable-kms-only --enable-uxa --mandir=/usr/share/man"],
 	"build":["make"],
 	"install":["make install"],
-	"uninstall":["make uninstall"]
+	"uninstall":["make uninstall"],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Mesa-23.1.6.json"
+	]
 }

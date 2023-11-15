@@ -12,5 +12,8 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/general-libraries/libgpg-error-1.47.json"
 	]
 }

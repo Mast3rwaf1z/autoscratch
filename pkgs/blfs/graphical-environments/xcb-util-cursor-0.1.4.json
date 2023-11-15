@@ -12,5 +12,9 @@
   ],
   "uninstall":[
     "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/xcb-util-image-0.4.1.json",
+    "pkgs/blfs/graphical-environments/xcb-util-renderutil-0.3.10.json"
   ]
 }

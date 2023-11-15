@@ -4,5 +4,12 @@
     "config":["./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.8.1 --with-default-trust-store-pkcs11=\"pkcs11:\""],
     "build":["make"],
     "install":["make install"],
-    "uninstall":["make uninstall"]
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/security/Nettle-3.9.1.json",
+        "pkgs/blfs/security/p11-kit-0.25.0.json",
+        "pkgs/blfs/general-libraries/libtasn1-4.19.0.json",
+        "pkgs/blfs/general-libraries/libunistring-1.1.json",
+        "pkgs/blfs/security/make-ca-1.12.json"
+    ]
 }

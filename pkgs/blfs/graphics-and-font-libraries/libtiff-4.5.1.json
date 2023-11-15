@@ -17,5 +17,8 @@
 	"uninstall":[
     "cd libtiff-build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/programming/CMake-3.27.2.json"
 	]
 }

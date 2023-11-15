@@ -18,5 +18,8 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
 	]
 }

@@ -4,5 +4,9 @@
     "config":["./configure --prefix=/usr"],
     "build":["make"],
     "install":["make install"],
-    "uninstall":["make uninstall"]
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/xfce-desktop/libxfce4ui-4.18.4.json",
+        "pkgs/blfs/gnome-libraries-and-desktop/VTE-0.72.2.json"
+    ]
 }

@@ -18,5 +18,8 @@
 	"uninstall":[
 		"cd build",
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/programming/CMake-3.27.2.json"
 	]
 }

@@ -18,5 +18,14 @@
     "uninstall":[
         "cd build",
         "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/graphical-environment-libraries/GTK+-3.24.38.json",
+        "pkgs/blfs/general-libraries/libxml2-2.10.4.json",
+        "pkgs/blfs/general-libraries/PCRE2-10.42.json",
+        "pkgs/blfs/general-libraries/ICU-73.2.json",
+        "pkgs/blfs/security/GnuTLS-3.8.1.json",
+        "pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json",
+        "pkgs/blfs/programming/Vala-0.56.11.json"
     ]
 }

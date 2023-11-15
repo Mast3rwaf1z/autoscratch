@@ -17,5 +17,8 @@
 	"uninstall":[
 		"cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Xorg build environment.json"
 	]
 }

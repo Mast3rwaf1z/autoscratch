@@ -32,5 +32,15 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/xfce-desktop/Exo-4.18.0.json",
+		"pkgs/blfs/general-libraries/libgcrypt-1.10.2.json",
+		"pkgs/blfs/extensible-markup-language/itstool-2.0.7.json",
+		"pkgs/blfs/security/Linux-PAM-1.5.3.json",
+		"pkgs/blfs/graphical-environments/Xorg-Server-21.1.8.json",
+		"pkgs/blfs/programming/Vala-0.56.11.json",
+		"pkgs/blfs/graphical-environment-libraries/libxklavier-5.4.json",
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
 	]
 }

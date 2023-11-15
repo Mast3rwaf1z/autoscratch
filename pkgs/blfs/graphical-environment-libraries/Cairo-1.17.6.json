@@ -14,5 +14,12 @@
   ],
   "uninstall":[
     "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphics-and-font-libraries/Pixman-0.42.2.json",
+    "pkgs/blfs/graphics-and-font-libraries/libpng-1.6.40.json",
+    "pkgs/blfs/graphics-and-font-libraries/Fontconfig-2.14.2.json",
+    "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+    "pkgs/blfs/graphical-environments/Xorg Libraries.json"
   ]
 }

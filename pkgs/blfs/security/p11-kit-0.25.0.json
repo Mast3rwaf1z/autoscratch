@@ -22,5 +22,9 @@
     "uninstall":[
         "cd build",
         "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libtasn1-4.19.0.json",
+        "pkgs/blfs/security/make-ca-1.12.json"
     ]
 }

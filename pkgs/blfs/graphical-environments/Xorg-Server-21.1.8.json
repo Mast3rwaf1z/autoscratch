@@ -22,5 +22,14 @@
 	"uninstall":[
     "cd build",
 		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/XKeyboardConfig-2.39.json",
+		"pkgs/blfs/graphical-environments/Xorg Fonts.json",
+		"pkgs/blfs/graphics-and-font-libraries/Pixman-0.42.2.json",
+		"pkgs/blfs/graphical-environments/libxcvt-0.1.2.json",
+		"pkgs/blfs/graphical-environments/xf86-input-libinput-1.3.0.json",
+		"pkgs/blfs/networking-libraries/libtirpc-1.3.3.json",
+		"pkgs/blfs/graphical-environment-libraries/libepoxy-1.5.10.json"
 	]
 }

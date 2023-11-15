@@ -12,5 +12,8 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/extensible-markup-language/docbook-xml-4.5.json"
 	]
 }

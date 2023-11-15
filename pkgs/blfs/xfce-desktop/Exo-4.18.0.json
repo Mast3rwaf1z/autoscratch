@@ -12,5 +12,10 @@
 	],
 	"uninstall":[
 		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/xfce-desktop/libxfce4util-4.18.1.json",
+		"pkgs/blfs/xfce-desktop/libxfce4ui-4.18.4.json",
+		"pkgs/blfs/graphical-environment-libraries/GTK+-3.24.38.json"
 	]
 }

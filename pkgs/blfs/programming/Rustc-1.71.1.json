@@ -12,5 +12,11 @@
 	],
 	"uninstall":[
 		"bash ../../scripts/Rustc-1.71.1-uninstall.sh"
+	],
+	"depends":[
+		"pkgs/blfs/programming/CMake-3.27.2.json",
+		"pkgs/blfs/networking-libraries/cURL-8.2.1.json",
+		"pkgs/blfs/programming/LLVM-16.0.5.json",
+		"pkgs/blfs/general-libraries/libssh2-1.11.0.json"
 	]
 }

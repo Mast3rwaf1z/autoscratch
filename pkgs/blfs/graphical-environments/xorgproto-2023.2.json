@@ -20,5 +20,8 @@
   ],
   "uninstall":[
     "ninja uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/util-macros-1.20.0.json"
   ]
 }

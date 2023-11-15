@@ -4,5 +4,6 @@
     "config":["./configure --prefix=/usr --disable-static --enable-lib-only --docdir=/usr/share/doc/nghttp2-1.55.1"],
     "build":["make"],
     "install":["make install"],
-    "uninstall":["make uninstall"]
+    "uninstall":["make uninstall"],
+    "depends":["pkgs/blfs/general-libraries/libxml2-2.10.4.json"]
 }
