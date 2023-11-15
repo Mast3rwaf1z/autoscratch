@@ -10,6 +10,7 @@ pkgs/blfs/graphical-environments/Mesa-23.1.6.json
 pkgs/blfs/graphical-environments/libxcvt-0.1.2.json
 pkgs/blfs/general-libraries/mtdev-1.1.6.json
 pkgs/blfs/graphical-environments/libevdev-1.13.1.json
+pkgs/blfs/graphical-environments/xf86-input-evdev-2.10.6.json
 pkgs/blfs/graphical-environments/libinput-1.23.0.json
 pkgs/blfs/graphical-environment-libraries/libepoxy-1.5.10.json
 pkgs/blfs/graphical-environments/Xorg-Server-21.1.8.json

@@ -18,7 +18,7 @@
         "cp -iv .config /boot/config-6.4.12",
         "cp -r Documentation -T /usr/share/doc/linux-6.4.12",
         "install -v -m755 -d /etc/modprobe.d",
-        "echo \"# Begin /etc/modprobe.d/usb.conf\ninstallohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true\ninstall uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true\n# End /etc/modprobe.d/usb.conf\" > /etc/modprobe.d/usb.conf"
+        "echo \"# Begin /etc/modprobe.d/usb.conf\ninstall ohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true\ninstall uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true\n# End /etc/modprobe.d/usb.conf\" > /etc/modprobe.d/usb.conf"
     ],
     "uninstall":[
         "rm /boot/vmlinuz-6.4.12-lfs-12.0-systemd",
