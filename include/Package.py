@@ -21,6 +21,7 @@ class Package:
         with open(filepath, "r") as file:
             config = loads(file.read())
 
+        self.path = filepath
         self.name = config["name"]
         self.src = config["src"]
         self.configPhase = config["config"]
@@ -30,7 +31,7 @@ class Package:
         self.dependencies = config["depends"] if "depends" in config else []
 
     def generateList(self) -> list[str]:
-        return sum([Package(dependency).generateList() for dependency in self.dependencies], []) + self.dependencies
+        return sum([Package(dependency).generateList() for dependency in self.dependencies], []) + self.path 
 
     def configure(self):
         filename = f"/tmp/{self.name}-config.sh"
