@@ -1,14 +1,19 @@
 {
     "name":"autoscratch",
     "src":null,
-    "config":[],
+    "config":[
+        "mv ../../db.db3 /tmp",
+        "mv ../../db_new.db3 /tmp"
+    ],
     "build":[
         "cp ../.. -r /usr/share",
         "mkdir -p /opt/autoscratch",
         "touch /opt/autoscratch"
     ],
     "install":[
-        "echo '#!/bin/bash\npython3 /usr/share/autoscratch.py $@ --db /opt/autoscratch/autoscratch.db3' > /usr/bin/autoscratch"
+        "echo '#!/bin/bash\npython3 /usr/share/autoscratch.py $@ --db /opt/autoscratch/autoscratch.db3' > /usr/bin/autoscratch",
+        "mv /tmp/db.db3 ../../",
+        "mv /tmp/db_new.db3 ../../"
     ],
     "uninstall":[
         "rm /usr/share/autoscratch -r"
