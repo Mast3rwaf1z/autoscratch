@@ -1,0 +1,8 @@
+{
+	"name":"xf86-video-intel-20230223",
+	"src":"https://anduin.linuxfromscratch.org/BLFS/xf86-video-intel/xf86-video-intel-20230223.tar.xz",
+	"config":["./autogen.sh $XORG_CONFIG --enable-kms-only --enable-uxa --mandir=/usr/share/man"],
+	"build":["make"],
+	"install":["make install"],
+	"uninstall":["make uninstall"]
+}
