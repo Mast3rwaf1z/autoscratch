@@ -3,9 +3,10 @@
     "src":"https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.4.12.tar.xz",
     "config":[
         "touch /opt/kernel-config",
-        "cp /opt/kernel-config .",
+        "cp /opt/kernel-config .config",
         "make mrproper",
-        "make menuconfig"
+        "make menuconfig",
+        "cp .config /opt/kernel-config"
     ],
     "build":[
         "make"
