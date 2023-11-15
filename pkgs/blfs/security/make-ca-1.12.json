@@ -1,0 +1,15 @@
+{
+    "name":"make-ca-1.12",
+    "src":"https://github.com/lfs-book/make-ca/releases/download/v1.12/make-ca-1.12.tar.xz",
+    "config":[],
+    "build":[],
+    "install":[
+        "make install",
+        "install -vdm755 /etc/ssl/local",
+        "/usr/sbin/make-ca -g",
+        "systemctl enable update-pki.timer"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ]
+}

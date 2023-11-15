@@ -1,0 +1,8 @@
+{
+    "name":"libtasn1-4.19.0",
+    "src":"https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz",
+    "config":["./configure --prefix=/usr --disable-static"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

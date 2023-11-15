@@ -1,0 +1,8 @@
+{
+    "name":"gnutls-3.8.1",
+    "src":"https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.1.tar.xz",
+    "config":["./configure --prefix=/usr --docdir=/usr/share/doc/gnutls-3.8.1 --with-default-trust-store-pkcs11=\"pkcs11:\""],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

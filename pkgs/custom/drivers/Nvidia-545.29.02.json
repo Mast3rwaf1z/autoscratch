@@ -1,0 +1,11 @@
+{
+    "name":"NVIDIA-Linux-x86_64-535.129.03",
+    "src":"https://us.download.nvidia.com/XFree86/Linux-x86_64/545.29.02/NVIDIA-Linux-x86_64-545.29.02.run",
+    "config":[
+        "chmod +x ../NVIDIA-Linux-x86_64-545.29.02.run",
+        "./../NVIDIA-Linux-x86_64-545.29.02.run -x"
+    ],
+    "build":[],
+    "install":["./nvidia-installer -s"],
+    "uninstall":["./nvidia-installer --uninstall"]
+}

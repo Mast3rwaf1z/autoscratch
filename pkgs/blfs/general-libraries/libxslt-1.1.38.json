@@ -1,0 +1,8 @@
+{
+    "name":"libxslt-1.1.38",
+    "src":"https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.38.tar.xz",
+    "config":["./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/libxslt-1.1.38 PYTHON=/usr/bin/python3"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

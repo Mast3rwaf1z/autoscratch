@@ -1,0 +1,15 @@
+{
+    "name":"nettle-3.9.1",
+    "src":"https://ftp.gnu.org/gnu/nettle/nettle-3.9.1.tar.gz",
+    "config":["./configure --prefix=/usr --disable-static"],
+    "build":["make"],
+    "install":[
+        "make install",
+        "chmod   -v   755 /usr/lib/lib{hogweed,nettle}.so",
+        "install -v -m755 -d /usr/share/doc/nettle-3.9.1",
+        "install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-3.9.1"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ]
+}

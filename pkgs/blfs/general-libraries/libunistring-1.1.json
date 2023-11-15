@@ -1,0 +1,10 @@
+{
+    "name":"libunistring-1.1",
+    "src":"https://ftp.gnu.org/gnu/libunistring/libunistring-1.1.tar.xz",
+    "config":[
+        "./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/libunistring-1.1"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

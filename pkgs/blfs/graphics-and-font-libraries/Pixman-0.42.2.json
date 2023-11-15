@@ -1,0 +1,21 @@
+{
+    "name":"pixman-0.42.2",
+    "src":"https://www.cairographics.org/releases/pixman-0.42.2.tar.gz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ]
+}

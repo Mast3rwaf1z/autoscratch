@@ -1,0 +1,22 @@
+{
+    "name":"vte-0.72.2",
+    "src":"https://gitlab.gnome.org/GNOME/vte/-/archive/0.72.2/vte-0.72.2.tar.gz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release -Dfribidi=false .."
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "rm -v /etc/profile.d/vte.*"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ]
+}

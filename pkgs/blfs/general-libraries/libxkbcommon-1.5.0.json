@@ -1,0 +1,21 @@
+{
+    "name":"libxkbcommon-1.5.0",
+    "src":"https://xkbcommon.org/download/libxkbcommon-1.5.0.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=/usr --buildtype=release -Denable-docs=false"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ]
+}

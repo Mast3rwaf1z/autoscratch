@@ -1,0 +1,7 @@
+{
+    "name":"fontconfig-2.14.2",
+    "src":"https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.2.tar.xz",
+    "config":["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-docs --docdir=/usr/share/doc/fontconfig-2.14.2"],
+    "build":["make"],
+    "install":["make install"]
+}
