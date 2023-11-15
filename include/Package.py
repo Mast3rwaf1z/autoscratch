@@ -31,7 +31,7 @@ class Package:
         self.dependencies = config["depends"] if "depends" in config else []
 
     def generateList(self) -> list[str]:
-        return sum([Package(dependency).generateList() for dependency in self.dependencies], []) + self.path 
+        return sum([Package(dependency).generateList() for dependency in self.dependencies], []) + [self.path] 
 
     def configure(self):
         filename = f"/tmp/{self.name}-config.sh"
