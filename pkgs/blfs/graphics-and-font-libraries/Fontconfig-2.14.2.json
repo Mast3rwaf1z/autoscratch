@@ -4,5 +4,6 @@
     "config":["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-docs --docdir=/usr/share/doc/fontconfig-2.14.2"],
     "build":["make"],
     "install":["make install"],
+    "uninstall":["make uninstall"],
     "depends":["pkgs/blfs/graphics-and-font-libraries/FreeType-2.13.1.json"]
 }
