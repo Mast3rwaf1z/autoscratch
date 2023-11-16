@@ -1,0 +1,15 @@
+{
+    "name":"Discord",
+    "src":"https://dl.discordapp.net/apps/linux/0.0.35/discord-0.0.35.tar.gz",
+    "config":[
+        "cp -r ../Discord /usr/share"
+    ],
+    "build":[],
+    "install":[
+        "ln -s /usr/share/Discord/Discord /usr/bin/discord"
+    ],
+    "uninstall":[
+        "rm /usr/bin/discord",
+        "rm -r /usr/share/Discord"
+    ]
+}
