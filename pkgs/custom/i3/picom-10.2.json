@@ -1,0 +1,29 @@
+{
+    "name":"picom-10.2",
+    "src":"https://github.com/yshui/picom/archive/refs/tags/v10.2.tar.gz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=/usr --buildtype=release"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/custom/libraries/uthash-2.3.0.json",
+        "pkgs/blfs/graphical-environments/Xorg Libraries.json",
+        "pkgs/blfs/graphical-environments/libxcb-1.16.json",
+        "pkgs/blfs/graphical-environments/xcb-proto-1.16.0.json",
+        "pkgs/blfs/graphical-environments/xcb-util-0.4.1.json",
+        "pkgs/blfs/graphics-and-font-libraries/Pixman-0.42.2.json"
+    ]
+}
