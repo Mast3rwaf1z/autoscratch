@@ -44,5 +44,5 @@ match mode:
         Database.print()
     
     case "search":
-        files = check_output(["find", ".", "-name", f"*{searchTarget}*"]).decode()
+        files = check_output(["find", "./pkgs", "-name", f"*{searchTarget}*"]).decode()
         print(files)
