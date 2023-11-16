@@ -1,6 +1,5 @@
 from json import loads
 from subprocess import check_call, DEVNULL, CalledProcessError
-from sys import argv
 
 from include.Arguments import quiet
 

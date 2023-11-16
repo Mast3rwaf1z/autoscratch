@@ -1,5 +1,4 @@
 from subprocess import check_call, DEVNULL, check_output
-from sys import argv
 from json import loads
 
 from include.Package import Package
@@ -7,8 +6,8 @@ from include.Logger import info
 from include.Arguments import quiet
 
 class listContainer:
-    def __init__(self, field):
-        self.generator = lambda: [row["name"] for row in Database.getAll() if row[field] == 1]
+    def __init__(self, field, all=False):
+        self.generator = lambda: [row["name"] for row in Database.getAll() if row[field] == 1 or all]
 
     def __iter__(self):
         self.value = self.generator()
@@ -28,6 +27,7 @@ class Database:
     installed = listContainer("installed")
     built = listContainer("built")
     configured = listContainer("configured")
+    allPackages = listContainer("installed", all=True)
 
     def initialize(filepath="/opt/autoscratch/db.db3"):
         info("Initializing database singleton")
