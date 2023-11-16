@@ -1,0 +1,31 @@
+{
+    "name":"speex-1.2.1",
+    "src":[
+        "https://downloads.xiph.org/releases/speex/speex-1.2.1.tar.gz",
+        "https://downloads.xiph.org/releases/speex/speexdsp-1.2.1.tar.gz"
+    ],
+    "config":[
+        "./configure --prefix=/usr    --disable-static --docdir=/usr/share/doc/speex-1.2.1",
+        "tar xf ../speexdsp-1.2.1.tar.gz",
+        "cd speexdsp-1.2.1",
+        "./configure --prefix=/usr --disable-static --docdir=/usr/share/doc/speexdsp-1.2.1"
+    ],
+    "build":[
+        "make",
+        "cd speexdsp-1.2.1",
+        "make"
+    ],
+    "install":[
+        "make install",
+        "cd speexdsp-1.2.1",
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall",
+        "cd speexdsp-1.2.1",
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/multimedia-libraries-and-drivers/libogg-1.3.5.json"
+    ]
+}

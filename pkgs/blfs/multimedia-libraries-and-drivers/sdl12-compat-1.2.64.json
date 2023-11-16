@@ -1,0 +1,26 @@
+{
+    "name":"sdl12-compat-release-1.2.64",
+    "src":"https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.64/sdl12-compat-release-1.2.64.tar.gz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RELEASE .."
+    ],
+    "build":[
+        "cd build",
+        "make"
+    ],
+    "install":[
+        "cd build",
+        "make install"
+    ],
+    "uninstall":[
+        "cd build",
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/programming/CMake-3.27.2.json",
+        "pkgs/blfs/graphical-environment-libraries/GLU-9.0.3.json",
+        "pkgs/blfs/multimedia-libraries-and-drivers/SDL2-2.28.2.json"
+    ]
+}

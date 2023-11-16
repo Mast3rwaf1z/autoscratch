@@ -1,0 +1,24 @@
+{
+    "name":"node-v18.17.1",
+    "src":"https://nodejs.org/dist/v18.17.1/node-v18.17.1.tar.xz",
+    "config":[
+        "./configure --prefix=/usr          --shared-cares         --shared-libuv         --shared-openssl       --shared-nghttp2       --shared-zlib          --with-intl=system-icu"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall",
+        "ln -sf node /usr/share/doc/node-18.17.1"
+    ],
+    "depends":[
+        "pkgs/blfs/system-utilities/Which-2.21.json",
+        "pkgs/blfs/networking-libraries/c-ares-1.19.1.json",
+        "pkgs/blfs/general-libraries/ICU-73.2.json",
+        "pkgs/blfs/general-libraries/libuv-1.46.0.json",
+        "pkgs/blfs/networking-libraries/nghttp2-1.55.1.json"
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name":"firefox-115.2.0esr.source",
+    "src":"https://archive.mozilla.org/pub/firefox/releases/115.2.0esr/source/firefox-115.2.0esr.source.tar.xz",
+    "config":[
+        "bash ../../scripts/Firefox-115.2.0esr-config.sh"
+    ],
+    "build":[
+        "export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none ",
+        "export MOZBUILD_STATE_PATH=${PWD}/mozbuild",
+        "./mach configure",
+        "./mach build"
+    ],
+    "install":[
+        "export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none ",
+        "export MOZBUILD_STATE_PATH=${PWD}/mozbuild",
+        "MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none",
+        "./mach install",
+        "bash ../../scripts/Firefox-115.2.0esr-install.sh"
+    ],
+    "uninstall":[
+        "./mach uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/programming/Cbindgen-0.24.3.json",
+        "pkgs/blfs/general-libraries/dbus-glib-0.112.json",
+        "pkgs/blfs/graphical-environment-libraries/GTK+-3.24.38.json",
+        "pkgs/blfs/graphical-environment-libraries/libnotify-0.8.2.json",
+        "pkgs/blfs/programming/LLVM-16.0.5.json",
+        "pkgs/blfs/general-libraries/Node.js-18.17.1.json",
+        "pkgs/blfs/multimedia-libraries-and-drivers/PulseAudio-16.1.json",
+        "pkgs/blfs/databases/SQLite-3.42.0.json",
+        "pkgs/blfs/programming/Python-3.11.4.json",
+        "pkgs/blfs/graphical-environment-libraries/startup-notification-0.12.json",
+        "pkgs/blfs/system-utilities/UnZip-6.0.json",
+        "pkgs/blfs/programming/yasm-1.3.0.json",
+        "pkgs/blfs/system-utilities/Zip-3.0.json",
+        "pkgs/blfs/general-libraries/ICU-73.2.json",
+        "pkgs/blfs/networking-libraries/libevent-2.1.12.json",
+        "pkgs/blfs/multimedia-libraries-and-drivers/libvpx-1.13.0.json",
+        "pkgs/blfs/graphics-and-font-libraries/libwebp-1.3.1.json",
+        "pkgs/blfs/programming/NASM-2.16.01.json",
+        "pkgs/blfs/security/NSS-3.92.json"
+    ]
+}

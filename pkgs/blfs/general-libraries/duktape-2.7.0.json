@@ -1,0 +1,16 @@
+{
+    "name":"duktape-2.7.0",
+    "src":"https://duktape.org/duktape-2.7.0.tar.xz",
+    "config":[
+        "sed -i 's/-Os/-O2/' Makefile.sharedlibrary"
+    ],
+    "build":[
+        "make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr"
+    ],
+    "install":[
+        "make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr install"
+    ],
+    "uninstall":[
+        "make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr uninstall"
+    ]
+}

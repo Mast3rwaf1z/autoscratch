@@ -1,0 +1,30 @@
+{
+    "name":"pulseAudio-16.1",
+    "src":"https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-16.1.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr       --buildtype=release -Ddatabase=gdbm     -Ddoxygen=false     -Dbluez5=disabled   .."
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "rm -fv /etc/dbus-1/system.d/pulseaudio-system.conf"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/multimedia-libraries-and-drivers/libsndfile-1.2.2.json",
+        "pkgs/blfs/networking-libraries/alsa-lib-1.2.9.json",
+        "pkgs/blfs/system-utilities/dbus-1.14.8.json",
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+        "pkgs/blfs/multimedia-libraries-and-drivers/Speex-1.2.1.json",
+        "pkgs/blfs/graphical-environments/Xorg Libraries.json"
+    ]
+}

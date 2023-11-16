@@ -1,0 +1,14 @@
+{
+    "name":"cbindgen-0.24.3",
+    "src":"https://github.com/eqrion/cbindgen/archive/v0.24.3/cbindgen-0.24.3.tar.gz",
+    "config":[],
+    "build":[
+        "cargo build --release"
+    ],
+    "install":[
+        "install -Dm755 target/release/cbindgen /usr/bin/"
+    ],
+    "depends":[
+        "pkgs/blfs/programming/Rustc-1.71.1.json"
+    ]
+}

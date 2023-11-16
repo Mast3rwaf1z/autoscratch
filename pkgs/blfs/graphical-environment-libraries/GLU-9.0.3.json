@@ -1,0 +1,25 @@
+{
+    "name":"glu-9.0.3",
+    "src":"ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.3.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=$XORG_PREFIX -Dgl_provider=gl --buildtype=release"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "rm -vf /usr/lib/libGLU.a"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/graphical-environments/Mesa-23.1.6.json"
+    ]
+}

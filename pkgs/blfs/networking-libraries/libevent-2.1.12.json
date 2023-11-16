@@ -1,0 +1,17 @@
+{
+    "name":"libevent-2.1.12-stable",
+    "src":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz",
+    "config":[
+        "sed -i 's/python/&3/' event_rpcgen.py",
+        "./configure --prefix=/usr --disable-static"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ]
+}

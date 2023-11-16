@@ -1,0 +1,28 @@
+{
+    "name":"systemd-254",
+    "src":"https://github.com/systemd/systemd/archive/v254/systemd-254.tar.gz",
+    "config":[
+        "sed -i -e 's/GROUP=\"render\"/GROUP=\"video\"/' -e 's/GROUP=\"sgx\", //' rules.d/50-udev-default.rules.in",
+        "mkdir build",
+        "cd build",
+        "meson setup ..                --prefix=/usr           --buildtype=release     -Ddefault-dnssec=no     -Dfirstboot=false       -Dinstall-tests=false   -Dldconfig=false        -Dman=auto              -Dsysusers=false        -Drpmmacrosdir=no       -Dhomed=false           -Duserdb=false          -Dmode=release          -Dpam=true              -Dpamconfdir=/etc/pam.d -Ddev-kvm-mode=0660     -Ddocdir=/usr/share/doc/systemd-254"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "grep 'pam_systemd' /etc/pam.d/system-session || echo 'session  required    pam_loginuid.so\nsession  optional    pam_systemd.so\n' > /etc/pam.d/system-session",
+        "echo 'account  required    pam_access.so\naccount  include     system-account\nsession  required    pam_env.so\nsession  required    pam_limits.so\nsession  required    pam_unix.so\nsession  required    pam_loginuid.so\nsession  optional    pam_keyinit.so force revoke\nsession  optional    pam_systemd.so\nauth     required    pam_deny.so\npassword required    pam_deny.so\n' > /etc/pam.d/systemd-user"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/security/Linux-PAM-1.5.3.json",
+        "pkgs/blfs/security/Polkit-123.json"
+    ]
+}

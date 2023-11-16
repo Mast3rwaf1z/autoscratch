@@ -1,0 +1,20 @@
+{
+    "name":"dbus-glib-0.112",
+    "src":"https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.112.tar.gz",
+    "config":[
+        "./configure --prefix=/usr     --sysconfdir=/etc --disable-static"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/system-utilities/dbus-1.14.8.json",
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json"
+    ]
+}

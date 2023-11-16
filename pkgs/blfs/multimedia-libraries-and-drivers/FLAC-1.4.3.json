@@ -1,0 +1,13 @@
+{
+    "name":"flac-1.4.3",
+    "src":"https://downloads.xiph.org/releases/flac/flac-1.4.3.tar.xz",
+    "config":[
+        "./configure --prefix=/usr            --disable-thorough-tests --docdir=/usr/share/doc/flac-1.4.3"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ]
+}
