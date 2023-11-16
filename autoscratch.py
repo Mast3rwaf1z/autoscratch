@@ -2,9 +2,10 @@ from include.PackageManager import PackageManager
 from include.Package import Package
 from include.Database import Database
 from os import geteuid
+from subprocess import check_output
 
 from include.Logger import warning
-from include.Arguments import dbFile, listFile, listMode, mode, installTarget, uninstallTarget, quiet
+from include.Arguments import dbFile, listFile, listMode, mode, installTarget, uninstallTarget, quiet, searchTarget
 
 if not geteuid() == 0:
     print("\033[38;2;255;0;0mERROR:\033[0m You are not root!")
@@ -41,3 +42,7 @@ match mode:
 
     case "list":
         Database.print()
+    
+    case "search":
+        files = check_output(["find", ".", "-name", f"*{searchTarget}*"]).decode()
+        print(files)
