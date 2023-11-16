@@ -7,11 +7,18 @@
         "cd build",
         "meson setup .. --prefix=/usr --buildtype=release -Dgtk-doc=false -Dman=false"
     ],
-    "build":["ninja"],
-    "install":["ninja install"],
-    "uninstall":[
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
         "ninja install",
         "systemctl enable upower"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
     ],
     "depends":[
         "pkgs/blfs/general-libraries/libgudev-238.json",

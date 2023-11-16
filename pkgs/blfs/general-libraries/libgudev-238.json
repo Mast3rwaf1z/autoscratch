@@ -11,9 +11,11 @@
         "ninja"
     ],
     "install":[
+        "cd build",
         "ninja install"
     ],
     "uninstall":[
+        "cd build",
         "ninja uninstall"
     ],
     "depends":[
