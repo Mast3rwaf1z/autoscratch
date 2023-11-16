@@ -1,0 +1,39 @@
+pkgs/blfs/graphical-environments/Xorg build environment.json
+pkgs/blfs/graphical-environments/util-macros-1.20.0.json
+pkgs/blfs/graphical-environments/xorgproto-2023.2.json
+pkgs/blfs/graphical-environments/libXau-1.0.11.json
+pkgs/blfs/graphical-environments/libXdmcp-1.1.4.json
+pkgs/blfs/graphical-environments/xcb-proto-1.16.0.json
+pkgs/blfs/graphical-environments/libxcb-1.16.json
+pkgs/blfs/graphical-environments/xcb-util-0.4.1.json
+pkgs/blfs/graphical-environments/Xorg Libraries.json
+pkgs/blfs/graphical-environments/XKeyboardConfig-2.39.json
+pkgs/blfs/xfce-desktop/libxkbcommon-1.5.0.json
+pkgs/blfs/graphical-environments/xcb-util-renderutil-0.3.10.json
+pkgs/blfs/graphical-environments/xcb-util-image-0.4.1.json
+pkgs/blfs/graphical-environments/xcb-util-cursor-0.1.4.json
+pkgs/blfs/graphical-environments/xcb-util-wm-0.4.2.json
+pkgs/blfs/graphical-environments/xcb-util-keysyms-0.4.1.json
+pkgs/blfs/graphical-environments/xcb-util-xrm-1.0.0.json
+pkgs/blfs/general-libraries/libev-4.33.json
+pkgs/blfs/system-utilities/yajl-2.1.0.json
+pkgs/blfs/programming/Asciidoc-10.2.0.json
+pkgs/blfs/extensible-markup-language/docbook-xsl-nons-1.79.2.json
+pkgs/blfs/system-utilities/UnZip-6.0.json
+pkgs/blfs/standard-generalized-markup-language/sgml-common-0.6.3.json
+pkgs/blfs/extensible-markup-language/docbook-xml-4.5.json
+pkgs/blfs/extensible-markup-language/xmlto-0.0.28.json
+pkgs/blfs/programming/Pod-Simple-3.45.json
+pkgs/blfs/general-libraries/PCRE-8.45.json
+pkgs/blfs/graphical-environment-libraries/startup-notification-0.12.json
+pkgs/blfs/graphics-and-font-libraries/FriBidi-1.0.13.json
+pkgs/blfs/graphics-and-font-libraries/FreeType-2.13.1.json
+pkgs/blfs/general-libraries/libarchive-3.7.1.json
+pkgs/blfs/general-libraries/libuv-1.46.0.json
+pkgs/blfs/programming/CMake-3.27.2.json
+pkgs/blfs/graphics-and-font-libraries/Graphite2-1.3.14.json
+pkgs/blfs/graphics-and-font-libraries/HarfBuzz-8.1.1.json
+REINSTALL pkgs/blfs/graphics-and-font-libraries/FreeType-2.13.1.json
+pkgs/blfs/graphical-environment-libraries/Pango-1.50.14.json
+pkgs/blfs/graphical-environment-libraries/Cairo-1.17.6.json
+pkgs/blfs/i3/i3-4.23.json

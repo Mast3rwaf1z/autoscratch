@@ -1,0 +1,27 @@
+{
+  "name":"xorgproto-2023.2",
+  "src":["https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2023.2.tar.xz"],
+  "config":[
+    "rm -r build",
+    "mkdir build",
+    "cd    build",
+    "meson setup --prefix=$XORG_PREFIX .."
+  ],
+  "build":[
+    "cd    build",
+    "ls .",
+    "ninja"
+  ],
+  "install":[
+    "cd    build",
+    "ninja install",
+    "rm -rf /usr/share/doc/xorgproto-2023.2/xorgproto",
+    "mv -v $XORG_PREFIX/share/doc/xorgproto{,-2023.2}"
+  ],
+  "uninstall":[
+    "ninja uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/util-macros-1.20.0.json"
+  ]
+}

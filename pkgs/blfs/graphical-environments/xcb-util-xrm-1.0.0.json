@@ -1,0 +1,19 @@
+{
+  "name":"xcb-util-xrm-1.0",
+  "src":"https://github.com/Airblader/xcb-util-xrm/releases/download/v1.0/xcb-util-xrm-1.0.tar.gz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/libxcb-1.16.json"
+  ]
+}

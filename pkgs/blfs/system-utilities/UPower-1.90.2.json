@@ -1,0 +1,28 @@
+{
+    "name":"upower-v1.90.2",
+    "src":"https://gitlab.freedesktop.org/upower/upower/-/archive/v1.90.2/upower-v1.90.2.tar.bz2",
+    "config":[
+        "sed '/parse_version/d' -i src/linux/integration-test.py",
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=/usr --buildtype=release -Dgtk-doc=false -Dman=false"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "systemctl enable upower"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libgudev-238.json",
+        "pkgs/blfs/general-libraries/libusb-1.0.26.json",
+        "pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
+    ]
+}

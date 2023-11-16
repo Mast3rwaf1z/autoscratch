@@ -1,0 +1,16 @@
+{
+  "name":"libev-4.33",
+  "src":"http://dist.schmorp.de/libev/libev-4.33.tar.gz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ]
+}

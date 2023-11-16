@@ -1,0 +1,23 @@
+{
+	"name":"cmake-3.27.2",
+	"src":"https://cmake.org/files/v3.27/cmake-3.27.2.tar.gz",
+	"config":[
+		"sed -i '/\"lib64\"/s/64//' Modules/GNUInstallDirs.cmake",
+		"./bootstrap --prefix=/usr --system-libs --mandir=/share/man --no-system-jsoncpp --no-system-cppdap --no-system-librhash --docdir=/share/doc/cmake-3.27.2"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install"
+	],
+	"uninstall":[
+		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/networking-libraries/nghttp2-1.55.1.json",
+		"pkgs/blfs/general-libraries/libuv-1.46.0.json",
+		"pkgs/blfs/general-libraries/libarchive-3.7.1.json",
+		"pkgs/blfs/networking-libraries/cURL-8.2.1.json"
+	]
+}

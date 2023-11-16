@@ -1,0 +1,16 @@
+{
+	"name":"adwaita-icon-theme-44.0",
+	"src":"https://download.gnome.org/sources/adwaita-icon-theme/44/adwaita-icon-theme-44.0.tar.xz",
+	"config":[
+		"./configure --prefix=/usr"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install"
+	],
+	"uninstall":[
+		"make uninstall"
+	]
+}

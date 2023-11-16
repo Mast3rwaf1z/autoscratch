@@ -1,0 +1,24 @@
+{
+	"name":"libepoxy-1.5.10",
+	"src":"https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.10.tar.xz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release .."
+	],
+	"build":[
+    "cd build",
+		"ninja"
+	],
+	"install":[
+    "cd build",
+		"ninja install"
+	],
+	"uninstall":[
+    "cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Mesa-23.1.6.json"
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"name":"at-spi2-core-2.48.3",
+	"src":"https://download.gnome.org/sources/at-spi2-core/2.48/at-spi2-core-2.48.3.tar.xz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release .."
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"uninstall":[
+		"cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/system-utilities/dbus-1.14.8.json",
+		"pkgs/blfs/general-libraries/GLib-2.76.4.json",
+		"pkgs/blfs/gnome/gsettings-desktop-schemas-44.0.json",
+		"pkgs/blfs/graphical-environments/Xorg Libraries.json",
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
+	]
+}

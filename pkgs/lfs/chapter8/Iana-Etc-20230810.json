@@ -1,0 +1,13 @@
+{
+    "name":"iana-etc-20230810",
+    "src":"https://github.com/Mic92/iana-etc/releases/download/20230810/iana-etc-20230810.tar.gz",
+    "config":[],
+    "build":[],
+    "install":[
+        "cp services protocols /etc"
+    ],
+    "uninstall":[
+        "rm -rf /etc/services",
+        "rm -rf /etc/protocols"
+    ]
+}

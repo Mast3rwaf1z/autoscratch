@@ -1,0 +1,12 @@
+{
+    "name":"graphviz-8.1.0", 
+    "src":"https://gitlab.com/graphviz/graphviz/-/archive/8.1.0/graphviz-8.1.0.tar.bz2",
+    "config":[
+        "sed -i '/LIBPOSTFIX=\"64\"/s/64//' configure.ac",
+        "./autogen.sh",
+        "./configure --prefix=/usr --docdir=/usr/share/doc/graphviz-8.1.0"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

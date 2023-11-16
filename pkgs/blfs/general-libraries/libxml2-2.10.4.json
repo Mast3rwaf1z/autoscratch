@@ -1,0 +1,8 @@
+{
+    "name":"libxml2-2.10.4",
+    "src":"https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.4.tar.xz",
+    "config":["./configure --prefix=/usr --sysconfdir=/etc --disable-static --with-history PYTHON=/usr/bin/python3 --docdir=/usr/share/doc/libxml2-2.10.4"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

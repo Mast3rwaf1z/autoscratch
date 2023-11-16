@@ -1,0 +1,40 @@
+{
+  "name":"i3-4.23",
+  "src":"https://github.com/i3/i3/archive/refs/tags/4.23.tar.gz",
+  "config":[
+    "mkdir build",
+    "cd build",
+    "meson setup --prefix=/usr --buildtype=release .."
+  ],
+  "build":[
+	  "cd build",
+    "ninja"
+  ],
+  "install":[
+	  "cd build",
+    "ninja install"
+  ],
+  "uninstall":[
+	  "cd build",
+	  "ninja uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/libxcb-1.16.json",
+    "pkgs/blfs/graphical-environments/xcb-util-0.4.1.json",
+    "pkgs/blfs/general-libraries/libxkbcommon-1.5.0.json",
+    "pkgs/blfs/graphical-environments/xcb-util-cursor-0.1.4.json",
+    "pkgs/blfs/graphical-environments/xcb-util-wm-0.4.2.json",
+    "pkgs/blfs/graphical-environments/xcb-util-keysyms-0.4.1.json",
+    "pkgs/blfs/graphical-environments/xcb-util-xrm-1.0.0.json",
+    "pkgs/blfs/general-libraries/libev-4.33.json",
+    "pkgs/blfs/system-utilities/yajl-2.1.0.json",
+    "pkgs/blfs/programming/Asciidoc-10.2.0.json",
+    "pkgs/blfs/extensible-markup-language/xmlto-0.0.28.json",
+    "pkgs/blfs/programming/Pod-Simple-3.45.json",
+    "pkgs/blfs/extensible-markup-language/docbook-xml-4.5.json",
+    "pkgs/blfs/general-libraries/PCRE-8.45.json",
+    "pkgs/blfs/graphical-environment-libraries/startup-notification-0.12.json",
+    "pkgs/blfs/graphical-environment-libraries/Pango-1.50.14.json",
+    "pkgs/blfs/graphical-environment-libraries/Cairo-1.17.6.json"
+  ]
+}

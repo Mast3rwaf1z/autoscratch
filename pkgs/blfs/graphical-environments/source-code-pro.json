@@ -1,0 +1,12 @@
+{
+    "name":"source-code-pro-fonts",
+    "src":"https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip",
+    "config":[],
+    "build":[],
+    "install":[
+        "install -v -d -m755 /usr/share/fonts/source-code-pro",
+        "install -v -m644 OTF/*.otf /usr/share/fonts/source-code-pro",
+        "fc-cache -v /usr/share/fonts/source-code-pro"
+    ],
+    "uninstall":["rm -rvf /usr/share/fonts/source-code-pro"]
+}

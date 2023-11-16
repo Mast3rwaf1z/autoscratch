@@ -1,0 +1,30 @@
+{
+  "name":"pango-1.50.14",
+  "src":"https://download.gnome.org/sources/pango/1.50/pango-1.50.14.tar.xz",
+  "config":[
+    "sed -i '/array-bounds/d' meson.build",
+    "mkdir build",
+    "cd build",
+    "meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback .."
+  ],
+  "build":[
+	  "cd build",
+    "ninja"
+  ],
+  "install":[
+	  "cd build",
+    "ninja install"
+  ],
+  "uninstall":[
+	  "cd build",
+    "ninja uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphics-and-font-libraries/Fontconfig-2.14.2.json",
+    "pkgs/blfs/graphics-and-font-libraries/FriBidi-1.0.13.json",
+    "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+    "pkgs/blfs/graphical-environment-libraries/Cairo-1.17.6.json",
+    "pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json",
+    "pkgs/blfs/graphical-environments/Xorg Libraries.json"
+  ]
+}

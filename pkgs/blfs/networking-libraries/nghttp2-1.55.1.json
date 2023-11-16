@@ -1,0 +1,9 @@
+{
+    "name":"nghttp2-1.55.1",
+    "src":"https://github.com/nghttp2/nghttp2/releases/download/v1.55.1/nghttp2-1.55.1.tar.xz",
+    "config":["./configure --prefix=/usr --disable-static --enable-lib-only --docdir=/usr/share/doc/nghttp2-1.55.1"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"],
+    "depends":["pkgs/blfs/general-libraries/libxml2-2.10.4.json"]
+}

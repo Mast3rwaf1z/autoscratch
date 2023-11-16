@@ -1,0 +1,29 @@
+{
+    "name":"p11-kit-0.25.0",
+    "src":"https://github.com/p11-glue/p11-kit/releases/download/0.25.0/p11-kit-0.25.0.tar.xz",
+    "config":[
+        "sed 's/if (gi/& \\&\\& gi != C_GetInterface/' -i p11-kit/modules.c",
+        "sed '20,$ d' -i trust/trust-extract-compat",
+        "echo '/usr/libexec/make-ca/copy-trust-modifications\n/usr/sbin/make-ca -r' > trust/trust-extract-compat",
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release -Dtrust_paths=/etc/pki/anchors"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "ln -sfv /usr/libexec/p11-kit/trust-extract-compat /usr/bin/update-ca-certificates",
+        "ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libtasn1-4.19.0.json"
+    ]
+}

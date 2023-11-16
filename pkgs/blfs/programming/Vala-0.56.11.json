@@ -1,0 +1,12 @@
+{
+    "name":"vala-0.56.11",
+    "src":"https://download.gnome.org/sources/vala/0.56/vala-0.56.11.tar.xz",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+        "pkgs/blfs/general-utilities/Graphviz-8.1.0.json"
+    ]
+}

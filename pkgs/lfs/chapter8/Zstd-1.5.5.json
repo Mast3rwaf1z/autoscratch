@@ -1,0 +1,15 @@
+{
+    "name":"zstd-1.5.5",
+    "src":"https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz",
+    "config":[],
+    "build":[
+        "make prefix=/usr"
+    ],
+    "install":[
+        "make prefix=/usr install",
+        "rm -v /usr/lib/libzstd.a"
+    ],
+    "uninstall":[
+        "make prefix=/usr uninstall"
+    ]
+}

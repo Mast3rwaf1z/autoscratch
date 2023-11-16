@@ -1,0 +1,21 @@
+{
+	"name":"libxfce4ui-4.18.4",
+	"src":"https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.4.tar.bz2",
+	"config":[
+		"./configure --prefix=/usr --sysconfdir=/etc"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install"
+	],
+	"uninstall":[
+		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environment-libraries/GTK+-3.24.38.json",
+		"pkgs/blfs/xfce-desktop/Xfconf-4.18.1.json",
+		"pkgs/blfs/graphical-environment-libraries/startup-notification-0.12.json"
+	]
+}

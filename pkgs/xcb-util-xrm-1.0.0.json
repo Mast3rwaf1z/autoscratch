@@ -1,9 +1,0 @@
-{
-  "name":"xcb-util-xrm-1.0",
-  "src":"https://github.com/Airblader/xcb-util-xrm/releases/download/v1.0/xcb-util-xrm-1.0.tar.gz",
-  "cmds":[
-    "./configure $XORG_CONFIG",
-    "make",
-    "make install"
-  ]
-}

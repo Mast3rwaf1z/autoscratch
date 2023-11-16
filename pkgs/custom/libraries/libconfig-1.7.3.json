@@ -1,0 +1,10 @@
+{
+    "name":"libconfig-1.7.3",
+    "src":"https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.3.tar.gz",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

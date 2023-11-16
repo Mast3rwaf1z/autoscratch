@@ -1,0 +1,18 @@
+{
+  "name":"Xorg build environment",
+  "src":null,
+  "build":[],
+  "config":[],
+  "install":[
+    "export XORG_PREFIX=/usr",
+    "export XORG_CONFIG=\"--prefix=$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static\"",
+    "mkdir -p /etc/profile.d",
+    "mkdir -p /etc/sudoers.d",
+    "cat > /etc/profile.d/xorg.sh << EOF\nXORG_PREFIX=\"$XORG_PREFIX\"\nXORG_CONFIG=\"--prefix=\\$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static\"\nexport XORG_PREFIX XORG_CONFIG\nEOF\nchmod 644 /etc/profile.d/xorg.sh",
+    "cat > /etc/sudoers.d/xorg << EOF\nDefaults env_keep += XORG_PREFIX\nDefaults env_keep += XORG_CONFIG\nEOF"
+  ],
+  "uninstall":[
+    "rm -r /etc/profile.d",
+    "rm -r /etc/sudoers.d"
+  ]
+}

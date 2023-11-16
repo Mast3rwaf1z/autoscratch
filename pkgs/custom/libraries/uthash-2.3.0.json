@@ -1,0 +1,13 @@
+{
+    "name":"uthash-2.3.0",
+    "src":"https://github.com/troydhanson/uthash/archive/refs/tags/v2.3.0.tar.gz",
+    "config":[
+    ],
+    "build":[],
+    "install":[
+        "cp include/* /usr/include"
+    ],
+    "uninstall":[
+        "for file in $(ls include); do rm /usr/include/$file; done"
+    ]
+}

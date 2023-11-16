@@ -1,0 +1,21 @@
+{
+  "name":"xmlto-0.0.28",
+  "src":"https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2",
+  "config":[
+    "LINKS=\"/usr/bin/links\" ./configure --prefix=/usr"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/extensible-markup-language/docbook-xml-4.5.json",
+    "pkgs/blfs/extensible-markup-language/docbook-xsl-nons-1.79.2.json",
+    "pkgs/blfs/general-libraries/libxslt-1.1.38.json"
+  ]
+}

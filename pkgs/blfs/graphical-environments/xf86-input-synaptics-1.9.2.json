@@ -1,0 +1,12 @@
+{
+	"name":"xf86-input-synaptics-1.9.2",
+	"src":"https://www.x.org/pub/individual/driver/xf86-input-synaptics-1.9.2.tar.xz",
+	"config":["./configure $XORG_CONFIG"],
+	"build":["make"],
+	"install":["make install"],
+	"uninstall":["make uninstall"],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Xorg-Server-21.1.8.json",
+		"pkgs/blfs/graphical-environments/libevdev-1.13.1.json"
+	]
+}

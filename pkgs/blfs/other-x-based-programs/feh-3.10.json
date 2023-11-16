@@ -1,0 +1,21 @@
+{
+    "name":"feh-3.10",
+    "src":"https://feh.finalrewind.org/feh-3.10.tar.bz2",
+    "config":[
+        "sed -i \"s:doc/feh:&-3.10:\" config.mk"
+    ],
+    "build":[
+        "make PREFIX=/usr"
+    ],
+    "install":[
+        "make PREFIX=/usr install"
+    ],
+    "uninstall":[
+        "make PREFIX=/usr uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/graphics-and-font-libraries/libpng-1.6.40.json",
+        "pkgs/blfs/graphical-environment-libraries/imlib2-1.12.0.json",
+        "pkgs/blfs/networking-libraries/cURL-8.2.1.json"
+    ]
+}

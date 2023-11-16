@@ -1,0 +1,24 @@
+{
+	"name":"tiff-4.5.1",
+	"src":"https://download.osgeo.org/libtiff/tiff-4.5.1.tar.gz",
+	"config":[
+		"mkdir -p libtiff-build",
+		"cd       libtiff-build",
+		"cmake -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/libtiff-4.5.1 -DCMAKE_INSTALL_PREFIX=/usr -G Ninja .."
+	],
+	"build":[
+    "cd libtiff-build",
+		"ninja"
+	],
+	"install":[
+    "cd libtiff-build",
+		"ninja install"
+	],
+	"uninstall":[
+    "cd libtiff-build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/programming/CMake-3.27.2.json"
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"name":"shared-mime-info-2.2",
+	"src":"https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.2/shared-mime-info-2.2.tar.gz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release -Dupdate-mimedb=true .."
+	],
+	"build":[
+    "cd build",
+		"ninja"
+	],
+	"install":[
+    "cd build",
+		"ninja install"
+	],
+	"uninstall":[
+    "cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/general-libraries/GLib-2.76.4.json",
+		"pkgs/blfs/general-libraries/libxml2-2.10.4.json"
+	]
+}

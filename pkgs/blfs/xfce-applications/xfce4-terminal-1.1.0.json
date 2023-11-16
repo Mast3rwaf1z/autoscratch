@@ -1,0 +1,12 @@
+{
+    "name":"xfce4-terminal-1.1.0",
+    "src":"https://archive.xfce.org/src/apps/xfce4-terminal/1.1/xfce4-terminal-1.1.0.tar.bz2",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"],
+    "depends":[
+        "pkgs/blfs/xfce-desktop/libxfce4ui-4.18.4.json",
+        "pkgs/blfs/gnome-libraries-and-desktop/VTE-0.72.2.json"
+    ]
+}

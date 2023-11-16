@@ -1,0 +1,29 @@
+{
+    "name":"linux-6.4.12",
+    "src":"https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.4.12.tar.xz",
+    "config":[
+        "touch /opt/kernel-config",
+        "cp /opt/kernel-config .config",
+        "make mrproper",
+        "make menuconfig",
+        "cp .config /opt/kernel-config"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make modules_install",
+        "cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.4.12-lfs-12.0-systemd",
+        "cp -iv System.map /boot/System.map-6.4.12",
+        "cp -iv .config /boot/config-6.4.12",
+        "cp -r Documentation -T /usr/share/doc/linux-6.4.12",
+        "install -v -m755 -d /etc/modprobe.d",
+        "echo \"# Begin /etc/modprobe.d/usb.conf\ninstall ohci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i ohci_hcd ; true\ninstall uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true\n# End /etc/modprobe.d/usb.conf\" > /etc/modprobe.d/usb.conf"
+    ],
+    "uninstall":[
+        "rm /boot/vmlinuz-6.4.12-lfs-12.0-systemd",
+        "rm /boot/System.map-6.4.12",
+        "rm /boot/config-6.4.12",
+        "rm /usr/share/doc/linux-6.4.12 -r"
+    ]
+}

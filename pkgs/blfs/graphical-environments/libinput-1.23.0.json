@@ -1,0 +1,25 @@
+{
+	"name":"libinput-1.23.0",
+	"src":"https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.23.0/libinput-1.23.0.tar.gz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=$XORG_PREFIX --buildtype=release -Ddebug-gui=false -Dtests=false -Dlibwacom=false -Dudev-dir=/usr/lib/udev .."
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"uninstall":[
+		"cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/libevdev-1.13.1.json",
+		"pkgs/blfs/general-libraries/mtdev-1.1.6.json"
+	]
+}

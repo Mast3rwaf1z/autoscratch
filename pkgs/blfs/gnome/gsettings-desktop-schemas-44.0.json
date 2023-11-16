@@ -1,0 +1,25 @@
+{
+	"name":"gsettings-desktop-schemas-44.0",
+	"src":"https://download.gnome.org/sources/gsettings-desktop-schemas/44/gsettings-desktop-schemas-44.0.tar.xz",
+	"config":[
+		"sed -i -r 's:\"(/system):\"/org/gnome\\1:g' schemas/*.in",
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=/usr --buildtype=release .."
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"uninstall":[
+		"cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
+	]
+}

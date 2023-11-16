@@ -1,0 +1,14 @@
+{
+	"name":"Mako-1.2.4",
+	"src":"https://files.pythonhosted.org/packages/source/M/Mako/Mako-1.2.4.tar.gz",
+	"config":[
+		"pip3 wheel -w dist --no-build-isolation --no-deps $PWD"
+	],
+	"build":[],
+	"install":[
+		"pip3 install --no-index --find-links dist --no-cache-dir --no-user Mako"
+	],
+	"uninstall":[
+		"pip3 uninstall --no-index --find-links dist --no-cache-dir --no-user Mako"
+	]
+}

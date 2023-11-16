@@ -1,8 +1,0 @@
-{
-	"name":"itstool-2.0.7",
-	"src":"https://files.itstool.org/itstool/itstool-2.0.7.tar.bz2",
-	"cmds":[
-		"PYTHON=/usr/bin/python3 ./configure --prefix=/usr &&",
-		"make",
-		"make install"
-	]}

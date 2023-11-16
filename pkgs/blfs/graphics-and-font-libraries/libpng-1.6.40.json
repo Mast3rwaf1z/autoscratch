@@ -1,0 +1,14 @@
+{
+    "name":"libpng-1.6.40",
+    "src":[
+        "https://downloads.sourceforge.net/libpng/libpng-1.6.40.tar.xz",
+        "https://downloads.sourceforge.net/sourceforge/libpng-apng/libpng-1.6.39-apng.patch.gz"
+    ],
+    "config":[
+        "gzip -cd ../libpng-1.6.39-apng.patch.gz | patch -p1",
+        "./configure --prefix=/usr --disable-static"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

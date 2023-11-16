@@ -1,0 +1,19 @@
+{
+    "name":"giflib-5.2.1",
+    "src":"https://sourceforge.net/projects/giflib/files/giflib-5.2.1.tar.gz",
+    "config":[],
+    "build":["make"],
+    "install":[
+        "make prefix=/usr install",
+        "rm -fv /usr/lib/libgif.a",
+        "find doc \\( -name Makefile\\* -o -name \\*.1 -o -name \\*.xml \\) -exec rm -v {} \\;",
+        "install -v -dm755 /usr/share/doc/giflib-5.2.1",
+        "cp -v -R doc/* /usr/share/doc/giflib-5.2.1"
+    ],
+    "uninstall":[
+        "make prefix=/usr uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/extensible-markup-language/xmlto-0.0.28.json"
+    ]
+}

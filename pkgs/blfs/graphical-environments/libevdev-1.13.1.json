@@ -1,0 +1,21 @@
+{
+	"name":"libevdev-1.13.1",
+	"src":"https://www.freedesktop.org/software/libevdev/libevdev-1.13.1.tar.xz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup .. --prefix=$XORG_PREFIX --buildtype=release -Ddocumentation=disabled"
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"uninstall":[
+		"cd build",
+		"ninja uninstall"
+	]
+}

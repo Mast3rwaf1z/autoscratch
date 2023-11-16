@@ -1,0 +1,26 @@
+{
+	"name":"mesa-23.1.6",
+	"src":"https://mesa.freedesktop.org/archive/mesa-23.1.6.tar.xz",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=$XORG_PREFIX --buildtype=release -Dplatforms=x11 -Dgallium-drivers=auto -Dvulkan-drivers=\"\" -Dvalgrind=disabled -Dlibunwind=disabled .."
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"uninstall":[
+		"cd build",
+		"ninja uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/graphical-environments/Xorg Libraries.json",
+		"pkgs/blfs/graphical-environment-libraries/Libdrm-2.4.115.json",
+		"pkgs/blfs/programming/Mako-1.2.4.json"
+	]
+}

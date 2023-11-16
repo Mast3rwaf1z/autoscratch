@@ -1,0 +1,20 @@
+{
+    "name":"autoscratch",
+    "src":null,
+    "config":[
+    ],
+    "build":[
+        "mkdir -p /usr/share/autoscratch",
+        "cp ../../{include,lists,pkgs,readme.md,autoscratch.py,scripts} -r /usr/share/autoscratch",
+        "mkdir -p /opt/autoscratch",
+        "touch /opt/autoscratch",
+        "mkdir -p /usr/share/autoscratch/build"
+    ],
+    "install":[
+        "echo '#!/bin/bash\ncd /usr/share/autoscratch\npython3 /usr/share/autoscratch/autoscratch.py $@ --db /opt/autoscratch/autoscratch.db3' > /usr/bin/autoscratch",
+        "chmod +x /usr/bin/autoscratch"
+    ],
+    "uninstall":[
+        "rm /usr/share/autoscratch -r"
+    ]
+}

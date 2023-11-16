@@ -1,0 +1,17 @@
+{
+	"name":"libgpg-error-1.47",
+	"src":"https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2",
+	"config":[
+		"./configure --prefix=/usr"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install",
+		"install -v -m644 -D README /usr/share/doc/libgpg-error-1.47/README"
+	],
+	"uninstall":[
+		"make uninstall"
+	]
+}

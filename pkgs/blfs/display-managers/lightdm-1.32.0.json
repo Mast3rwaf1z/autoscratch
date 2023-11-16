@@ -1,0 +1,46 @@
+{
+	"name":"lightdm-1.32.0",
+	"src":[
+		"https://github.com/CanonicalLtd/lightdm/releases/download/1.32.0/lightdm-1.32.0.tar.xz",
+		"https://github.com/Xubuntu/lightdm-gtk-greeter/releases/download/lightdm-gtk-greeter-2.0.8/lightdm-gtk-greeter-2.0.8.tar.gz",
+		"https://www.linuxfromscratch.org/blfs/downloads/12.0-systemd/blfs-systemd-units-20230816.tar.xz"
+	],
+	"config":[
+		"groupadd -g 65 lightdm",
+		"useradd -c \"Lightdm Daemon\" -d /var/lib/lightdm -u 65 -g lightdm -s /bin/false lightdm",
+		"./configure --prefix=/usr --libexecdir=/usr/lib/lightdm --localstatedir=/var --sbindir=/usr/bin --sysconfdir=/etc --disable-static --disable-tests --with-greeter-user=lightdm --with-greeter-session=lightdm-gtk-greeter --docdir=/usr/share/doc/lightdm-1.32.0"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install",
+		"cp tests/src/lightdm-session /usr/bin",
+		"sed -i '1 s/sh/bash --login/' /usr/bin/lightdm-session",
+		"rm -rf /etc/init",
+		"install -v -dm755 -o lightdm -g lightdm /var/lib/lightdm",
+		"install -v -dm755 -o lightdm -g lightdm /var/lib/lightdm-data",
+		"install -v -dm755 -o lightdm -g lightdm /var/cache/lightdm",
+		"install -v -dm770 -o lightdm -g lightdm /var/log/lightdm",
+		"tar -xf ../lightdm-gtk-greeter-2.0.8.tar.gz",
+		"./configure --prefix=/usr --libexecdir=/usr/lib/lightdm --sbindir=/usr/bin --sysconfdir=/etc --with-libxklavier --enable-kill-on-sigterm --disable-libido --disable-libindicator --disable-static --disable-maintainer-mode --docdir=/usr/share/doc/lightdm-gtk-greeter-2.0.8",
+		"make",
+		"make install",
+		"tar xf ../blfs-systemd-units-20230816.tar.xz",
+		"cd blfs-systemd-units-20230816",
+		"make install-lightdm"
+	],
+	"uninstall":[
+		"make uninstall"
+	],
+	"depends":[
+		"pkgs/blfs/xfce-desktop/Exo-4.18.0.json",
+		"pkgs/blfs/general-libraries/libgcrypt-1.10.2.json",
+		"pkgs/blfs/extensible-markup-language/itstool-2.0.7.json",
+		"pkgs/blfs/security/Linux-PAM-1.5.3.json",
+		"pkgs/blfs/graphical-environments/Xorg-Server-21.1.8.json",
+		"pkgs/blfs/programming/Vala-0.56.11.json",
+		"pkgs/blfs/graphical-environment-libraries/libxklavier-5.4.json",
+		"pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
+	]
+}

@@ -1,0 +1,19 @@
+{
+  "name":"libXau-1.0.11",
+  "src":"https://www.x.org/pub/individual/lib/libXau-1.0.11.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/xorgproto-2023.2.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+    "name":"iso-codes-4.15.0",
+    "src":"https://ftp.debian.org/debian/pool/main/i/iso-codes/iso-codes_4.15.0.orig.tar.xz",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"],
+    "uninstall":["make uninstall"]
+}

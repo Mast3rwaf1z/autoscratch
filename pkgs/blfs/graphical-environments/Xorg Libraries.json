@@ -1,0 +1,19 @@
+{
+  "name":"Xorg Libraries",
+  "src": null,
+  "config":[
+    "ls ../../scripts"
+  ],
+  "build":[
+    "bash ../../scripts/Xorg\\ Libraries.sh"
+  ],
+  "install":[],
+  "uninstall":[
+    "echo 'Please uninstall manually!'",
+    "exit 1"
+  ],
+	"depends":[
+    "pkgs/blfs/graphical-environments/libxcb-1.16.json",
+    "pkgs/blfs/graphics-and-font-libraries/Fontconfig-2.14.2.json"
+	]
+}

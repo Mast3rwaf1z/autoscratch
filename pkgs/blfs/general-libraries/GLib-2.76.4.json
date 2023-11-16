@@ -1,0 +1,31 @@
+{
+    "name":"glib-2.76.4",
+    "src":[
+        "https://download.gnome.org/sources/glib/2.76/glib-2.76.4.tar.xz",
+        "https://www.linuxfromscratch.org/patches/blfs/12.0/glib-skip_warnings-1.patch"
+    ],
+    "config":[
+        "patch -Np1 -i ../glib-skip_warnings-1.patch",
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=/usr --buildtype=release -Dman=true"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "mkdir -p /usr/share/doc/glib-2.76.4",
+        "cp -r ../docs/reference/{gio,glib,gobject} /usr/share/doc/glib-2.76.4"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/PCRE2-10.42.json",
+        "pkgs/blfs/general-libraries/libxslt-1.1.38.json"
+    ]
+}

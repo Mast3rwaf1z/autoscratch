@@ -1,0 +1,20 @@
+{
+  "name":"xcb-util-cursor-0.1.4",
+  "src":"https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.4.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/xcb-util-image-0.4.1.json",
+    "pkgs/blfs/graphical-environments/xcb-util-renderutil-0.3.10.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+	"name":"Xorg Applications",
+	"src":null,
+	"config":[
+    	"ls ../../scripts"
+	],
+	"build":[
+		"bash ../../scripts/Xorg\\ Applications.sh"
+	],
+	"install":[],
+	"uninstall":[
+		"echo 'please uninstall manually!'",
+		"exit 1"
+	],
+    "depends":[
+		"pkgs/blfs/graphical-environments/xcb-util-0.4.1.json",
+		"pkgs/blfs/graphical-environments/xbitmaps-1.1.3.json",
+		"pkgs/blfs/graphical-environments/Mesa-23.1.6.json",
+		"pkgs/blfs/graphics-and-font-libraries/libpng-1.6.40.json"
+    ]
+}

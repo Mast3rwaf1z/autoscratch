@@ -1,0 +1,19 @@
+{
+  "name":"xcb-util-0.4.1",
+  "src":"https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/libxcb-1.16.json"
+  ]
+}

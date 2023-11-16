@@ -1,0 +1,19 @@
+{
+  "name":"libXdmcp-1.1.4",
+  "src":"https://www.x.org/pub/individual/lib/libXdmcp-1.1.4.tar.xz",
+  "config":[
+    "./configure $XORG_CONFIG --docdir=/usr/share/doc/libXdmcp-1.1.4"
+  ],
+  "build":[
+    "make"
+  ],
+  "install":[
+    "make install"
+  ],
+  "uninstall":[
+    "make uninstall"
+  ],
+  "depends":[
+    "pkgs/blfs/graphical-environments/xorgproto-2023.2.json"
+  ]
+}
