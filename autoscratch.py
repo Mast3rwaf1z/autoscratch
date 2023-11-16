@@ -20,7 +20,7 @@ match mode:
         try:
             targets = Package(installTarget).generateList()
             print(f"targets({len(targets)}): ", end="")
-            for target in targets: print(f'{Package(target).name}', end="")
+            for target in targets: print(f'{Package(target).name}\t', end="")
             if not input("\nProceed with installation? [Y/n]: ").lower() == "y": exit(0)
             timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
             print("-"*10)
