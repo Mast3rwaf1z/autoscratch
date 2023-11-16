@@ -18,7 +18,7 @@ packageManager = PackageManager()
 match mode:
     case "install":
         try:
-            targets = Package(installTarget).generateList()
+            targets = packageManager.generatePackageList(Package(installTarget))
             print(f"targets({len(targets)}): ", end="\r\t\t")
             for i, target in enumerate(targets): 
                 if i%5 == 0 and not i == 0: # newline every 5 prints
