@@ -3,7 +3,7 @@
     "src":"https://github.com/vivien/i3blocks/archive/refs/tags/1.5.tar.gz",
     "config":[
         "./autogen.sh",
-        "./configure --prefix=/usr --buildtype=release"
+        "./configure --prefix=/usr"
     ],
     "build":[
         "make"
