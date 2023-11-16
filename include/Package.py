@@ -1,7 +1,7 @@
 from json import loads
 from subprocess import check_call, DEVNULL
 from sys import argv
-from Database import Database
+from include.Database import Database
 
 from include.Arguments import quiet
 
