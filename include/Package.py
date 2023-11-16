@@ -1,7 +1,6 @@
 from json import loads
 from subprocess import check_call, DEVNULL
 from sys import argv
-from include.Database import Database
 
 from include.Arguments import quiet
 
@@ -32,7 +31,7 @@ class Package:
         self.dependencies = config["depends"] if "depends" in config else []
 
     def generateList(self) -> list[str]:
-        packages = list(dict.fromkeys(sum([Package(dependency).generateList() for dependency in self.dependencies if not dependency in Database.singleton], []) + [self.path]))
+        packages = list(dict.fromkeys(sum([Package(dependency).generateList() for dependency in self.dependencies], []) + [self.path]))
         return packages
 
     def configure(self):

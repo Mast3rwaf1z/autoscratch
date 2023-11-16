@@ -2,6 +2,7 @@ from subprocess import check_call, DEVNULL, check_output
 from sys import argv
 from json import loads
 
+from include.Package import Package
 from include.Logger import info
 from include.Arguments import quiet
 
@@ -24,7 +25,7 @@ class Database:
             stderr=DEVNULL if quiet else None, 
             stdout=DEVNULL if quiet else None)
         
-    def add(package):
+    def add(package:Package):
         if not Database.singleton: Database.initialize()
         return check_call(
             [
@@ -34,7 +35,7 @@ class Database:
             ], 
             stderr=DEVNULL if quiet else None, 
             stdout=DEVNULL if quiet else None)
-    def addTiming(package, type:str, value:float):
+    def addTiming(package:Package, type:str, value:float):
         if not Database.singleton: Database.initialize()
         check_call(
             [
@@ -53,17 +54,17 @@ class Database:
             stderr=DEVNULL if quiet else None, 
             stdout=DEVNULL if quiet else None)
     
-    def update(package, field:str, value:bool):
+    def update(package:Package | str, field:str, value:bool):
         if not Database.singleton: Database.initialize()
         return check_call(
             [
                 "sqlite3",
                 Database.path,
-                f"update packages set {field} = {'true' if value else 'false'} where name = '{package.name if not isinstance(package, str) else package}'"
+                f"update packages set {field} = {'true' if value else 'false'} where name = '{package.name if isinstance(package, Package) else package}'"
             ]
         )
     
-    def getPackage(package) -> dict[str, str | bool]:
+    def getPackage(package:Package) -> dict[str, str | bool]:
         if not Database.singleton: Database.initialize()
         data = loads(check_output(
             [
