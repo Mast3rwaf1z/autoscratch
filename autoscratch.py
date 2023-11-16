@@ -18,14 +18,14 @@ packageManager = PackageManager()
 match mode:
     case "install":
         try:
-            targets = Package(installTarget).generateList()
+            targets = packageManager.generatePackageList(Package(installTarget))
             print(f"targets({len(targets)}): ", end="\r\t\t")
             for i, target in enumerate(targets): 
                 if i%5 == 0 and not i == 0: # newline every 5 prints
                     print("\n\t\t", end="")
                 print(f'{Package(target).name} ', end="")
             if not input("\n\nProceed with installation? [Y/n]: ").lower() == "y": exit(0)
-            timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
+            timings = {Package(package):packageManager.install(Package(package)) for package in targets}
             print("-"*10)
             print("Stats")
             for key in timings.keys():

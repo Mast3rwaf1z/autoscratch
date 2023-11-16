@@ -4,6 +4,7 @@ from sys import argv
 
 from include.Arguments import quiet
 
+
 class Package:
     name:str = ""
     src:str | list[str] | None = ""
@@ -29,11 +30,6 @@ class Package:
         self.installPhase = config["install"]
         self.uninstallPhase = config["uninstall"]
         self.dependencies = config["depends"] if "depends" in config else []
-
-    def generateList(self, visited=[]) -> list[str]:
-        packages = list(dict.fromkeys(sum([Package(dependency).generateList(visited) for dependency in self.dependencies if not dependency in visited], []) + [self.path]))
-        visited += self.dependencies
-        return packages
 
     def configure(self):
         filename = f"/tmp/{self.name}-config.sh"
