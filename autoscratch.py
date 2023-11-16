@@ -5,7 +5,7 @@ from os import geteuid
 from subprocess import check_output
 
 from include.Logger import warning
-from include.Arguments import dbFile, listFile, listMode, mode, installTarget, uninstallTarget, quiet, searchTarget
+from include.Arguments import dbFile, mode, installTarget, uninstallTarget, quiet, searchTarget
 
 if not geteuid() == 0:
     print("\033[38;2;255;0;0mERROR:\033[0m You are not root!")
@@ -18,11 +18,14 @@ packageManager = PackageManager()
 match mode:
     case "install":
         try:
-            if listMode:
-                with open(listFile, "r") as file:
-                    timings = {Package(package):packageManager.install(Package(package)) for package in file.read().split("\n")}
-            else:
-                timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
+            targets = Package(installTarget).generateList()
+            print(f"targets({len(targets)}): ", end="\r\t\t")
+            for i, target in enumerate(targets): 
+                if i%5 == 0 and not i == 0: # newline every 5 prints
+                    print("\n\t\t", end="")
+                print(f'{Package(target).name} ', end="")
+            if not input("\n\nProceed with installation? [Y/n]: ").lower() == "y": exit(0)
+            timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
             print("-"*10)
             print("Stats")
             for key in timings.keys():

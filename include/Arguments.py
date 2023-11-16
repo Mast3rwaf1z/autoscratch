@@ -4,10 +4,6 @@ mode = argv[1]
 
 quiet = not "--verbose" in argv or "-v" in argv
 
-listMode = "--list" in argv or "-l" in argv
-
-listFile = argv[argv.index("--list")+1] if "--list" in argv else argv[argv.index("-l")+1] if listMode else None
-
 reinstall = "--reinstall" in argv or "-r" in argv
 
 dbFile = argv[argv.index("--db")+1] if "--db" in argv else "db_new.db3"
