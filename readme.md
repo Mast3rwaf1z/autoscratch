@@ -4,17 +4,18 @@ This project defines a package manager where all packages are defined locally an
 # install
 it is recommended to use the tool to install which and sqlite3 twice to record them into the database using itself
 ```sh
-python3 autoscratch.py single pkgs/Which-2.21.json
-python3 autoscratch.py single pkgs/SQLite-3.42.0.json
+python3 autoscratch.py install pkgs/blfs/system-utilities/Which-2.21.json
+python3 autoscratch.py install pkgs/blfs/databases/SQLite-3.42.0.json
+python3 autoscratch.py install pkgs/custom/autoscratch.json
 ```
 
 # usage
 there are a few commands defined:
 ```sh
-# this command installs a single package regardless of dependency installation
-python3 autoscratch.py single pkgs/<pkgname>-<pkgver>.json
-# this command takes a file containing a list of (relative) paths to package configurations, such that packages can be installed in the correct order
-python3 autoscratch.py orderfile <orderfile-path>
+# this command installs a single package
+autoscratch install <path-to-config>.json
 # lists all installed packages
-python3 autoscratch.py list
+autoscratch list
+# searches package definitions for a file, uses `find` under the hood
+autoscratch search <search string>
 ```
