@@ -20,6 +20,7 @@
     ],
     "depends":[
         "pkgs/custom/libraries/uthash-2.3.0.json",
+        "pkgs/custom/libraries/libconfig-1.7.3.json",
         "pkgs/blfs/graphical-environments/Xorg Libraries.json",
         "pkgs/blfs/graphical-environments/libxcb-1.16.json",
         "pkgs/blfs/graphical-environments/xcb-proto-1.16.0.json",
