@@ -24,7 +24,7 @@ match mode:
                 if i%5 == 0 and not i == 0: # newline every 5 prints
                     print("\n\t\t", end="")
                 print(f'{Package(target).name} ', end="")
-            if not input("\n\nProceed with installation? [Y/n]: ").lower() == "y": exit(0)
+            if not input("\n\nProceed with installation? [Y/n]: ").lower() in ["y", "", "yes"]: exit(0)
             timings = {Package(package):packageManager.install(Package(package)) for package in targets}
             print("-"*10)
             print("Stats")
