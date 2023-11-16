@@ -1,0 +1,16 @@
+{
+    "name":"libcups-3.0b2",
+    "src":"https://github.com/OpenPrinting/libcups/releases/download/v3.0b2/libcups-3.0b2-source.tar.gz",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ]
+}

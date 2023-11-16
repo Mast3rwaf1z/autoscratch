@@ -11,5 +11,8 @@
     "uninstall":[
         "rm /usr/bin/discord",
         "rm -r /usr/share/Discord"
+    ],
+    "depends":[
+        "pkgs/custom/libraries/libcups-3.0b2.json"
     ]
 }
