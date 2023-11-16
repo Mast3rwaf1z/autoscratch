@@ -8,7 +8,7 @@ from include.Arguments import quiet
 
 class listContainer:
     def __init__(self, field):
-        self.generator = lambda: [row[field] for row in Database.getAll()]
+        self.generator = lambda: [row["name"] for row in Database.getAll() if row[field] == 1]
 
     def __iter__(self):
         self.value = self.generator()
