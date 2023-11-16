@@ -29,7 +29,7 @@ class PackageManager:
 
     def install(self, package:Package) -> dict[str, float]:
         global statusMessage, shouldPrint
-        if not package.name in Database.singleton:
+        if not package.name in Database.installed or package.name in Database.built or package.name in Database.configured:
             Database.add(package)
 
         shouldPrint = True
@@ -93,5 +93,5 @@ class PackageManager:
             Database.update(package["name"], "built", False)
 
     def generatePackageList(self, initial:Package):
-        packages = list(dict.fromkeys(sum([self.generatePackageList(Package(package)) for package in initial.dependencies if not Package(package).name in Database.singleton], []))) + [initial.path]
+        packages = list(dict.fromkeys(sum([self.generatePackageList(Package(package)) for package in initial.dependencies if not Package(package).name in Database.installed], []))) + [initial.path]
         return packages

@@ -6,9 +6,28 @@ from include.Package import Package
 from include.Logger import info
 from include.Arguments import quiet
 
+class listContainer:
+    def __init__(self, field):
+        self.generator = lambda: [row[field] for row in Database.getAll()]
+
+    def __iter__(self):
+        self.value = self.generator()
+        self.__i__ = 0
+        return self
+    def __next__(self):
+        if self.__i__ == len(self.value):
+            raise StopIteration
+        value = self.value[self.__i__]
+        self.__i__ += 1
+        return value
+
+
 class Database:
     path:str = ""
     singleton = None
+    installed = listContainer("installed")
+    built = listContainer("built")
+    configured = listContainer("configured")
 
     def initialize(filepath="/opt/autoscratch/db.db3"):
         info("Initializing database singleton")
@@ -94,16 +113,3 @@ class Database:
             "select * from packages",
             "-table"
         ]).decode())
-
-    
-    def __iter__(self):
-        self.__names__ = [package["name"] for package in Database.getAll()]
-        self.__i__ = 0
-        return self
-    def __next__(self):
-
-        if self.__i__ == len(self.__names__):
-            raise StopIteration
-        name = self.__names__[self.__i__]
-        self.__i__ += 1
-        return name
