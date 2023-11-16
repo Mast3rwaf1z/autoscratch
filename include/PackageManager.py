@@ -29,7 +29,7 @@ class PackageManager:
 
     def install(self, package:Package) -> dict[str, float]:
         global statusMessage, shouldPrint
-        if not package.name in Database.installed or package.name in Database.built or package.name in Database.configured:
+        if not package.name in Database.installed or not package.name in Database.built or not package.name in Database.configured:
             Database.add(package)
 
         shouldPrint = True
