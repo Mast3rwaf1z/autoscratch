@@ -10,7 +10,8 @@
         "touch /opt/autoscratch"
     ],
     "install":[
-        "echo '#!/bin/bash\npython3 /usr/share/autoscratch.py $@ --db /opt/autoscratch/autoscratch.db3' > /usr/bin/autoscratch"
+        "echo '#!/bin/bash\npython3 /usr/share/autoscratch.py $@ --db /opt/autoscratch/autoscratch.db3' > /usr/bin/autoscratch",
+        "chmod +x /usr/bin/autoscratch"
     ],
     "uninstall":[
         "rm /usr/share/autoscratch -r"
