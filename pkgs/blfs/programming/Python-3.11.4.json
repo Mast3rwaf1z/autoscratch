@@ -1,0 +1,20 @@
+{
+    "name":"Python-3.11.4",
+    "src":"https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tar.xz",
+    "config":[
+        "CXX=\"/usr/bin/g++\"",
+        "./configure --prefix=/usr --enable-shared --with-system-expat --with-system-ffi --enable-optimizations"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/databases/SQLite-3.42.0.json"
+    ]
+}
