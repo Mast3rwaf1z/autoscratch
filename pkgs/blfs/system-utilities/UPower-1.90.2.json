@@ -1,5 +1,5 @@
 {
-    "name":"upower-1.90.2",
+    "name":"upower-v1.90.2",
     "src":"https://gitlab.freedesktop.org/upower/upower/-/archive/v1.90.2/upower-v1.90.2.tar.bz2",
     "config":[
         "sed '/parse_version/d' -i src/linux/integration-test.py",
