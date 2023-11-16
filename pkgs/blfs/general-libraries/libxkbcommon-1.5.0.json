@@ -4,7 +4,7 @@
     "config":[
         "mkdir build",
         "cd build",
-        "meson setup .. --prefix=/usr --buildtype=release -Denable-docs=false"
+        "meson setup .. --prefix=/usr --buildtype=release -Denable-docs=false -Denable-wayland=false"
     ],
     "build":[
         "cd build",
