@@ -5,7 +5,7 @@
     ],
     "build":[
         "mkdir -p /usr/share/autoscratch",
-        "cp ../../{include,lists,pkgs,readme.md,autoscratch.py} -r /usr/share/autoscratch",
+        "cp ../../{include,lists,pkgs,readme.md,autoscratch.py,scripts} -r /usr/share/autoscratch",
         "mkdir -p /opt/autoscratch",
         "touch /opt/autoscratch",
         "mkdir -p /usr/share/autoscratch/build"
