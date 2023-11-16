@@ -25,7 +25,7 @@ match mode:
                     print("\n\t\t", end="")
                 print(f'{Package(target).name} ', end="")
             if not input("\n\nProceed with installation? [Y/n]: ").lower() == "y": exit(0)
-            timings = {Package(package):packageManager.install(Package(package)) for package in Package(installTarget).generateList()}
+            timings = {Package(package):packageManager.install(Package(package)) for package in targets}
             print("-"*10)
             print("Stats")
             for key in timings.keys():

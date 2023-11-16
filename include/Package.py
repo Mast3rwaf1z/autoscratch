@@ -1,6 +1,7 @@
 from json import loads
 from subprocess import check_call, DEVNULL
 from sys import argv
+from Database import Database
 
 from include.Arguments import quiet
 
@@ -30,9 +31,8 @@ class Package:
         self.uninstallPhase = config["uninstall"]
         self.dependencies = config["depends"] if "depends" in config else []
 
-    def generateList(self, visited=[]) -> list[str]:
-        packages = list(dict.fromkeys(sum([Package(dependency).generateList(visited) for dependency in self.dependencies if not dependency in visited], []) + [self.path]))
-        visited += self.dependencies
+    def generateList(self) -> list[str]:
+        packages = list(dict.fromkeys(sum([Package(dependency).generateList() for dependency in self.dependencies if not dependency in Database.singleton], []) + [self.path]))
         return packages
 
     def configure(self):
