@@ -25,10 +25,10 @@ class Package:
         self.path = filepath
         self.name = config["name"]
         self.src = config["src"]
-        self.configPhase = config["config"]
-        self.buildPhase = config["build"]
+        self.configPhase = config["config"] if "config" in config else []
+        self.buildPhase = config["build"] if "build" in config else []
         self.installPhase = config["install"]
-        self.uninstallPhase = config["uninstall"]
+        self.uninstallPhase = config["uninstall"] if "uninstall" in config else []
         self.dependencies = config["depends"] if "depends" in config else []
 
     def configure(self):
