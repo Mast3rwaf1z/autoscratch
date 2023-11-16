@@ -8,15 +8,16 @@ from include.Logger import info, error, ok
 from include.Arguments import quiet, reinstall
 
 statusMessage = ""
+shouldPrint = False
 
 def loading():
-    global statusMessage
+    global statusMessage, shouldPrint
     counter = 0
     chars = ["|", "/", "-", "\\"]
     start = now = time()
     while True:
         sleep(.5)
-        print(f'\r{chars[counter]} | {int(now-start)}s | {statusMessage}\033[0K', end="")
+        if shouldPrint: print(f'\r{chars[counter]} | {int(now-start)}s | {statusMessage}\033[0K', end="")
         counter = counter + 1 if counter < (len(chars)-1) else 0
         now = time()
 
@@ -27,10 +28,11 @@ class PackageManager:
             self.loader.start()
 
     def install(self, package:Package) -> dict[str, float]:
-        global statusMessage
+        global statusMessage, shouldPrint
         if not package.name in Database.singleton:
             Database.add(package)
 
+        shouldPrint = True
         timings = {}
         then = time()
         statusMessage = f"Configuring {package.name}..."
@@ -64,6 +66,7 @@ class PackageManager:
         else:
             error(f"Failed to install {package.name}")
         timings["install"] = time() - then
+        shouldPrint = False
 
         return timings
 
