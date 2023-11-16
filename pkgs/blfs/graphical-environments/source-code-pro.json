@@ -4,7 +4,7 @@
     "config":[],
     "build":[],
     "install":[
-        "install -v -m755 /usr/share/fonts/source-code-pro",
+        "install -v -d -m755 /usr/share/fonts/source-code-pro",
         "install -v -m644 OTF/*.otf /usr/share/fonts/source-code-pro",
         "fc-cache -v /usr/share/fonts/source-code-pro"
     ],
