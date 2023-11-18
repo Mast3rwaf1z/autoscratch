@@ -6,13 +6,14 @@
     ],
     "build":[],
     "install":[
-        "ln -s /usr/share/Discord/Discord /usr/bin/discord"
+        "ln -sf /usr/share/Discord/Discord /usr/bin/discord",
+	"chmod 4755 /usr/share/Discord/chrome-sandbox"
     ],
     "uninstall":[
         "rm /usr/bin/discord",
         "rm -r /usr/share/Discord"
     ],
     "depends":[
-        "pkgs/custom/libraries/libcups-3.0b2.json"
+        "pkgs/blfs/printing/Cups-2.4.6.json"
     ]
 }

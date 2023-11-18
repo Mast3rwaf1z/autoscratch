@@ -1,0 +1,10 @@
+{
+	"name":"libdaemon-0.14",
+	"src":"https://0pointer.de/lennart/projects/libdaemon/libdaemon-0.14.tar.gz",
+	"config":[
+		"./configure --prefix=/usr --disable-static"
+	],
+	"build":["make"],
+	"install":["make docdir=/usr/share/doc/libdaemon-0.14 install"],
+	"uninstall":["make docdir=/usr/share/doc/libdaemon-0.14 uninstall"]
+}

@@ -90,4 +90,4 @@ class Package:
             for line in self.uninstallPhase:
                 file.write(f"{line}\n")
 
-        return process(["bash", filename], stdout=DEVNULL if quiet else None, stdin=DEVNULL if quiet else None)
+        return process(["bash", filename], stdout=DEVNULL if quiet else None, stderr=DEVNULL if quiet else None)

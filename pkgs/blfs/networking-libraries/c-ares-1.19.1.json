@@ -7,9 +7,11 @@
         "cmake  -DCMAKE_INSTALL_PREFIX=/usr .."
     ],
     "build":[
+	"cd build",
         "make"
     ],
     "install":[
+	"cd build",
         "make install"
     ],
     "depends":[

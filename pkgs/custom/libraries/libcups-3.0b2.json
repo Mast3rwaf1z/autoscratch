@@ -1,8 +1,8 @@
 {
-    "name":"libcups-3.0b2",
-    "src":"https://github.com/OpenPrinting/libcups/releases/download/v3.0b2/libcups-3.0b2-source.tar.gz",
+    "name":"libcups-3.0b1",
+    "src":"https://github.com/OpenPrinting/libcups/releases/download/v3.0b1/libcups-3.0b1-source.tar.gz",
     "config":[
-        "./configure --prefix=/usr"
+        "./configure --prefix=/usr --disable-static"
     ],
     "build":[
         "make"
@@ -12,5 +12,8 @@
     ],
     "uninstall":[
         "make uninstall"
+    ],
+    "depends":[
+	    "pkgs/blfs/networking-libraries/Avahi-0.8.json"
     ]
 }

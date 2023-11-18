@@ -1,5 +1,5 @@
 {
-    "name":"pulseAudio-16.1",
+    "name":"pulseaudio-16.1",
     "src":"https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-16.1.tar.xz",
     "config":[
         "mkdir build",

@@ -1,0 +1,34 @@
+{
+	"name":"avahi-0.8",
+	"src":[
+		"https://github.com/lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz",
+		"https://www.linuxfromscratch.org/patches/blfs/12.0/avahi-0.8-ipv6_race_condition_fix-1.patch"
+	],
+	"config":[
+		"groupadd -fg 84 avahi",
+		"useradd -c \"Avahi Daemon Owner\" -d /run/avahi-daemon -u 84 -g avahi -s /bin/false",
+		"groupadd -fg 86 netdev",
+		"patch -Np1 -i ../avahi-0.8-ipv6_race_condition_fix-1.patch",
+		"sed -i '426a if (events & AVAHI_WATCH_HUP) { client_free(c); return; }' avahi-daemon/simple-protocol.c",
+		"./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static --disable-libevent --disable-mono --disable-monodoc --disable-python --disable-qt3 --disable-qt4 --enable-core-docs --with-distro=none --with-dbus-system-address='unix:path=/run/dbus/system_bus_socket' --disable-qt5"
+	],
+	"build":[
+		"make"
+	],
+	"install":[
+		"make install",
+		"systemctl enable avahi-daemon",
+		"systemctl enable avahi-dnsconfd"
+	],
+	"uninstall":[
+		"systemctl disable --now avahi-daemon",
+		"systemctl disable --now avahi-dnsconfd",
+		"make uninstall"
+	],
+	"depends":[
+		"./pkgs/blfs/general-libraries/GLib-2.76.4.json",
+		"./pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json",
+		"./pkgs/blfs/graphical-environment-libraries/GTK+-3.24.38.json",
+		"pkgs/blfs/general-libraries/libdaemon-0.14.json"
+	]
+}
