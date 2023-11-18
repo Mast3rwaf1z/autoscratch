@@ -18,10 +18,24 @@
         "make -C doc html"
     ],
     "install":[
+        "cd build",
         "make install",
         "install -v -m755 -d /usr/share/doc/gnupg-2.4.3/html",
         "install -v -m644    doc/gnupg_nochunks.html /usr/share/doc/gnupg-2.4.3/html/gnupg.html",
         "install -v -m644    ../doc/*.texi doc/gnupg.txt /usr/share/doc/gnupg-2.4.3",
         "install -v -m644    doc/gnupg.html/* /usr/share/doc/gnupg-2.4.3/html"
+    ],
+    "uninstall":[
+        "cd build",
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libassuan-2.5.6.json",
+        "pkgs/blfs/general-libraries/libgcrypt-1.10.2.json",
+        "pkgs/blfs/general-libraries/libksba-1.6.4.json",
+        "pkgs/blfs/general-libraries/npth-1.6.json",
+        "pkgs/blfs/other-server-software/OpenLDAP-2.6.6.json",
+        "pkgs/blfs/security/GnuTLS-3.8.1.json",
+        "pkgs/blfs/general-utilities/pinentry-1.2.1.json"
     ]
 }
