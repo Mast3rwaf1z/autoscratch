@@ -1,0 +1,23 @@
+{
+    "name":"fuse-3.16.1",
+    "src":"https://github.com/libfuse/libfuse/releases/download/fuse-3.16.1/fuse-3.16.1.tar.gz",
+    "config":[
+        "sed -i '/^udev/,$ s/^/#/' util/meson.build",
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release .."
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install",
+        "chmod u+s /usr/bin/fusermount3",
+        "cd ..",
+        "cp -Rv doc/html -T /usr/share/doc/fuse-3.16.1",
+        "install -v -m644   doc/{README.NFS,kernel.txt} /usr/share/doc/fuse-3.16.1",
+        "cat > /etc/fuse.conf << \"EOF\"\n# Set the maximum number of FUSE mounts allowed to non-root users.\n# The default is 1000.\n#\n#mount_max = 1000\n# Allow non-root users to specify the 'allow_other' or 'allow_root'\n# mount options.\n#\nuser_allow_other\nEOF"
+    ]
+}

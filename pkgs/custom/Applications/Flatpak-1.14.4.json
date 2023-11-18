@@ -14,6 +14,7 @@
         "make uninstall"
     ],
     "depends":[
-        "pkgs/blfs/security/GPGME-1.21.0.json"
+        "pkgs/blfs/security/GPGME-1.21.0.json",
+        "pkgs/blfs/file-systems-and-disk-management/Fuse-3.16.1.json"
     ]
 }
