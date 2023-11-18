@@ -1,0 +1,16 @@
+{
+    "name":"libstemmer_c-2.2.0",
+    "src":"https://snowballstem.org/dist/libstemmer_c-2.2.0.tar.gz",
+    "config":[],
+    "build":[
+        "make PREFIX=/usr"
+    ],
+    "install":[
+        "cp src_c/*.h /usr/include",
+        "cp include/libstemmer.h /usr/include",
+        "cp libstemmer/libstemmer.o /usr/lib"
+    ],
+    "uninstall":[
+        "make PREFIX=/usr uninstall"
+    ]
+}
