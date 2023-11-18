@@ -1,0 +1,11 @@
+{
+    "name":"OpenJDK-20.0.2+9-x86_64-bin",
+    "src":"https://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-20.0.2/OpenJDK-20.0.2+9-x86_64-bin.tar.xz",
+    "install":[
+        "install -vdm755 /opt/OpenJDK-20.0.2-bin",
+        "mv -v * /opt/OpenJDK-20.0.2-bin",
+        "chown -R root:root /opt/OpenJDK-20.0.2-bin",
+        "ln -sfn OpenJDK-20.0.2-bin /opt/jdk",
+        "bash ../../scripts/Java-20.0.2-install.sh"
+    ]
+}
