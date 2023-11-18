@@ -1,0 +1,23 @@
+{
+    "name":"snowball-2.2.0",
+    "src":null,
+    "config":[
+        "git clone https://github.com/snowballstem/snowball",
+        "cd snowball",
+        "git switch 48a67a2831005f49c48ec29a5837640e23e54e6b --detach",
+        "git apply ../../scripts/snowball-2.2.0.diff"
+    ],
+    "build":[
+        "cd snowball",
+        "make"
+    ],
+    "install":[
+        "cd snowball",
+        "install -Dt \"/usr/include\" -m644 include/libstemmer.h",
+        "install -Dm644 libstemmer.so.0 /usr/lib/libstemmer.so.0.0.0",
+        "ln -s libstemmer.so.0.0.0 \"/usr/lib/libstemmer.so.0\"",
+        "ln -s libstemmer.so.0 \"/usr/lib/libstemmer.so\"",
+        "install -Dt \"/usr/share/licenses/libstemmer\" -m644 COPYING"
+    ],
+    "uninstall":[]
+}

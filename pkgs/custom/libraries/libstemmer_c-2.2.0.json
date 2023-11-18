@@ -7,8 +7,7 @@
     ],
     "install":[
         "cp src_c/*.h /usr/include",
-        "cp include/libstemmer.h /usr/include",
-        "cp libstemmer/libstemmer.o /usr/lib"
+        "cp include/libstemmer.h /usr/include"
     ],
     "uninstall":[
         "make PREFIX=/usr uninstall"
