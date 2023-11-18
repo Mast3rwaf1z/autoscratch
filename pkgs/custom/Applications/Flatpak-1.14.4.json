@@ -15,6 +15,7 @@
     ],
     "depends":[
         "pkgs/blfs/security/GPGME-1.21.0.json",
-        "pkgs/blfs/file-systems-and-disk-management/Fuse-3.16.1.json"
+        "pkgs/blfs/file-systems-and-disk-management/Fuse-3.16.1.json",
+        "pkgs/custom/libraries/ostree-2023.7.json"
     ]
 }

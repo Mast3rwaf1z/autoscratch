@@ -1,0 +1,16 @@
+{
+    "name":"libostree-2023.7",
+    "src":"https://github.com/ostreedev/ostree/releases/download/v2023.7/libostree-2023.7.tar.xz",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ]
+}
