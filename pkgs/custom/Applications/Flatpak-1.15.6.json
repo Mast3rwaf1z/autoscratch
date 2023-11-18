@@ -2,16 +2,21 @@
     "name":"flatpak-1.15.6",
     "src":"https://github.com/flatpak/flatpak/releases/download/1.15.6/flatpak-1.15.6.tar.xz",
     "config":[
-        "./configure --prefix=/usr"
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release -Dtests=false .."
     ],
     "build":[
-        "make"
+        "cd build",
+        "ninja"
     ],
     "install":[
-        "make install"
+        "cd build",
+        "ninja install"
     ],
     "uninstall":[
-        "make uninstall"
+        "cd build",
+        "ninja uninstall"
     ],
     "depends":[
         "pkgs/blfs/security/GPGME-1.21.0.json",
