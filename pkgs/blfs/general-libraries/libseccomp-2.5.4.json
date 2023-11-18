@@ -1,0 +1,9 @@
+{
+    "name":"libseccomp-2.5.4",
+    "src":"https://github.com/seccomp/libseccomp/releases/download/v2.5.4/libseccomp-2.5.4.tar.gz",
+    "config":[
+        "./configure --prefix=/usr --disable-static"
+    ],
+    "build":["make"],
+    "install":["make install"]
+}

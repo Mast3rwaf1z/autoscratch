@@ -18,6 +18,7 @@
         "pkgs/blfs/file-systems-and-disk-management/Fuse-3.16.1.json",
         "pkgs/custom/libraries/ostree-2023.7.json",
         "pkgs/blfs/general-libraries/JSON-GLib-1.6.6.json",
-        "pkgs/custom/libraries/AppStream-1.0.0.json"
+        "pkgs/custom/libraries/AppStream-1.0.0.json",
+        "pkgs/blfs/general-libraries/libseccomp-2.5.4.json"
     ]
 }
