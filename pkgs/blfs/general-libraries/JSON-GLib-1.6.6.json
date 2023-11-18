@@ -1,0 +1,22 @@
+{
+    "name":"json-glib-1.6.6",
+    "src":"https://download.gnome.org/sources/json-glib/1.6/json-glib-1.6.6.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release .."
+    ],
+    "build":[
+        "ninja"
+    ],
+    "install":[
+        "ninja install"
+    ],
+    "uninstall":[
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+        "pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json"
+    ]
+}
