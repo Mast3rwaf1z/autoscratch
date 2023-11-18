@@ -5,7 +5,7 @@
         "git clone https://github.com/snowballstem/snowball",
         "cd snowball",
         "git switch 48a67a2831005f49c48ec29a5837640e23e54e6b --detach",
-        "git apply ../../scripts/snowball-2.2.0.diff"
+        "git apply ../../../scripts/snowball-2.2.0.diff"
     ],
     "build":[
         "cd snowball",
