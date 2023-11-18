@@ -1,0 +1,12 @@
+{
+    "name":"attr-2.5.1",
+    "src":"https://download.savannah.gnu.org/releases/attr/attr-2.5.1.tar.gz",
+    "config":[
+        "./configure --prefix=/usr     --disable-static  --sysconfdir=/etc --docdir=/usr/share/doc/attr-2.5.1"
+    ],
+    "build":["make"],
+    "install":[
+        "make install"
+    ],
+    "uninstall":["make uninstall"]
+}

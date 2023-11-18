@@ -1,0 +1,19 @@
+{
+    "name":"flatpak-1.14.4",
+    "src":"https://github.com/flatpak/flatpak/releases/download/1.14.4/flatpak-1.14.4.tar.xz",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":[
+        "make install"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/security/GPGME-1.21.0.json"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "name":"libassuan-2.5.6",
+    "src":"https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-2.5.6.tar.bz2",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":[
+        "make",
+        "make -C doc html",
+        "makeinfo --html --no-split -o doc/assuan_nochunks.html doc/assuan.texi",
+        "makeinfo --plaintext       -o doc/assuan.txt           doc/assuan.texi"
+    ],
+    "install":[
+        "make install",
+        "install -v -dm755   /usr/share/doc/libassuan-2.5.6/html",
+        "install -v -m644 doc/assuan.html/* /usr/share/doc/libassuan-2.5.6/html",
+        "install -v -m644 doc/assuan_nochunks.html /usr/share/doc/libassuan-2.5.6",
+        "install -v -m644 doc/assuan.{txt,texi} /usr/share/doc/libassuan-2.5.6"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libgpg-error-1.47.json"
+    ]
+}

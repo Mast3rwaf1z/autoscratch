@@ -1,0 +1,16 @@
+{
+    "name":"libcap-2.69",
+    "src":"https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.69.tar.xz",
+    "config":[
+        "sed -i '/install -m.*STA/d' libcap/Makefile"
+    ],
+    "build":[
+        "make prefix=/usr lib=lib"
+    ],
+    "install":[
+        "make prefix=/usr lib=lib install"
+    ],
+    "uninstall":[
+        "make prefix=/usr lib=lib uninstall"
+    ]
+}
