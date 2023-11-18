@@ -1,0 +1,12 @@
+{
+    "name":"libidn2-2.3.4",
+    "src":"https://ftp.gnu.org/gnu/libidn/libidn2-2.3.4.tar.gz",
+    "config":[
+        "./configure --prefix=/usr --disable-static"
+    ],
+    "build":["make"],
+    "install":["make install"],
+    "depends":[
+        "pkgs/blfs/general-libraries/libunistring-1.1.json"
+    ]
+}

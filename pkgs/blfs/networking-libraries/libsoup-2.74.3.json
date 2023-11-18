@@ -1,0 +1,25 @@
+{
+    "name":"libsoup-2.74.3",
+    "src":"https://download.gnome.org/sources/libsoup/2.74/libsoup-2.74.3.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr       --buildtype=release -Dvapi=enabled      -Dgssapi=disabled   -Dsysprof=disabled  .."
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "depends":[
+        "pkgs/blfs/networking-libraries/glib-networking-2.76.1.json",
+        "pkgs/blfs/networking-libraries/libpsl-0.21.2.json",
+        "pkgs/blfs/general-libraries/libxml2-2.10.4.json",
+        "pkgs/blfs/databases/SQLite-3.42.0.json",
+        "pkgs/blfs/general-libraries/gobject-introspection-1.76.1.json",
+        "pkgs/blfs/programming/Vala-0.56.11.json"
+    ]
+}

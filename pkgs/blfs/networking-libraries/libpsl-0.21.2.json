@@ -1,0 +1,21 @@
+{
+    "name":"libpsl-0.21.2",
+    "src":"https://github.com/rockdaboot/libpsl/releases/download/0.21.2/libpsl-0.21.2.tar.gz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release "
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libidn2-2.3.4.json",
+        "pkgs/blfs/general-libraries/libunistring-1.1.json"
+    ]
+}

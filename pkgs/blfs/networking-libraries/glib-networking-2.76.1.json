@@ -1,0 +1,22 @@
+{
+    "name":"glib-networking-2.76.1",
+    "src":"https://download.gnome.org/sources/glib-networking/2.76/glib-networking-2.76.1.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release -Dlibproxy=disabled .."
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/GLib-2.76.4.json",
+        "pkgs/blfs/security/GnuTLS-3.8.1.json",
+        "pkgs/blfs/gnome/gsettings-desktop-schemas-44.0.json"
+    ]
+}
