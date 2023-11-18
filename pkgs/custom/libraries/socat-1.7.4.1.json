@@ -1,0 +1,7 @@
+{
+    "name":"socat-1.7.4.1",
+    "src":"http://www.dest-unreach.org/socat/download/Archive/socat-1.7.4.1.tar.gz",
+    "config":["./configure --prefix=/usr"],
+    "build":["make"],
+    "install":["make install"]
+}
