@@ -19,6 +19,7 @@
         "ninja uninstall"
     ],
     "depends":[
-        "pkgs/blfs/extensible-markup-language/itstool-2.0.7.json"
+        "pkgs/blfs/extensible-markup-language/itstool-2.0.7.json",
+        "pkgs/blfs/general-libraries/libyaml-0.2.5.json"
     ]
 }
