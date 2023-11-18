@@ -1,0 +1,14 @@
+{
+    "name":"libstemmer_c",
+    "src":"http://snowball.tartarus.org/dist/libstemmer_c.tgz",
+    "config":[],
+    "build":[
+        "make PREFIX=/usr"
+    ],
+    "install":[
+        "make PREFIX=/usr install"
+    ],
+    "uninstall":[
+        "make PREFIX=/usr uninstall"
+    ]
+}
