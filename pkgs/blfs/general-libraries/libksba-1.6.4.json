@@ -1,0 +1,9 @@
+{
+    "name":"libksba-1.6.4",
+    "src":"https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2",
+    "config":[
+        "./configure --prefix=/usr"
+    ],
+    "build":["make"],
+    "install":["make install"]
+}

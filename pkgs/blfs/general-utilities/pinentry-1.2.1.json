@@ -1,0 +1,15 @@
+{
+    "name":"pinentry-1.2.1",
+    "src":"https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
+    "config":[
+        "./configure --prefix=/usr --enable-pinentry-tty"
+    ],
+    "build":[
+        "make"
+    ],
+    "install":["make install"],
+    "depends":[
+        "pkgs/blfs/general-libraries/libassuan-2.5.6.json",
+        "pkgs/blfs/general-libraries/libgpg-error-1.47.json"
+    ]
+}

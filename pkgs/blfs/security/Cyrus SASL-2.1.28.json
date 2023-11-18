@@ -1,0 +1,23 @@
+{
+    "name":"cyrus-sasl-2.1.28",
+    "src":"https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz",
+    "config":[
+        "./configure --prefix=/usr        --sysconfdir=/etc    --enable-auth-sasldb --with-dbpath=/var/lib/sasl/sasldb2 --with-sphinx-build=no              --with-saslauthd=/var/run/saslauthd"
+    ],
+    "build":[
+        "make -j1"
+    ],
+    "install":[
+        "make install",
+        "install -v -dm755                          /usr/share/doc/cyrus-sasl-2.1.28/html",
+        "install -v -m644  saslauthd/LDAP_SASLAUTHD /usr/share/doc/cyrus-sasl-2.1.28",
+        "install -v -m644  doc/legacy/*.html        /usr/share/doc/cyrus-sasl-2.1.28/html",
+        "install -v -dm700 /var/lib/sasl"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/databases/Berkeley DB-5.3.28.json"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "name":"gnupg-2.4.3",
+    "src":[
+        "https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.3.tar.bz2",
+        "https://www.linuxfromscratch.org/patches/blfs/12.0/gnupg-2.4.3-emacs-1.patch"
+    ],
+    "config":[
+        "patch -Np1 -i ../gnupg-2.4.3-emacs-1.patch",
+        "mkdir build",
+        "cd build",
+        "../configure --prefix=/usr           --localstatedir=/var    --sysconfdir=/etc       --docdir=/usr/share/doc/gnupg-2.4.3"
+    ],
+    "build":[
+        "cd build",
+        "make",
+        "makeinfo --html --no-split -I doc -o doc/gnupg_nochunks.html ../doc/gnupg.texi",
+        "makeinfo --plaintext       -I doc -o doc/gnupg.txt           ../doc/gnupg.texi",
+        "make -C doc html"
+    ],
+    "install":[
+        "make install",
+        "install -v -m755 -d /usr/share/doc/gnupg-2.4.3/html",
+        "install -v -m644    doc/gnupg_nochunks.html /usr/share/doc/gnupg-2.4.3/html/gnupg.html",
+        "install -v -m644    ../doc/*.texi doc/gnupg.txt /usr/share/doc/gnupg-2.4.3",
+        "install -v -m644    doc/gnupg.html/* /usr/share/doc/gnupg-2.4.3/html"
+    ]
+}

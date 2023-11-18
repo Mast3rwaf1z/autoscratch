@@ -1,0 +1,29 @@
+{
+    "name":"openldap-2.6.6",
+    "src":[
+        "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz",
+        "https://www.linuxfromscratch.org/patches/blfs/12.0/openldap-2.6.6-consolidated-1.patch"
+    ],
+    "config":[
+        "patch -Np1 -i ../openldap-2.6.6-consolidated-1.patch",
+        "autoconf",
+        "./configure --prefix=/usr     --sysconfdir=/etc --disable-static  --enable-dynamic  --enable-versioning=yes  --disable-debug   --disable-slapd"
+    ],
+    "build":[
+        "make depend",
+        "make"
+    ],
+    "install":[
+        "make install",
+        "cd ..",
+        "wget https://www.linuxfromscratch.org/blfs/downloads/12.0-systemd/blfs-systemd-units-20230816.tar.xz",
+        "cd blfs-systemd-units-20230816",
+        "make install-slapd"
+    ],
+    "uninstall":[
+        "make uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/security/Cyrus SASL-2.1.28.json"
+    ]
+}

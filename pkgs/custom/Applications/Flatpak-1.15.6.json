@@ -27,6 +27,7 @@
         "pkgs/blfs/general-libraries/libseccomp-2.5.4.json",
         "pkgs/blfs/programming/pyparsing-3.1.1.json",
         "pkgs/blfs/networking-libraries/libsoup-2.74.3.json",
-        "pkgs/custom/libraries/socat-1.7.4.1.json"
+        "pkgs/custom/libraries/socat-1.7.4.1.json",
+        "pkgs/blfs/security/GnuPG-2.4.3.json"
     ]
 }
