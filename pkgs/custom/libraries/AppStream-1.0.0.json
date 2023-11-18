@@ -1,0 +1,24 @@
+{
+    "name":"AppStream-1.0.0",
+    "src":"https://www.freedesktop.org/software/appstream/releases/AppStream-1.0.0.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup .. --prefix=/usr --buildtype=release"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "uninstall":[
+        "cd build",
+        "ninja uninstall"
+    ],
+    "depends":[
+        "pkgs/blfs/extensible-markup-language/itstool-2.0.7.json"
+    ]
+}
