@@ -1,0 +1,14 @@
+{
+	"name":"VSCode-linux-x64",
+	"src":null,
+	"build":[
+		"cd /opt",
+		"wget https://az764295.vo.msecnd.net/stable/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/code-stable-x64-1699527057.tar.gz",
+		"tar xf code-stable-x64-1699527057.tar.gz"
+	],
+	"install":[
+		"ln -s /opt/VSCode-linux-x64/bin/code /usr/bin/code",
+		"chmod +x /usr/bin/code",
+		"chmod 4755 /opt/VSCode-linux-x64/chrome-sandbox"
+	]
+}

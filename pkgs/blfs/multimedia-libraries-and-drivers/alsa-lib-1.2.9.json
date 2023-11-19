@@ -1,0 +1,10 @@
+{
+	"name":"alsa-lib-1.2.9",
+	"src":"https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.9.tar.bz2",
+	"config":["./configure"],
+	"build":["make"],
+	"install":["make install"],
+	"depends":[
+		"./pkgs/blfs/system-utilities/Systemd-254.json"
+	]
+}

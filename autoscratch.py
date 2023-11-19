@@ -57,11 +57,12 @@ match mode:
     
     case "update":
         check_root()
-        check_call(["rm", "/tmp/autoscratch"])
+        check_call(["rm", "-rf", "/tmp/autoscratch"])
         check_call(["mkdir", "/tmp/autoscratch"])
         chdir("/tmp/autoscratch")
         for call in [
             ["git", "clone", "https://github.com/Mast3rwaf1z/autoscratch.git", "/tmp/autoscratch"],
+            ["mkdir", "/tmp/autoscratch/build"],
             ["python3", "autoscratch.py", "install", "pkgs/custom/autoscratch.json", "--reinstall", "--verbose"]
         ]:
             check_call(call, stdout=DEVNULL if quiet else None, stderr=DEVNULL if quiet else None)

@@ -93,5 +93,7 @@ class PackageManager:
             Database.update(package["name"], "built", False)
 
     def generatePackageList(self, initial:Package):
+        info(initial.name)
         packages = list(dict.fromkeys(sum([self.generatePackageList(Package(package)) for package in initial.dependencies if not Package(package).name in Database.installed], []))) + [initial.path]
+        info(f"leaving {initial.name}")
         return packages

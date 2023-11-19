@@ -1,0 +1,22 @@
+{
+	"name":"x265-20230215",
+	"src":"https://anduin.linuxfromscratch.org/BLFS/x265/x265-20230215.tar.xz",
+	"config":[
+		"mkdir bld",
+		"cd bld",
+		"cmake -DCMAKE_INSTALL_PREFIX=/usr -DGIT_ARCHETYPE=1 -Wno-dev ../source"
+	],
+	"build":[
+		"cd bld",
+		"make"
+	],
+	"install":[
+		"cd bld",
+		"make install",
+		"rm -vf /usr/lib/libx265.a"
+	],
+	"depends":[
+		"./pkgs/blfs/programming/CMake-3.27.2.json",
+		"./pkgs/blfs/programming/NASM-2.16.01.json"
+	]
+}

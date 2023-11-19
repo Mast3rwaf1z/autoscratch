@@ -1,0 +1,21 @@
+{
+	"name":"libvdpau-1.5",
+	"src":"https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/1.5/libvdpau-1.5.tar.bz2",
+	"config":[
+		"mkdir build",
+		"cd build",
+		"meson setup --prefix=$XORG_PREFIX .."
+	],
+	"build":[
+		"cd build",
+		"ninja"
+	],
+	"install":[
+		"cd build",
+		"ninja install"
+	],
+	"depends":[
+		"./pkgs/blfs/graphical-environments/Xorg Libraries.json",
+		"./pkgs/blfs/graphical-environments/Mesa-23.1.6.json"
+	]
+}

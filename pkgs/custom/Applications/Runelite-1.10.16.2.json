@@ -1,0 +1,23 @@
+{
+	"name":"runelite-runelite-parent-1.10.16.2",
+	"src":"https://github.com/runelite/runelite/archive/refs/tags/runelite-parent-1.10.16.2.tar.gz",
+	"config":[
+		"cd runelite-client",
+		"mvn clean"
+	],
+	"build":[
+		"cd runelite-client",
+		"mvn compile"
+	],
+	"install":[
+		"cd runelite-client",
+		"mvn package",
+		"mkdir /opt/runelite-1.10.16.2",
+		"cp target/*.jar /opt/runelite-1.10.16.2",
+		"echo \"#!/bin/bash\njava -jar /opt/runelite-1.10.16.2/client-1.10.16.2-shaded.jar $@\" > /usr/bin/runelite",
+		"chmod +x /usr/bin/runelite"
+	],
+	"depends":[
+		"./pkgs/custom/programming/Apache-Maven-3.9.5.json"
+	]
+}

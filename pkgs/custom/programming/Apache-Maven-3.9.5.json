@@ -3,8 +3,9 @@
     "src":"https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz",
     "install":[
         "mkdir /opt/apache-maven-3.9.5",
-        "cp * /opt/apache-maven-3.9.5",
-        "ln -s /opt/apache-maven/bin/mvn /usr/bin/mvn"
+        "cp -rv * /opt/apache-maven-3.9.5",
+	"rm -f /usr/bin/mvn",
+        "ln -s /opt/apache-maven-3.9.5/bin/mvn /usr/bin/mvn"
     ],
     "depends":[
         "pkgs/blfs/programming/Java-20.0.2.json"

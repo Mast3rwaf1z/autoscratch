@@ -17,8 +17,9 @@
         "make install",
         "cd ..",
         "wget https://www.linuxfromscratch.org/blfs/downloads/12.0-systemd/blfs-systemd-units-20230816.tar.xz",
+	"tar xf blfs-systemd-units-20230816.tar.xz",
         "cd blfs-systemd-units-20230816",
-        "make install-slapd"
+        "#make install-slapd"
     ],
     "uninstall":[
         "make uninstall"

@@ -1,0 +1,9 @@
+{
+	"name":"fdk-aac-2.0.2",
+	"src":"https://downloads.sourceforge.net/opencore-amr/fdk-aac-2.0.2.tar.gz",
+	"config":[
+		"./configure --prefix=/usr --disable-static"
+	],
+	"build":["make"],
+	"install":["make install"]
+}

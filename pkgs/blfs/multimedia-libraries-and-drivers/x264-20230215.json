@@ -1,0 +1,10 @@
+{
+	"name":"x264-20230215",
+	"src":"https://anduin.linuxfromscratch.org/BLFS/x264/x264-20230215.tar.xz",
+	"config":[
+		"./configure --prefix=/usr --enable-shared --disable-cli"
+	],
+	"build":["make"],
+	"install":["make install"],
+	"depends":["./pkgs/blfs/programming/NASM-2.16.01.json"]
+}
