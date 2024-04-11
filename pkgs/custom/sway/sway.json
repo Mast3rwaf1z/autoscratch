@@ -1,0 +1,23 @@
+{
+    "name":"sway",
+    "src":"https://github.com/WillPower3309/swayfx/archive/refs/tags/0.3.2.tar.gz",
+    "config":[],
+    "build":[
+        "meson build",
+        "ninja -C build"
+    ],
+    "install":[
+        "ninja -C build install",
+        "chmod a+s /usr/local/bin/sway"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/wayland-1.22.0.json",
+        "pkgs/blfs/general-libraries/Wayland-Protocols-1.32.json",
+        "pkgs/custom/libraries/wlroots.json",
+        "pkgs/blfs/general-libraries/PCRE2-10.42.json",
+        "pkgs/blfs/general-libraries/JSON-C-0.17.json",
+        "pkgs/blfs/graphical-environment-libraries/Pango-1.50.14.json",
+        "pkgs/blfs/graphical-environment-libraries/Cairo-1.17.6.json",
+        "pkgs/blfs/graphical-environment-libraries/gdk-pixbuf-2.42.10.json"
+    ]
+}

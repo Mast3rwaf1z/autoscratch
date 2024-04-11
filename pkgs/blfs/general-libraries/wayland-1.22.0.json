@@ -1,0 +1,21 @@
+{
+    "name":"wayland-1.22.0",
+    "src":"https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.22.0/downloads/wayland-1.22.0.tar.xz",
+    "config":[
+        "mkdir build",
+        "cd    build",
+        "meson setup .. --prefix=/usr --buildtype=release -Ddocumentation=false"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ],
+    "depends":[
+        "pkgs/blfs/general-libraries/libxml2-2.10.4.json"
+    ]
+
+}

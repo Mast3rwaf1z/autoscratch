@@ -1,0 +1,21 @@
+{
+    "name":"wlroots-0.17.2",
+    "src":"https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.17.2/wlroots-0.17.2.tar.gz",
+    "depends":[
+        "pkgs/blfs/general-libraries/wayland-1.22.0.json",
+        "pkgs/blfs/general-libraries/Wayland-Protocols-1.32.json",
+        "pkgs/blfs/graphical-environment-libraries/Libdrm-2.4.115.json",
+        "pkgs/blfs/graphical-environments/libinput-1.23.0.json",
+        "pkgs/blfs/general-libraries/libxkbcommon-1.5.0.json",
+        "pkgs/blfs/graphics-and-font-libraries/Pixman-0.42.2.json"
+    ],
+    "config":[
+        "meson setup build"
+    ],
+    "build":[
+        "ninja -C build"
+    ],
+    "install":[
+        "ninja -C build install"
+    ]
+}

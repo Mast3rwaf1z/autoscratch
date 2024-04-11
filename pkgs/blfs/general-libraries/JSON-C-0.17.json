@@ -1,0 +1,20 @@
+{
+    "name":"json-c-0.17",
+    "src":"https://s3.amazonaws.com/json-c_releases/releases/json-c-0.17.tar.gz",
+    "depends":[
+        "pkgs/blfs/programming/CMake-3.27.2.json"
+    ],
+    "config":[
+        "mkdir build",
+        "cd build",
+        "cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DBUILD_STATIC_LIBS=OFF    .."
+    ],
+    "build":[
+        "cd build",
+        "make"
+    ],
+    "install":[
+        "cd build",
+        "make install"
+    ]
+}

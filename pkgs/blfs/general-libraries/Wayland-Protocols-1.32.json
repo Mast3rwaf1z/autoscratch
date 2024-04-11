@@ -1,0 +1,20 @@
+{
+    "name":"wayland-protocols-1.32",
+    "src":"https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.32/downloads/wayland-protocols-1.32.tar.xz",
+    "depends":[
+        "pkgs/blfs/general-libraries/wayland-1.22.0.json"
+    ],
+    "config":[
+        "mkdir build",
+        "cd build",
+        "meson setup --prefix=/usr --buildtype=release"
+    ],
+    "build":[
+        "cd build",
+        "ninja"
+    ],
+    "install":[
+        "cd build",
+        "ninja install"
+    ]
+}
